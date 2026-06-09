@@ -18,10 +18,12 @@ HTML head - Azhar
   - Elijah (index.html)
   - Krish (services.html)
   - Azhar (contact.html)
+
 CSS heads - Owam and Krishendree
   - Krish (services.css)
   - Owam (about.css)
   - Azhar (index.css)
+
 JS heads - Yaghya and Elijah
   -Yaghya (index and services)
   -Elijah (contact and about)
