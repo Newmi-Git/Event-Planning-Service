@@ -1,3 +1,4 @@
+```
 EVENT PLANNING SERVICE
 			FIRST PHASE - PLANNING
           Planning 
@@ -27,7 +28,7 @@ CSS heads - Owam and Krishendree
 JS heads - Yaghya and Elijah
   -Yaghya (index and services)
   -Elijah (contact and about)
-  
+  ```
 
 
 SITE
