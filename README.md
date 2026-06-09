@@ -31,6 +31,7 @@ JS heads - Yaghya and Elijah
 SITE
 url: affairdecoeur.co.za
 
+```text
 Project Structure
 │
 ├── Main-Site
@@ -47,20 +48,14 @@ Project Structure
 │           └── Self-Hosted Functions
 │
 ├── Service Table
-│
 ├── Gallery
-│
 ├── After-purchase Survey
-│
 ├── Reviews
-│
 ├── Filter-System
-│
 ├── Search-Bar
-│
 ├── Calendar
-│
 └── Budget
+```
 
 
 ============CONCLUSION============
