@@ -23,8 +23,8 @@ CSS heads - Owam and Krishendree
   - Owam (about.css)
   - Azhar (index.css)
 JS heads - Yaghya and Elijah
-  -Yaghya ( index and services )
-  -Elijah ( contact and about )
+  -Yaghya (index and services)
+  -Elijah (contact and about)
   
 
 
