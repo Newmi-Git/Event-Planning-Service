@@ -31,37 +31,36 @@ JS heads - Yaghya and Elijah
 SITE
 url: affairdecoeur.co.za
 
-Layout:
-  Main-Site
-  	Event-Tab
-  Events:
-  	Location
-  	Invites
-  	Transport and Map
-  	On-site Images
-  Service Table
-  Gallery
-  After-purchase Survey
-  Reviews
-  Filter-System
-  Event-Types	
-  	Go-To
-  	Hired-Experienced
-  	Self-Hosted Functions
-  Search-Bar
-  Calendar
-  Budget
-
-
-
-
-
-
-
-
-
-
-
+Project Structure
+│
+├── Main-Site
+│   └── Event-Tab
+│       ├── Events
+│       │   ├── Location
+│       │   ├── Invites
+│       │   ├── Transport and Map
+│       │   └── On-site Images
+│       │
+│       └── Event-Types
+│           ├── Go-To
+│           ├── Hired-Experienced
+│           └── Self-Hosted Functions
+│
+├── Service Table
+│
+├── Gallery
+│
+├── After-purchase Survey
+│
+├── Reviews
+│
+├── Filter-System
+│
+├── Search-Bar
+│
+├── Calendar
+│
+└── Budget
 
 
 ============CONCLUSION============
