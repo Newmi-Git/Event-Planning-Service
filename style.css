@@ -7,6 +7,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /*=====================================
@@ -102,8 +105,10 @@ body {
 }
 
 .herosection button:hover {
-  background-color: #ff4500;
   transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+  background-color: #ff4500;
 }
 
 /*=====================================
@@ -139,6 +144,176 @@ body {
   line-height: 1.8;
 }
 
+/* ==========================================
+   CONTACT PAGE
+   ========================================== */
+
+/* FIXED: Added padding-top to prevent the fixed navbar from overlapping content, and max-width layout control */
+.contact-page-wrapper {
+  padding-top: 140px; 
+  padding-bottom: 60px;
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  flex: 1; /* Pushes footer down if page content is short */
+}
+
+.contact_intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact_subtitle {
+  color: #ff2a54;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact_intro h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin: 10px 0;
+}
+
+.contact_intro p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.contact_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.contact_info {
+  padding-right: 20px;
+}
+
+.contact_info h3 {
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+}
+
+.contact_info > p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.info_icon {
+  font-size: 1.4rem;
+  background: rgba(255, 42, 84, 0.08);
+  padding: 10px;
+  border-radius: 12px;
+  line-height: 1;
+}
+
+.info_item h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.info_item p, 
+.info_item a {
+  margin: 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.info_item a:hover {
+  color: #ff2a54;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.form_group input,
+.form_group textarea {
+  padding: 14px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background-color: #fcfcfc;
+  transition: all 0.2s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  outline: none;
+  border-color: #ff2a54;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.12);
+}
+
+.contact_submit_btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 42, 84, 0.2);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.contact_submit_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+  background-color: #ff4500;
+}
+
 /*=====================================
   FOOTER
 =====================================*/
@@ -148,4 +323,5 @@ body {
   padding: 20px;
   background-color: #333;
   color: white;
+  margin-top: auto; /* Ensures footer sticks to absolute bottom when page height is low */
 }
