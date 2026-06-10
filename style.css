@@ -2,100 +2,150 @@ html {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #fafafa;
 }
 
 /*=====================================
-  NAVBAR
-  =====================================*/          
+  NAVBAR (LIGHT THEME)
+=====================================*/          
 
-nav{
-  position:fixed;
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  justify-content: space-between;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.92); /* Light transparent background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 1rem;
+  box-sizing: border-box;
   z-index: 1000;
 }
 
-ul {
+.navbar ul {
   list-style: none;
   display: flex;
+  align-items: center; /* Vertically centers text links and the logo */
   margin: 0;
   padding: 0;
 }
 
-li {
-  text-decoration: none;
-  color: white;
-  padding: 1rem;
+.navbar li {
+  padding: 0.5rem 1rem;
 }
 
-nav a{
-  text-decoration: none;
-  color: white;
-  padding: 1rem;
+.navbar li img {
+  height: 60px; /* Enlarged logo size */
+  width: auto;
+  display: block;
 }
 
-nav a:hover{
-  color: #ff6347;
-  transition: color 0.3s ease;
-  transform: translateX(-2px) 0.3s ease;
-  text-decoration: line-through;
+.navbar-container a {
+  text-decoration: none;
+  color: #333; /* Dark text for contrast against the light navbar */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.navbar-container a:hover {
+  color: #ff6347; /* Accent color on hover */
+  text-decoration: underline;
+  transform: translateY(-2px);
 }
 
 /*=====================================
-  HERO
-  =====================================*/
+  HERO - INDEX
+=====================================*/
 
-.hero{
+.herosection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 80vh;
   width: 100%;
+  background-color: #222; /* Dark background so white hero text pops */
+  text-align: center;
+  padding-top: 90px; /* Generous padding so the larger navbar doesn't cover content */
 }
 
-.hero img{ 
-  height: 100%;
-  width: auto;
-  object-fit: cover;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.hero h1{
+.herosection h1 {
   font-size: 3rem;
-  margin: 0;
+  margin: 0 0 10px 0;
   color: white;
+  letter-spacing: 2px;
 }
 
-.hero p{
+.herosection p {
   font-size: 1.5rem;
-  color: white;
+  color: #ddd;
+  margin: 0 0 30px 0;
 }
 
-.hero button{
-  padding: 20px 40px;
+.herosection button {
+  padding: 15px 40px;
   font-size: 1.2rem;
   background-color: #ff6347;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.hero button:hover{
+.herosection button:hover {
   background-color: #ff4500;
-  transition: background-color 0.3s ease;
-  transform: translateY(-2px) 0.3s ease;
+  transform: translateY(-2px);
+}
+
+/*=====================================
+  ACHIEVEMENTS AND SERVICES - INDEX
+=====================================*/
+
+.achievements-services-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievements, .services-index {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievements:hover, .services-index:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.services-index ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+
+/*=====================================
+  FOOTER
+=====================================*/
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
 }
