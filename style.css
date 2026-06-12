@@ -13,7 +13,7 @@ body {
 }
 
 /*=====================================
-  NAVBAR (LIGHT THEME)
+  NAVBAR 
 =====================================*/          
 
 .navbar-container {
@@ -24,8 +24,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.92); /* Light transparent background */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  background-color: rgba(255, 255, 255, 0.92); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-sizing: border-box;
@@ -35,8 +35,7 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  align-items: center; /* Vertically centers text links and the logo */
-  margin: 0;
+  align-items: center; 
   padding: 0;
 }
 
@@ -45,14 +44,14 @@ body {
 }
 
 .navbar li img {
-  height: 60px; /* Enlarged logo size */
+  height: 60px;
   width: auto;
   display: block;
 }
 
 .navbar-container a {
   text-decoration: none;
-  color: #333; /* Dark text for contrast against the light navbar */
+  color: #333; 
   font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
@@ -75,9 +74,9 @@ body {
   justify-content: center;
   height: 80vh;
   width: 100%;
-  background-color: #222; /* Dark background so white hero text pops */
+  background-color: #222; 
   text-align: center;
-  padding-top: 90px; /* Generous padding so the larger navbar doesn't cover content */
+  padding-top: 90px; 
 }
 
 .herosection h1 {
@@ -148,14 +147,13 @@ body {
    CONTACT PAGE
    ========================================== */
 
-/* FIXED: Added padding-top to prevent the fixed navbar from overlapping content, and max-width layout control */
 .contact-page-wrapper {
   padding-top: 140px; 
   padding-bottom: 60px;
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
-  flex: 1; /* Pushes footer down if page content is short */
+  flex: 1; 
 }
 
 .contact_intro {
@@ -323,5 +321,5 @@ body {
   padding: 20px;
   background-color: #333;
   color: white;
-  margin-top: auto; /* Ensures footer sticks to absolute bottom when page height is low */
+  margin-top: auto; 
 }
