@@ -69,7 +69,8 @@ function filterAll() {
 
     document.querySelectorAll('.products').forEach(card => {
         const nameMatch     = card.dataset.name.toLowerCase().includes(query);
-        const categoryMatch = checked.includes(card.dataset.category);
+        const cardCategories = card.dataset.category.split(' ');
+        const categoryMatch  = checked.every(cat => cardCategories.includes(cat));
         const priceMatch    = parseInt(card.dataset.price) <= budget;
 
         card.style.display = (nameMatch && categoryMatch && priceMatch) ? '' : 'none';

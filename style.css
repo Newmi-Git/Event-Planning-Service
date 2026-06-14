@@ -481,7 +481,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    font-size: 200%;
+    font-size: 159%;
     transition: all 0.5s ease-in-out;
 }
 
@@ -510,4 +510,5 @@ body {
 .services-page .products:hover {
     transform: scale(1.01);
     box-shadow: 0 10px 30px rgba(244, 162, 29, 0.677);
+    cursor: pointer;
 }
