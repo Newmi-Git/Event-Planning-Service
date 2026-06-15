@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Affair De Coeur</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Entire Page -->
+        <div class="services-page"> 
+            <!-- Navigation Bar -->
+            <div class="navbar-container">
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="./services.html">Events</a></li>
+                        <li><a href="#">Budget Tracker</a></li>
+                        <li><a href="./index.html"><img src="Images/AffaireDeCoeur_transparent.png" alt="Logo"></a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Surrounds the entire products and search function -->
+            <div class="services-wrapper">
+
+                <!-- The side bar -->
+                <div class="filter-section">
+                    <h3>Events</h3>
+
+                    <div class="active-filters">
+                        <span class="tag" data-filter="spring">Spring <button>×</button></span>
+                        <span class="tag" data-filter="indoor">Indoor <button>×</button></span>
+                        <span class="tag" data-filter="outdoor">Outdoor <button>×</button></span>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><input type="checkbox" value="go-karting" > Go Karting</label>
+                        <label><input type="checkbox" value="swimming" > Swimming</label>
+                        <label><input type="checkbox" value="swimming" > Indoor</label>
+                        <label><input type="checkbox" value="swimming" > Outdoor</label>
+                        <label><input type="checkbox" value="restaurants" > Restaurants</label>
+                        <label><input type="checkbox" value="fine-dining" > Fine Dining</label>
+                        <label><input type="checkbox" value="fast-food" > Fast Food</label>
+                        <label><input type="checkbox" value="buffet" > Buffet</label>
+                        <label><input type="checkbox" value="casual-dining" > Casual Dining</label>
+                        <label><input type="checkbox" value="winelands" > Winelands Tours</label>
+                        <label><input type="checkbox" value="nature" > Nature & Outdoors</label>
+                        <label><input type="checkbox" value="adventure" > Adventure</label>
+                        <label><input type="checkbox" value="culture" > Culture & Museums</label>
+                        <label><input type="checkbox" value="skating" > Skating</label>
+                        <label><input type="checkbox" value="aquarium" > Aquarium</label>
+                        <label><input type="checkbox" value="beaches" > Beaches</label>
+                        <label><input type="checkbox" value="scenic" > Scenic</label>
+                        <label><input type="checkbox" value="cafes" > Cafes</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Budget <span id="budget-label">R0–1000</span></label>
+                        <input type="range" id="budget-slider" min="0" max="2000" value="2000">
+                    </div>
+                </div>
+
+                <div class="services-section">
+
+                    <div class="services-search-bar">
+                        <div class="search-bar">
+                            <input type="text" id="search-input" placeholder="Search text">
+                            <button>🔍</button>
+                        </div>
+                        <div class="sorting-options">
+                            <button class="active" data-sort="new">✓ New</button>
+                            <button data-sort="price-asc">Price ascending</button>
+                            <button data-sort="price-desc">Price descending</button>
+                            <button data-sort="rating">Rating</button>
+                        </div>
+                    </div>
+
+                    <div class="service-header">
+                        <h1>What We Offer</h1>
+                    </div>
+
+                    <div class="service-items" id="product-grid">
+
+                        <!-- ── ORIGINAL VENUES (corrected) ── -->
+
+                        <div class="products" data-name="Century Karting" data-category="go-karting adventure" data-price="300" data-rating="4.5">
+                            <img src="images/go-karting-in-Cape-Town.webp" alt="Go Karting">
+                            <p style="font-size: 80%; color: black"><b>Century Karting</b></p>
+                            <p>From <b><i>R300</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Sea Point Pools" data-category="swimming outdoor nature" data-price="30" data-rating="4.2">
+                            <img src="images/diving-pool-at-front.jpg" alt="Swimming">
+                            <p style="font-size: 80%; color: black"><b>Sea Point Pools</b></p>
+                            <p>From <b><i>R30</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Pigalle Restaurant" data-category="restaurants fine-dining" data-price="800" data-rating="4.8">
+                            <img src="images/pigalle.webp" alt="Fine Dining">
+                            <p style="font-size: 80%; color: black"><b>Pigalle Restaurant</b></p>
+                            <p>From <b><i>R800</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Stellenbosch Winelands Tour" data-category="winelands outdoor scenic" data-price="1650" data-rating="4.7">
+                            <img src="images/winelandstour.jpg" alt="Winelands Tours">
+                            <p style="font-size: 80%; color: black"><b>Stellenbosch Winelands Tour</b></p>
+                            <p>From <b><i>R1650</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="The Village Buffet" data-category="restaurants buffet" data-price="180" data-rating="4.0">
+                            <img src="images/TheVillageBuffet.webp" alt="Buffet">
+                            <p style="font-size: 80%; color: black"><b>The Village Buffet</b></p>
+                            <p>From <b><i>R180</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Long Street Baths" data-category="swimming indoor" data-price="30" data-rating="4.3">
+                            <img src="images/longstreetbaths.jpg" alt="Outdoor Swimming">
+                            <p style="font-size: 80%; color: black"><b>Long Street Baths</b></p>
+                            <p>From <b><i>R30</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Honest Chocolate Cafe" data-category="restaurants cafes casual-dining" data-price="120" data-rating="4.1">
+                            <img src="images/honestchocolatecafe.webp" alt="Cafes">
+                            <p style="font-size: 80%; color: black"><b>Honest Chocolate Cafe</b></p>
+                            <p>From <b><i>R120</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Golden Dish" data-category="restaurants fast-food" data-price="80" data-rating="3.8">
+                            <img src="images/goldendish.jpg" alt="Fast Food">
+                            <p style="font-size: 80%; color: black"><b>Golden Dish</b></p>
+                            <p>From <b><i>R80</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Ricks Cafe Americain" data-category="restaurants casual-dining" data-price="200" data-rating="4.0">
+                            <img src="images/ricks-cafe-americain.webp" alt="Casual Dining">
+                            <p style="font-size: 80%; color: black"><b>Ricks Cafe Americain</b></p>
+                            <p>From <b><i>R200</i></b> per person</p>
+                        </div>
+
+                        <!-- ── NEW VENUES ── -->
+
+                        <!-- Nature & Outdoor -->
+                        <div class="products" data-name="Table Mountain Aerial Cableway" data-category="nature outdoor scenic adventure" data-price="450" data-rating="4.9">
+                            <img src="images/tablemountain.jpg" alt="Table Mountain">
+                            <p style="font-size: 80%; color: black"><b>Table Mountain Aerial Cableway</b></p>
+                            <p>From <b><i>R450</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Kirstenbosch National Botanical Garden" data-category="nature outdoor scenic" data-price="220" data-rating="4.8">
+                            <img src="images/kirstenbosch.jpg" alt="Kirstenbosch">
+                            <p style="font-size: 80%; color: black"><b>Kirstenbosch National Botanical Garden</b></p>
+                            <p>From <b><i>R220</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Cape Point Nature Reserve" data-category="nature outdoor scenic adventure" data-price="353" data-rating="4.8">
+                            <img src="images/capepoint.jpg" alt="Cape Point">
+                            <p style="font-size: 80%; color: black"><b>Cape Point Nature Reserve</b></p>
+                            <p>From <b><i>R353</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Boulders Beach Penguin Colony" data-category="nature outdoor beaches scenic" data-price="220" data-rating="4.7">
+                            <img src="images/bouldersbeach.jpg" alt="Boulders Beach Penguins">
+                            <p style="font-size: 80%; color: black"><b>Boulders Beach Penguin Colony</b></p>
+                            <p>From <b><i>R220</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Lions Head Hike" data-category="nature outdoor adventure scenic" data-price="0" data-rating="4.8">
+                            <img src="images/lionshead.jpg" alt="Lions Head Hike">
+                            <p style="font-size: 80%; color: black"><b>Lion's Head Hike</b></p>
+                            <p><b><i>Free</i></b> entry</p>
+                        </div>
+
+                        <div class="products" data-name="Chapman's Peak Drive" data-category="nature outdoor scenic" data-price="55" data-rating="4.7">
+                            <img src="images/chapmanspeak.jpg" alt="Chapmans Peak">
+                            <p style="font-size: 80%; color: black"><b>Chapman's Peak Drive</b></p>
+                            <p>From <b><i>R55</i></b> per vehicle</p>
+                        </div>
+
+                        <div class="products" data-name="Camps Bay Beach" data-category="beaches outdoor scenic" data-price="0" data-rating="4.6">
+                            <img src="images/campsbay.jpg" alt="Camps Bay Beach">
+                            <p style="font-size: 80%; color: black"><b>Camps Bay Beach</b></p>
+                            <p><b><i>Free</i></b> entry</p>
+                        </div>
+
+                        <div class="products" data-name="Clifton Beaches" data-category="beaches outdoor scenic" data-price="0" data-rating="4.6">
+                            <img src="images/cliftonbeach.jpg" alt="Clifton Beaches">
+                            <p style="font-size: 80%; color: black"><b>Clifton Beaches</b></p>
+                            <p><b><i>Free</i></b> entry</p>
+                        </div>
+
+                        <!-- Culture & Museums -->
+                        <div class="products" data-name="Robben Island Museum" data-category="culture outdoor scenic" data-price="750" data-rating="4.6">
+                            <img src="images/robbenisland.jpg" alt="Robben Island">
+                            <p style="font-size: 80%; color: black"><b>Robben Island Museum</b></p>
+                            <p>From <b><i>R750</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Two Oceans Aquarium" data-category="aquarium indoor culture" data-price="260" data-rating="4.6">
+                            <img src="images/twooceans.jpg" alt="Two Oceans Aquarium">
+                            <p style="font-size: 80%; color: black"><b>Two Oceans Aquarium</b></p>
+                            <p>From <b><i>R260</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Zeitz Museum of Contemporary Art Africa" data-category="culture indoor" data-price="200" data-rating="4.5">
+                            <img src="images/zeitzmocaa.jpg" alt="Zeitz MOCAA">
+                            <p style="font-size: 80%; color: black"><b>Zeitz Museum of Contemporary Art Africa</b></p>
+                            <p>From <b><i>R200</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Bo-Kaap Neighbourhood Walk" data-category="culture outdoor scenic" data-price="0" data-rating="4.5">
+                            <img src="images/bokaap.jpg" alt="Bo-Kaap">
+                            <p style="font-size: 80%; color: black"><b>Bo-Kaap Neighbourhood Walk</b></p>
+                            <p><b><i>Free</i></b> to explore</p>
+                        </div>
+
+                        <div class="products" data-name="Groot Constantia Wine Estate" data-category="winelands culture scenic" data-price="150" data-rating="4.6">
+                            <img src="images/grootconstantia.jpg" alt="Groot Constantia">
+                            <p style="font-size: 80%; color: black"><b>Groot Constantia Wine Estate</b></p>
+                            <p>From <b><i>R150</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="World of Birds Wildlife Sanctuary" data-category="nature indoor outdoor culture" data-price="195" data-rating="4.3">
+                            <img src="images/worldofbirds.jpg" alt="World of Birds">
+                            <p style="font-size: 80%; color: black"><b>World of Birds Wildlife Sanctuary</b></p>
+                            <p>From <b><i>R195</i></b> per person</p>
+                        </div>
+
+                        <!-- Skating -->
+                        <div class="products" data-name="The Ice Station GrandWest" data-category="skating indoor adventure" data-price="75" data-rating="4.4">
+                            <img src="images/icestation.jpg" alt="Ice Skating GrandWest">
+                            <p style="font-size: 80%; color: black"><b>The Ice Station GrandWest</b></p>
+                            <p>From <b><i>R75</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Rollercade Table Bay Mall" data-category="skating indoor adventure" data-price="180" data-rating="4.3">
+                            <img src="images/rollercade.jpg" alt="Rollercade Roller Skating">
+                            <p style="font-size: 80%; color: black"><b>Rollercade Table Bay Mall</b></p>
+                            <p>From <b><i>R180</i></b> per person</p>
+                        </div>
+
+                        <!-- Adventure -->
+                        <div class="products" data-name="Abseil Africa Table Mountain" data-category="adventure outdoor scenic" data-price="1095" data-rating="4.9">
+                            <img src="images/abseilafrica.jpg" alt="Abseil Africa">
+                            <p style="font-size: 80%; color: black"><b>Abseil Africa – Table Mountain</b></p>
+                            <p>From <b><i>R1095</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Cape Town City Sightseeing Bus" data-category="scenic culture outdoor" data-price="260" data-rating="4.5">
+                            <img src="images/citysightseeing.jpg" alt="City Sightseeing Bus">
+                            <p style="font-size: 80%; color: black"><b>Cape Town City Sightseeing Bus</b></p>
+                            <p>From <b><i>R260</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Hout Bay Harbour Boat Cruise" data-category="scenic outdoor adventure" data-price="150" data-rating="4.4">
+                            <img src="images/houtbaycruise.jpg" alt="Hout Bay Boat Cruise">
+                            <p style="font-size: 80%; color: black"><b>Hout Bay Harbour Boat Cruise</b></p>
+                            <p>From <b><i>R150</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Shark Cage Diving Gansbaai" data-category="adventure outdoor" data-price="1800" data-rating="4.7">
+                            <img src="images/sharkcagediving.jpg" alt="Shark Cage Diving">
+                            <p style="font-size: 80%; color: black"><b>Shark Cage Diving – Gansbaai</b></p>
+                            <p>From <b><i>R1800</i></b> per person</p>
+                        </div>
+
+                        <!-- Fine Dining & Restaurants -->
+                        <div class="products" data-name="La Colombe Restaurant" data-category="restaurants fine-dining" data-price="1250" data-rating="4.9">
+                            <img src="images/lacolombe.jpg" alt="La Colombe">
+                            <p style="font-size: 80%; color: black"><b>La Colombe Restaurant</b></p>
+                            <p>From <b><i>R1250</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="The Test Kitchen" data-category="restaurants fine-dining" data-price="1500" data-rating="4.9">
+                            <img src="images/testkitchen.jpg" alt="The Test Kitchen">
+                            <p style="font-size: 80%; color: black"><b>The Test Kitchen</b></p>
+                            <p>From <b><i>R1500</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Karibu Restaurant" data-category="restaurants casual-dining" data-price="250" data-rating="4.4">
+                            <img src="images/karibu.jpg" alt="Karibu Restaurant">
+                            <p style="font-size: 80%; color: black"><b>Karibu Restaurant</b></p>
+                            <p>From <b><i>R250</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Kloof Street House" data-category="restaurants casual-dining" data-price="350" data-rating="4.5">
+                            <img src="images/kloofstreethouse.jpg" alt="Kloof Street House">
+                            <p style="font-size: 80%; color: black"><b>Kloof Street House</b></p>
+                            <p>From <b><i>R350</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="The Harbour House Kalk Bay" data-category="restaurants fine-dining scenic" data-price="450" data-rating="4.6">
+                            <img src="images/harbourhouse.jpg" alt="Harbour House">
+                            <p style="font-size: 80%; color: black"><b>The Harbour House – Kalk Bay</b></p>
+                            <p>From <b><i>R450</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Societi Bistro" data-category="restaurants casual-dining" data-price="200" data-rating="4.4">
+                            <img src="images/societibistro.jpg" alt="Societi Bistro">
+                            <p style="font-size: 80%; color: black"><b>Societi Bistro</b></p>
+                            <p>From <b><i>R200</i></b> per person</p>
+                        </div>
+
+                        <!-- Cafes -->
+                        <div class="products" data-name="Bootlegger Coffee Company" data-category="cafes restaurants" data-price="80" data-rating="4.5">
+                            <img src="images/bootlegger.jpg" alt="Bootlegger Coffee">
+                            <p style="font-size: 80%; color: black"><b>Bootlegger Coffee Company</b></p>
+                            <p>From <b><i>R80</i></b> per person</p>
+                        </div>
+
+                        <div class="products" data-name="Truth Coffee Cape Town" data-category="cafes restaurants" data-price="90" data-rating="4.6">
+                            <img src="images/truthcoffee.jpg" alt="Truth Coffee">
+                            <p style="font-size: 80%; color: black"><b>Truth Coffee Cape Town</b></p>
+                            <p>From <b><i>R90</i></b> per person</p>
+                        </div>
+
+                        <!-- Markets -->
+                        <div class="products" data-name="Oranjezicht City Farm Market" data-category="outdoor culture casual-dining" data-price="0" data-rating="4.7">
+                            <img src="images/ozcf.jpg" alt="Oranjezicht City Farm Market">
+                            <p style="font-size: 80%; color: black"><b>Oranjezicht City Farm Market</b></p>
+                            <p><b><i>Free</i></b> entry</p>
+                        </div>
+
+                        <div class="products" data-name="Neighbourgoods Market" data-category="outdoor culture casual-dining" data-price="0" data-rating="4.5">
+                            <img src="images/neighbourgoods.jpg" alt="Neighbourgoods Market">
+                            <p style="font-size: 80%; color: black"><b>Neighbourgoods Market</b></p>
+                            <p><b><i>Free</i></b> entry</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
