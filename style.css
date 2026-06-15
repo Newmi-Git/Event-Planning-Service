@@ -416,6 +416,9 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    background-color: #FF6347;
+    padding: 30px;
+    border: black 2px solid;
 }
 
 .services-page .search-bar {
@@ -425,6 +428,7 @@ body {
     border-radius: 6px;
     padding: 6px 20px;
     gap: 8px;
+    border:black 2px solid;
 }
 
 .services-page .search-bar input {
@@ -455,6 +459,8 @@ body {
     cursor: pointer;
     font-size: 13px;
     color: #444;
+    border: black 2px solid;
+    transition: all ease-in-out;
 }
 
 .services-page .sorting-options button.active {
@@ -508,7 +514,7 @@ body {
 }
 
 .services-page .products:hover {
-    transform: scale(1.01);
+    transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(244, 162, 29, 0.677);
     cursor: pointer;
 }

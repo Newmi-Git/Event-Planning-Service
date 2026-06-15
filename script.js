@@ -127,7 +127,7 @@ sortBtns.forEach(btn => {
 
 
 
-
+const product = document.getElementById
 
 
 
