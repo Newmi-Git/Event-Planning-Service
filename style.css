@@ -12,6 +12,27 @@ body {
   min-height: 100vh;
 }
 
+/* Keeps the footer at the very bottom */
+main {
+  flex: 1; 
+}
+
+/* Styled darkmode button */
+.darkmode-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.darkmode-btn img {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+}
+
 /*=====================================
   NAVBAR 
 =====================================*/          
@@ -21,6 +42,7 @@ body {
   top: 0;
   left: 0;
   display: flex;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -30,6 +52,10 @@ body {
   -webkit-backdrop-filter: blur(10px);
   box-sizing: border-box;
   z-index: 1000;
+}
+
+.navbar ul {
+  gap:100px;
 }
 
 .navbar ul {
@@ -43,7 +69,7 @@ body {
   padding: 0.5rem 1rem;
 }
 
-.navbar li img {
+.navbar ul li a img {
   height: 60px;
   width: auto;
   display: block;
@@ -57,9 +83,9 @@ body {
   display: inline-block;
 }
 
-.navbar-container a:hover {
+.navbar-container .navbar ul li a:hover {
   color: #ff6347; /* Accent color on hover */
-  text-decoration: underline;
+  text-decoration:none;
   transform: translateY(-2px);
 }
 
