@@ -9,7 +9,7 @@
 <body>
     <div id="container">
         <div id="calculator">
-            <input id="display">
+            <input id="display" placeholder="0" readonly>
             <div id="btns">
                 <button onclick="appendtodisplay('+')">+</button>
                 <button onclick="appendtodisplay('7')">7</button>
@@ -30,54 +30,21 @@
             </div>
 
 
-            <input type="number" id="budgetinput" placeholder="Enter budget"><br>
+            <input type="number" id="budgetinput" placeholder="Enter budget"><br><br>
             <div id="budget">
                 <button class="budgetbutton" onclick="setbudget()">Set Budget</button>
                 <button class="subtractbutton" onclick="subtractprices()">Subtract all prices from budget</button>
             </div>
         </div><br>
-       
-        <!-- <div id="Events">
-            <div class="event-cards">
-                <div class="event-1">
-                    <div class="info">
-                        <img src="rick and morty.webp" alt="rick and morty">
-                        <p>Name:</p>
-                        <p>Price:</p>
-                    </div>
-                </div><br>
-
-
-                <div class="event-2">
-                    <div class="info">
-                        <img src="rick and morty.webp" alt="">
-                        <p>Name:</p>
-                        <p>Price:</p>
-                    </div>
-                </div><br>
-
-
-                <div class="event-3">
-                    <div class="info">
-                        <img src="rick and morty.webp" alt="">
-                        <p>Name:</p>
-                        <p>Price:</p>
-                    </div>
-                </div><br>
-            </div>
-        </div> -->
-
 
         <div class="add-events">
             <button class="addevent">Add more Events</button>
         </div>
     </div>
 
-
-    <!-- Make amount user entered display on the calculator
-     The user will be able to make calculations like -,+,*, or / 
-     Display you are over budget or below budget depending on the
-     calculations the user made-->
+    <div class="events">
+        
+    </div>
 
     <script src="calculator.js"></script>
 </body>

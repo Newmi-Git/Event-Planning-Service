@@ -1,18 +1,34 @@
 const display = document.getElementById("display");
 let budgetset = false;
 let budget = 0;
+let total = 0
 
+
+// Set budget functions
 
 function setbudget() {
     const budget = parseFloat(document.getElementById("budgetinput").value);
-    if (isNaN(budget) || budget <= 0) {
+    function showBudget() {
+        display.value = budget;
+    }
+
+    display.addEventListener("keydown", function (e) {
+        e.preventDefault();
+    })
+
+    if (isNaN(budget) || budget <= 0 ) {
         alert("Please enter a valid budget amount");
         return;
     }
+
     budgetset = true
     alert("Budget set to R" + budget + ".You can now use the calculator.")
+
+    showBudget()
 }
 
+
+// The calculator functions
 
 function appendtodisplay(user_input) {
     if (!budgetset) {
@@ -36,35 +52,23 @@ function Calculate() {
     display.value = eval(display.value);
 }
 
-
-function budgetdisplay(){
-    const user_budget
-}
+// -----------------------------------------------------
 
 
-let totalcost = 0
+// Subtract prices from budget function
 
+function subtractprices() {
+    const diff = budget - total
+    if (diff > 0) {
+        alert("You under budget by" + diff)
+    } 
 
-
-
-
-
-
-function checkbudget() {
-    let moneyleft = budget - totalcost;
-
-
-    if (moneyleft > 0) {
-        alert("You are under budget.")
-    }
-
-
-    else if (moneyleft < 0) {
-        alert("You are over budget")
-    }
-
-
-    else {
-        alert("You used your entire budget")
+    else if (diff < 0){
+        alert("You are over budget by" + diff)
+    } else{
+        alert("You are exactly on budget")
     }
 }
+
+
+
