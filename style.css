@@ -473,7 +473,6 @@ body {
    CONTACT PAGE
    ========================================== */
 
-/* FIXED: Added padding-top to prevent the fixed navbar from overlapping content, and max-width layout control */
 .contact-page-wrapper {
   padding-top: 140px; 
   padding-bottom: 60px;
