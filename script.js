@@ -77,16 +77,15 @@ function filterAll() {
     });
 }
 
-// --- SEARCH ---
 searchInput.addEventListener('input', filterAll);
 
-// --- BUDGET SLIDER ---
+
 budgetSlider.addEventListener('input', function () {
     budgetLabel.textContent = 'R0–' + this.value;
     filterAll();
 });
 
-// --- CHECKBOXES ---
+
 checkboxes.forEach(cb => cb.addEventListener('change', filterAll));
 
 // --- ACTIVE FILTER TAGS (×) ---
@@ -94,7 +93,6 @@ tagBtns.forEach(btn => {
     btn.addEventListener('click', function () {
         const tag         = this.parentElement;
         const filterValue = tag.dataset.filter;
-
         const cb = document.querySelector(`.filter-group input[value="${filterValue}"]`);
         if (cb) {
             cb.checked = false;
