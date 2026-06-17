@@ -168,6 +168,129 @@ main {
   padding: 0;
   line-height: 1.8;
 }
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+/* Tablets */
+@media (max-width: 900px) {
+
+  /* Navbar */
+  .navbar-container {
+    position: relative;
+    padding: 10px 0;
+  }
+
+  .navbar ul {
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar li {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .navbar ul li a img {
+    height: 50px;
+  }
+
+  /* Hero */
+  .herosection {
+    height: 70vh;
+    padding: 40px 20px;
+  }
+
+  .herosection h1 {
+    font-size: 2.3rem;
+  }
+
+  .herosection p {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+
+  /* Cards */
+  .achievements-services-index {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+
+  .achievements,
+  .services-index {
+    padding: 25px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+
+  /* Navbar becomes stacked */
+  .navbar-container {
+    position: relative;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar li {
+    text-align: center;
+  }
+
+  .navbar ul li a img {
+    height: 45px;
+  }
+
+  /* Hero mobile */
+  .herosection {
+    height: auto;
+    min-height: 70vh;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .herosection h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .herosection p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .herosection button {
+    width: 80%;
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  /* Achievement cards */
+  .achievements-services-index {
+    padding: 20px 15px;
+  }
+
+  .achievements h2,
+  .services-index h2 {
+    font-size: 1.3rem;
+  }
+
+  .achievements p,
+  .services-index li {
+    font-size: 0.95rem;
+  }
+
+  /* Dark mode button */
+  .darkmode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+
+}
 
 /* ==========================================
    CONTACT PAGE
