@@ -99,9 +99,9 @@
                 <div class="carousel-slide"><img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo"></div>
             </div>
         </div>
-        
-<div class="gallery-container">
-        <div class="gallery-item weddings">
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-item picnic">
             <img src="https://i.ibb.co/hRZhhpRQ/fam6.webp" alt="Family picnic">
         </div>
         <div class="gallery-item celebrations">
@@ -146,51 +146,53 @@
         <div class="gallery-item dining">
             <img src="https://i.ibb.co/HprwjhPj/dinning4.jpg" alt="Dining">
         </div>
-    </div> 
+    </div>
 
- <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.getElementById('search-filter');
-        const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const clearFiltersBtn = document.getElementById('clear-filters');
-        
-        function updateGalleryVisibility() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const activeCategories = Array.from(categoryCheckboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-filter');
+            const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const clearFiltersBtn = document.getElementById('clear-filters');
 
-            galleryItems.forEach(item => {
-                const altText = item.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
-                const itemClasses = item.className.toLowerCase();
-                
-                // Matches search if search is empty or term is found in alt text or classes
-                const matchesSearch = !searchTerm || altText.includes(searchTerm) || itemClasses.includes(searchTerm);
+            function updateGalleryVisibility() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                const activeCategories = Array.from(categoryCheckboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
 
-                // Matches category if no categories selected or item has one of selected categories
-                const matchesCategory = activeCategories.length === 0 || 
-                    activeCategories.some(cat => item.classList.contains(cat));
+                galleryItems.forEach(item => {
+                    const altText = item.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+                    const itemClasses = item.className.toLowerCase();
 
-                if (matchesSearch && matchesCategory) {
-                    item.style.display = 'block';
-                    item.style.animation = 'fadeIn 0.5s ease forwards';
-                } else {
-                    item.style.display = 'none';
-                }
+                    const matchesSearch = !searchTerm || altText.includes(searchTerm) || itemClasses.includes(searchTerm);
+                    const matchesCategory = activeCategories.length === 0 ||
+                        activeCategories.some(cat => item.classList.contains(cat));
+
+                    if (matchesSearch && matchesCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', updateGalleryVisibility());
+            categoryCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateGalleryVisibility());
             });
-        }
 
-        searchInput.addEventListener('input', updateGalleryVisibility);
-        
-        categoryCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateGalleryVisibility);
+            clearFiltersBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                categoryCheckboxes.forEach(cb => cb.checked = false);
+                updateGalleryVisibility();
+            });
         });
+    </script>
 
-        clearFiltersBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            categoryCheckboxes.forEach(cb => cb.checked = false);
-            updateGalleryVisibility();
-        });
-    });
-</script>
+    <div class="footer">
+        <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
+    </div>
+</body>
+
+</html>
