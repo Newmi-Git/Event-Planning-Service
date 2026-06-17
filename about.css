@@ -205,12 +205,12 @@ main {
 }
 
 .team-card h3 {
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
+     margin-bottom: 8px;
+     transition: color 0.3s ease;
 }
 
 .team-card:hover h3 {
-    color: #ec5a0b;
+     color: #ec5a0b;
 }
 .team-card p {
     color:rgb(192, 63, 16);
