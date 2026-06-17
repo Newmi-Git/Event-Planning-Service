@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affair De Coeur Gallery</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/6247c2759e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -100,6 +101,7 @@
             </div>
         </div>
     </div>
+
     <div class="gallery-container">
         <div class="gallery-item picnic">
             <img src="https://i.ibb.co/hRZhhpRQ/fam6.webp" alt="Family picnic">
@@ -148,77 +150,82 @@
         </div>
     </div>
 
-    <div class="footer-container">
-        <p>Follow us on</p>
-        <div class="icons">
-            <!-- Use fa-2x to increase icon size -->
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-x-twitter"></i>
-            <i class="fa-brands fa-square-facebook"></i>
-        </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links-box">
+                <p>Follow us on</p>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                </div>
+            </div>
 
-        <div class="about-us">
-            <p>About</p>
-            <a href="">Our Service</a>
-            <a href="">Our Process</a>
-            <a href="">Our Team</a>
-        </div>
+            <div class="about-us">
+                <p>About</p>
+                <a href="#">Our Service</a>
+                <a href="#">Our Process</a>
+                <a href="#">Our Team</a>
+            </div>
 
-        <div class="Mail">
-            <p>Email</p>
-            <a href=""></a>
-        </div>
+            <div class="Mail">
+                <p>Email</p>
+                <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
+            </div>
 
-        <div class="Location">
-            <p>Head Office Location</p>
-            <p>📍Cape Town, South Africa</p>
-        </div>
+            <div class="Location">
+                <p>Head Office Location</p>
+                <p>📍Cape Town, South Africa</p>
+            </div>
 
-        <div class="main-footer">
-            <p>2026 Affair de Coeur. All Rights Reserved.</p>
+            <div class="main-footer">
+                <p>&copy; 2026 Affair de Coeur. All Rights Reserved.</p>
+            </div>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-filter');
+            const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const clearFiltersBtn = document.getElementById('clear-filters');
+
+            function updateGalleryVisibility() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                const activeCategories = Array.from(categoryCheckboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+
+                galleryItems.forEach(item => {
+                    const altText = item.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+                    const itemClasses = item.className.toLowerCase();
+
+                    const matchesSearch = !searchTerm || altText.includes(searchTerm) || itemClasses.includes(searchTerm);
+                    const matchesCategory = activeCategories.length === 0 ||
+                        activeCategories.some(cat => item.classList.contains(cat));
+
+                    if (matchesSearch && matchesCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // FIXED: Removed invalid parentheses to prevent broken instant execution evaluation
+            searchInput.addEventListener('input', updateGalleryVisibility);
+            categoryCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateGalleryVisibility);
+            });
+
+            clearFiltersBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                categoryCheckboxes.forEach(cb => cb.checked = false);
+                updateGalleryVisibility();
+            });
+        });
+    </script>
+</body>
 
 </html>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const searchInput = document.getElementById('search-filter');
-        const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const clearFiltersBtn = document.getElementById('clear-filters');
-
-        function updateGalleryVisibility() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const activeCategories = Array.from(categoryCheckboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
-
-            galleryItems.forEach(item => {
-                const altText = item.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
-                const itemClasses = item.className.toLowerCase();
-
-                const matchesSearch = !searchTerm || altText.includes(searchTerm) || itemClasses.includes(searchTerm);
-                const matchesCategory = activeCategories.length === 0 ||
-                    activeCategories.some(cat => item.classList.contains(cat));
-
-                if (matchesSearch && matchesCategory) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        searchInput.addEventListener('input', updateGalleryVisibility());
-        categoryCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateGalleryVisibility());
-        });
-
-        clearFiltersBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            categoryCheckboxes.forEach(cb => cb.checked = false);
-            updateGalleryVisibility();
-        });
-    });
-</script>
