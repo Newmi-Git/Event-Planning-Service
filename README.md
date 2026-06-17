@@ -1,50 +1,50 @@
 
-#**Event Planning Service - Affair De Coeur**
+# **Event Planning Service - Affair De Coeur**
 
-##Startup Description
-
-
-##Problem Statement
+## Startup Description
 
 
-##__Team Members__
+## Problem Statement
+
+
+## __Team Members__
 Owam Gobingca
 Azhar Manie
 Yaghya Abdul
 Krishendree Kirstensamy
 Elijah Lategan
 
-##Features
+## Features
 
 
-##HTML Concepts Used
+## HTML Concepts Used
 
 
-##CSS Concepts Used
-
-
-
-##JavaScript Concepts Used
-
-
-###Figma:
-
-
-###Github:
-
-
-###Website Link:
-
-
-##Challenges
+## CSS Concepts Used
 
 
 
-##Lessons Learned:
+## JavaScript Concepts Used
+
+
+### Figma:
+
+
+### Github:
+
+
+### Website Link:
+
+
+## Challenges
 
 
 
-##Future Improvements
+## Lessons Learned:
+
+
+
+## Future Improvements
 			FIRST PHASE - PLANNING
           Planning 
 Business IDEA:
