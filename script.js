@@ -332,19 +332,26 @@ document.querySelectorAll('.add-to-plan-btn').forEach(btn => {
 // =========================================
 renderCart();
 
-
-
 const product = document.getElementById
-
-
-
-
-
-
-
-
-
-
-
-
 darkMode.addEventListener("click", darkMode())
+
+(function setupFilterDrawer() {
+    const filterSection = document.querySelector('.services-page .filter-section');
+    if (!filterSection) return;
+
+    // Create the toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'filter-toggle-btn';
+    toggleBtn.innerHTML = `
+        <span>🎯 Filter &amp; Search</span>
+        <span class="filter-toggle-icon">&#8964;</span>
+    `;
+
+    // Insert it as the first child of the filter section
+    filterSection.insertBefore(toggleBtn, filterSection.firstChild);
+
+    // Toggle drawer open/closed
+    toggleBtn.addEventListener('click', () => {
+        filterSection.classList.toggle('drawer-open');
+    });
+})();

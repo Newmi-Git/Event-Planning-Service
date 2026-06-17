@@ -1,0 +1,1316 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*=====================================
+  NAVBAR (LIGHT THEME)
+=====================================*/          
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.92); /* Light transparent background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Vertically centers text links and the logo */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  padding: 0.5rem 1rem;
+}
+
+.navbar li img {
+  height: 60px; /* Enlarged logo size */
+  width: auto;
+  display: block;
+}
+
+.navbar-container a {
+  text-decoration: none;
+  color: #333; /* Dark text for contrast against the light navbar */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.navbar-container a:hover {
+  color: #ff6347; /* Accent color on hover */
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+/*=====================================
+  HERO - INDEX
+=====================================*/
+
+.herosection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+  background-color: #222; /* Dark background so white hero text pops */
+  text-align: center;
+  padding-top: 90px; /* Generous padding so the larger navbar doesn't cover content */
+}
+
+.herosection h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.herosection p {
+  font-size: 1.5rem;
+  color: #ddd;
+  margin: 0 0 30px 0;
+}
+
+.herosection button {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.herosection button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+  background-color: #ff4500;
+}
+
+/*=====================================
+  ACHIEVEMENTS AND SERVICES - INDEX
+=====================================*/
+
+.achievements-services-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievements, .services-index {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievements:hover, .services-index:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.services-index ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   CONTACT PAGE
+   ========================================== */
+
+/* FIXED: Added padding-top to prevent the fixed navbar from overlapping content, and max-width layout control */
+.contact-page-wrapper {
+  padding-top: 140px; 
+  padding-bottom: 60px;
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  flex: 1; /* Pushes footer down if page content is short */
+}
+
+.contact_intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact_subtitle {
+  color: #ff2a54;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact_intro h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin: 10px 0;
+}
+
+.contact_intro p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.contact_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.contact_info {
+  padding-right: 20px;
+}
+
+.contact_info h3 {
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+}
+
+.contact_info > p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.info_icon {
+  font-size: 1.4rem;
+  background: rgba(255, 42, 84, 0.08);
+  padding: 10px;
+  border-radius: 12px;
+  line-height: 1;
+}
+
+.info_item h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.info_item p, 
+.info_item a {
+  margin: 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.info_item a:hover {
+  color: #ff2a54;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.form_group input,
+.form_group textarea {
+  padding: 14px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  background-color: #fcfcfc;
+  transition: all 0.2s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  outline: none;
+  border-color: #ff2a54;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 42, 84, 0.12);
+}
+
+.contact_submit_btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 42, 84, 0.2);
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.contact_submit_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 42, 84, 0.35);
+  filter: brightness(1.05);
+  background-color: #ff4500;
+}
+
+/*=====================================
+  FOOTER
+=====================================*/
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-top: auto; /* Ensures footer sticks to absolute bottom when page height is low */
+}
+
+
+
+
+/* ── SERVICES PAGE (scoped to .services-page) ── */
+
+.services-page {
+    font-family: sans-serif;
+    color: #222;
+
+}
+
+/* PAGE LAYOUT */
+.services-page .services-wrapper {
+    display: flex;
+    margin-top: 80px;
+}
+
+/* SIDEBAR */
+.services-page .filter-section {
+    width: 180px;
+    flex-shrink: 0;
+    padding: 16px;
+    border-right: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.services-page .filter-section h3 {
+    margin-bottom: 10px;
+}
+
+.services-page .active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.services-page .tag {
+    background: #eee;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.services-page .tag button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+
+.services-page .filter-group {
+    margin-bottom: 12px;
+}
+
+.services-page .filter-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.services-page .filter-group ul {
+    list-style: none;
+    padding-left: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.services-page .filter-group input[type="range"] {
+    width: 100%;
+    margin-top: 6px;
+}
+
+/* MAIN SECTION */
+.services-page .services-section {
+    flex: 1;
+    padding: 20px 24px;
+}
+
+/* SEARCH + SORT BAR */
+.services-page .services-search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    background-color: #FF6347;
+    padding: 30px;
+    border: black 2px solid;
+}
+
+.services-page .search-bar {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 6px;
+    padding: 6px 20px;
+    gap: 8px;
+    border:black 2px solid;
+}
+
+.services-page .search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 14px;
+    width: 220px;
+}
+
+.services-page .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.services-page .sorting-options {
+    display: flex;
+    gap: 6px;
+}
+
+.services-page .sorting-options button {
+    padding: 5px 12px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    color: #444;
+    border: black 2px solid;
+    transition: all ease-in-out;
+}
+
+.services-page .sorting-options button.active {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
+
+/* HEADING */
+.services-page .service-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.services-page .service-header {
+  display: flex;
+  flex-direction: row;
+  gap: 65vw;
+}
+
+.services-page .service-header button {
+  height: 6vh;
+  width: 3vw;
+  border-radius: 50%;
+}
+
+/* CARD GRID */
+.services-page .service-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.services-page .products {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 159%;
+    transition: all 0.5s ease-in-out;
+}
+
+.services-page .products.wide {
+    grid-column: span 2;
+}
+
+.services-page .products img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    background: #e5e5e5;
+}
+
+.services-page .products.wide img {
+    aspect-ratio: 16/7;
+}
+
+.services-page .products p {
+    padding: 8px 10px;
+    font-size: 70%;
+    color: #555;
+}
+
+.services-page .products:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(244, 162, 29, 0.677);
+    cursor: pointer;
+}
+
+/* ─────────────────────────────────────────
+   ADD THIS BLOCK TO THE BOTTOM OF style.css
+   ───────────────────────────────────────── */
+
+/* HOST TAGS */
+.services-page .products {
+    position: relative;
+}
+
+.services-page .host-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.services-page .we-host-tag {
+    background: #FF6347;
+    color: #fff;
+}
+
+.services-page .external-tag {
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+}
+
+/* CARD ACTION BUTTONS */
+.services-page .card-actions {
+    display: flex;
+    gap: 6px;
+    padding: 6px 10px 10px;
+}
+
+.services-page .card-actions button {
+    flex: 1;
+    padding: 5px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.services-page .add-to-plan-btn {
+    background: #FF6347;
+    color: #fff;
+}
+
+.services-page .add-to-plan-btn:hover {
+    background: #e5502f;
+}
+
+.services-page .add-to-plan-btn:active {
+    transform: scale(0.95);
+}
+
+.services-page .add-to-plan-btn.added {
+    background: #2ecc71;
+}
+
+.services-page .go-to-site-btn {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd !important;
+}
+
+.services-page .go-to-site-btn:hover {
+    background: #e2e2e2;
+}
+
+/* CART WRAPPER & BUTTON */
+.services-page .cart-wrapper {
+    position: relative;
+}
+
+.services-page .cart-btn {
+    position: relative;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF6347;
+    border: none;
+    font-size: 18px;
+    transition: transform 0.15s;
+}
+
+.services-page .cart-btn.bump {
+    animation: cartBump 0.4s ease;
+}
+
+@keyframes cartBump {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.35); }
+    60%  { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+.services-page .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #222;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.services-page .cart-count.pop {
+    animation: countPop 0.3s ease;
+}
+
+@keyframes countPop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+/* FLY-TO-CART PARTICLE */
+.fly-particle {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #FF6347;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: none;
+}
+
+/* CART DROPDOWN */
+.services-page .cart-dropdown {
+    display: none;
+    position: absolute;
+    top: 54px;
+    right: 0;
+    width: 320px;
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+    z-index: 1000;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.services-page .cart-dropdown.open {
+    display: flex;
+    animation: dropIn 0.2s ease;
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.services-page .cart-dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #FF6347;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.services-page .cart-close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.services-page .cart-items-list {
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.services-page .cart-empty-msg {
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+    padding: 24px 0;
+    margin: 0;
+}
+
+.services-page .cart-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid #f5f5f5;
+    animation: fadeInRow 0.2s ease;
+}
+
+@keyframes fadeInRow {
+    from { opacity: 0; transform: translateX(8px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.services-page .cart-item-name {
+    flex: 1;
+    font-weight: 600;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.services-page .cart-item-price {
+    color: #FF6347;
+    font-size: 12px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.services-page .cart-item-delete {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+
+.services-page .cart-item-delete:hover {
+    color: #e74c3c;
+}
+
+/* CART FOOTER / NOTES */
+.services-page .cart-dropdown-footer {
+    padding: 10px 14px 14px;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+}
+
+.services-page .cart-note-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.services-page .cart-note-row input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    outline: none;
+}
+
+.services-page .cart-note-row input:focus {
+    border-color: #FF6347;
+}
+
+.services-page #cart-note-add-btn {
+    background: #FF6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.services-page #cart-note-add-btn:hover {
+    background: #e5502f;
+}
+
+.services-page .cart-note-entry {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+    animation: fadeInRow 0.2s ease;
+}
+
+.services-page .cart-note-entry button {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0;
+    margin-left: 6px;
+    flex-shrink: 0;
+}
+
+.services-page .cart-note-entry button:hover {
+    color: #e74c3c;
+}
+
+/* SERVICE HEADER — keep cart-wrapper right-aligned */
+.services-page .service-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AFFAIR DE COEUR — RESPONSIVE STYLES
+   Paste this at the very bottom of style.css
+   (after the style-additions.css block)
+   ══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   TABLET  —  max-width: 1024px
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+    /* Navbar */
+    .services-page .navbar ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 8px 16px;
+    }
+
+    .services-page .navbar ul li a {
+        font-size: 13px;
+    }
+
+    /* Layout: tighten sidebar */
+    .services-page .services-wrapper {
+        margin-top: 70px;
+    }
+
+    .services-page .filter-section {
+        width: 160px;
+        padding: 12px;
+    }
+
+    /* Grid: 3 columns on tablet */
+    .services-page .service-items {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    /* Search bar */
+    .services-page .services-search-bar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .services-page .sorting-options {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    /* Service header */
+    .services-page .service-header {
+        gap: 0;
+    }
+
+    /* Cart dropdown width */
+    .services-page .cart-dropdown {
+        width: 290px;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   LARGE MOBILE  —  max-width: 768px
+   Sidebar collapses, filter becomes a toggle drawer
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ── NAVBAR ── */
+    .services-page .navbar ul {
+        gap: 8px;
+        padding: 6px 12px;
+    }
+
+    .services-page .navbar ul li img {
+        height: 32px;
+    }
+
+    /* ── LAYOUT ── */
+    .services-page .services-wrapper {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    /* ── FILTER SIDEBAR → COLLAPSIBLE DRAWER ── */
+    .services-page .filter-section {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 0;
+        position: relative;
+    }
+
+    /* Hide the sidebar content by default on mobile */
+    .services-page .filter-section .filter-group {
+        display: none;
+        padding: 12px 16px;
+        background: #fff;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    /* Show when drawer is open */
+    .services-page .filter-section.drawer-open .filter-group {
+        display: block;
+    }
+
+    /* Filter toggle button (injected by JS) */
+    .services-page .filter-toggle-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 14px 16px;
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #eee;
+        font-size: 15px;
+        font-weight: 700;
+        color: #222;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .services-page .filter-toggle-btn .filter-toggle-icon {
+        font-size: 18px;
+        color: #FF6347;
+        transition: transform 0.25s ease;
+        line-height: 1;
+    }
+
+    .services-page .filter-section.drawer-open .filter-toggle-icon {
+        transform: rotate(180deg);
+    }
+
+    /* Filter labels become comfortable touch targets */
+    .services-page .filter-section .filter-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 0;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .services-page .filter-section .filter-group label input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #FF6347;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+
+    .services-page .filter-section h3 {
+        display: none; /* replaced by toggle button */
+    }
+
+    /* ── MAIN CONTENT ── */
+    .services-page .services-section {
+        padding: 14px 12px;
+    }
+
+    /* ── SEARCH + SORT ── */
+    .services-page .services-search-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    .services-page .search-bar {
+        width: 100%;
+    }
+
+    .services-page .search-bar input {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .services-page .sorting-options {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .services-page .sorting-options button {
+        text-align: center;
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+
+    /* ── SERVICE HEADER ── */
+    .services-page .service-header {
+        align-items: center;
+        margin-bottom: 14px;
+    }
+
+    .services-page .service-header h1 {
+        font-size: 28px !important;
+        margin-bottom: 0;
+    }
+
+    /* ── CART DROPDOWN ── */
+    .services-page .cart-dropdown {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        max-height: 75vh;
+        border-radius: 16px 16px 0 0;
+        box-shadow: 0 -4px 30px rgba(0,0,0,0.18);
+        animation: slideUp 0.25s ease;
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .services-page .cart-items-list {
+        max-height: 45vh;
+    }
+
+    /* ── CARD GRID — 2 columns ── */
+    .services-page .service-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* ── CARD ACTIONS ── */
+    .services-page .card-actions {
+        flex-direction: column;
+        gap: 5px;
+        padding: 6px 8px 10px;
+    }
+
+    .services-page .card-actions button {
+        width: 100%;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* ── HOST TAG ── */
+    .services-page .host-tag {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   SMALL MOBILE  —  max-width: 480px
+   Single column, max readability
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    /* ── NAVBAR ── */
+    .services-page .navbar ul {
+        gap: 6px 10px;
+        padding: 8px 10px;
+        justify-content: center;
+    }
+
+    .services-page .navbar ul li a {
+        font-size: 12px;
+    }
+
+    .services-page .navbar ul li img {
+        height: 28px;
+    }
+
+    /* ── LAYOUT ── */
+    .services-page .services-wrapper {
+        margin-top: 56px;
+    }
+
+    .services-page .services-section {
+        padding: 10px 10px;
+    }
+
+    /* ── SEARCH BAR ── */
+    .services-page .services-search-bar {
+        padding: 12px 10px;
+        border-radius: 6px;
+        border-width: 1px;
+    }
+
+    /* Sort: 2 columns still, but more compact */
+    .services-page .sorting-options button {
+        font-size: 11px;
+        padding: 7px 2px;
+        border-radius: 8px;
+    }
+
+    /* ── HEADING ── */
+    .services-page .service-header h1 {
+        font-size: 22px !important;
+    }
+
+    .services-page .cart-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    /* ── CARD GRID — 1 column ── */
+    .services-page .service-items {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Cards fill width and look more portrait at 1-col */
+    .services-page .products img {
+        aspect-ratio: 16/7;
+    }
+
+    /* ── CARD TEXT ── */
+    .services-page .products p {
+        font-size: 75% !important;
+    }
+
+    /* ── CARD ACTIONS — side by side again at full width ── */
+    .services-page .card-actions {
+        flex-direction: row;
+        gap: 6px;
+        padding: 6px 10px 10px;
+    }
+
+    .services-page .card-actions button {
+        padding: 9px 6px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    /* ── CART DROPDOWN ── */
+    .services-page .cart-dropdown {
+        max-height: 80vh;
+    }
+
+    .services-page .cart-items-list {
+        max-height: 48vh;
+    }
+
+    .services-page .cart-item-name {
+        max-width: 160px;
+        font-size: 12px;
+    }
+
+    .services-page .cart-dropdown-header span {
+        font-size: 13px;
+    }
+
+    /* ── FILTER DRAWER ── */
+    .services-page .filter-section .filter-group {
+        display: none;
+        column-count: 2;
+        column-gap: 12px;
+    }
+
+    .services-page .filter-section.drawer-open .filter-group {
+        display: block;
+    }
+
+    .services-page .filter-section .filter-group label {
+        font-size: 13px;
+        break-inside: avoid;
+    }
+
+    /* Budget slider stays full width */
+    .services-page .filter-group:last-child {
+        column-count: 1;
+    }
+
+    /* ── HOST TAG ── */
+    .services-page .host-tag {
+        font-size: 8px;
+        padding: 2px 5px;
+        top: 6px;
+        left: 6px;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   UTILITY — respect reduced motion preference
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .services-page .products,
+    .services-page .cart-btn,
+    .services-page .cart-count,
+    .services-page .cart-dropdown,
+    .services-page .cart-item-row,
+    .fly-particle {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ══════════════════════════════════════════════════════
+   NAVBAR OVERLAP FIX
+   Paste this at the top of responsive.css
+   (or at the bottom of style.css)
+   ══════════════════════════════════════════════════════ */
+
+/* Make navbar fixed so it stays on top */
+.services-page .navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Push the whole wrapper down by the navbar's height */
+.services-page .services-wrapper {
+    margin-top: 80px;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+    .services-page .services-wrapper {
+        margin-top: 70px;
+    }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .services-page .services-wrapper {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-page .services-wrapper {
+        margin-top: 56px;
+    }
+}
