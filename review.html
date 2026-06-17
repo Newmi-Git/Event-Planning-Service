@@ -9,13 +9,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body { font-family: 'Segoe UI', sans-serif; }
-
-        /* NAV */
-        .navbar { background: #f5f5f5; border-bottom: 1px solid #ddd; }
-        .navbar .brand { font-weight: 600; font-size: 1.1rem; }
-        .navbar a { color: #333; text-decoration: none; font-size: 0.9rem; }
-        .navbar a:hover { color: #000; }
+        body { font-family: 'Segoe UI', sans-serif; padding-top: 60px; height:100vh;}
 
         /* HERO */
         .hero-section {
@@ -55,7 +49,7 @@
 
         .review-card.featured { border: 3px solid #111; }
 
-        .stars i { color: #bbb; font-size: 0.85rem; }
+        .stars i { color: #f7ff0b; font-size: 0.85rem; }
 
         .review-card h6 { font-weight: 700; margin: 0; }
 
@@ -157,20 +151,25 @@
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="navbar px-5 py-3 d-flex align-items-center justify-content-between">
-        <div class="d-flex gap-4">
-            <a href="#">About Us</a>
-            <a href="#">Galleries</a>
-            <a href="#">Events</a>
-        </div>
-        <span class="brand">Affair De Coeur</span>
-        <div class="d-flex gap-4">
-            <a href="#">Budget Tracker</a>
-            <a href="#">Reviews</a>
-            <a href="#">Contact</a>
-        </div>
-    </nav>
+    <header>
+      <div class="navbar-container">
+        <nav class="navbar">
+          <ul>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./services.html">Events</a></li>
+            <li><a href="#">Budget Tracker</a></li>
+            <li>
+              <a href="./index.html">
+                <img src="images/AffaireDeCoeur_transparent.png" alt="Logo" />
+              </a>
+            </li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <!-- HERO -->
     <section class="hero-section d-flex align-items-center justify-content-between">
@@ -189,7 +188,7 @@
                     <div class="d-flex gap-4 justify-content-center">
 
                         <div class="review-card featured">
-                            <div class="stars"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div>
+                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
                             <h6>Review</h6>
                             <p class="review-text">"The team handled everything perfectly. We didn't have to worry about a thing!"</p>
                             <div class="reviewer d-flex align-items-center gap-2">
@@ -199,7 +198,7 @@
                         </div>
 
                         <div class="review-card">
-                            <div class="stars"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div>
+                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                             <h6>Review</h6>
                             <p class="review-text">"Great attention to detail and very creative ideas for our Birthday Celebration."</p>
                             <div class="reviewer d-flex align-items-center gap-2">
@@ -209,7 +208,7 @@
                         </div>
 
                         <div class="review-card">
-                            <div class="stars"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div>
+                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
                             <h6>Review</h6>
                             <p class="review-text">"Excellent service from start to finish. Truly a memorable experience."</p>
                             <div class="reviewer d-flex align-items-center gap-2">
@@ -226,7 +225,7 @@
                     <div class="d-flex gap-4 justify-content-center">
 
                         <div class="review-card">
-                            <div class="stars"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></div>
+                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                             <h6>Review</h6>
                             <p class="review-text">"Every single detail was taken care of. Our wedding was absolutely perfect!"</p>
                             <div class="reviewer d-flex align-items-center gap-2">
@@ -246,7 +245,7 @@
                         </div>
 
                         <div class="review-card">
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
                             <h6>Review</h6>
                             <p class="review-text">"Professional, warm, and incredibly talented. Would recommend to everyone."</p>
                             <div class="reviewer d-flex align-items-center gap-2">
