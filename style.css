@@ -476,6 +476,23 @@ body {
     margin-bottom: 20px;
 }
 
+.services-page .service-header {
+  display: flex;
+  flex-direction: row;
+  gap: 65vw;
+}
+
+.services-page .service-header button {
+  max-width: 110px;
+  max-height: 90px;
+  border-radius: 50%;
+}
+
+.services-page .service-header img {
+    width: fit-content;
+    height: fit-content;
+}
+
 /* CARD GRID */
 .services-page .service-items {
     display: grid;
