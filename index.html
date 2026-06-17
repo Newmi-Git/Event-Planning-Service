@@ -12,17 +12,33 @@
       <div class="navbar-container">
         <nav class="navbar">
           <ul>
+            <!-- 1. Invisible spacer to keep logo perfectly centered -->
+            <li class="nav-spacer" aria-hidden="true"></li>
+
+            <!-- 2. Core Navigation Links -->
             <li><a href="./gallery.html">Gallery</a></li>
             <li><a href="./services.html">Events</a></li>
             <li><a href="#">Budget Tracker</a></li>
-            <li>
+            
+            <li class="logo-item">
               <a href="./index.html">
                 <img src="images/AffaireDeCoeur_transparent.png" alt="Logo" />
               </a>
             </li>
+            
             <li><a href="#">Reviews</a></li>
             <li><a href="./about.html">About Us</a></li>
             <li><a href="./contact.html">Contact</a></li>
+          
+            <li class="dropdown-item">
+              <button class="account-btn" aria-haspopup="true" aria-expanded="false">
+                Account <span class="arrow">▼</span>
+              </button>
+              <div class="dropdown-menu">
+                <a href="./login.html" class="dropdown-link">Login</a>
+                <a href="./sign-up.html" class="dropdown-link signup-highlight">Sign Up</a>
+              </div>
+            </li>
           </ul>
         </nav>
       </div>

@@ -30,26 +30,109 @@ function register() {
     alert("Account Created!");
 }
 
-function login() {
+// ============================================================================
+// ---  SIGN-UP PAGE (Azhar Manie) ---
+// ============================================================================
+
+function register(e) {
+    // Prevents the browser from reloading the page natively on form submission
+    if (e) e.preventDefault(); 
+    
+    // Grabs input values matching the IDs inside signup.html
+    const usernameField = document.getElementById("username");
+    const passwordField = document.getElementById("password");
+
+    if (!usernameField || !passwordField) {
+        console.error("Authentication fields could not be found in the DOM.");
+        return;
+    }
+
+    const username = usernameField.value.trim();
+    const password = passwordField.value;
+
+    // Retrieve database array from LocalStorage, or initialize an empty array
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check if the email/username is already registered
+    const userExists = users.some(user => user.username.toLowerCase() === username.toLowerCase());
+    
+    if (userExists) {
+        alert("Username or Email Already Exists!");
+        return;
+    }
+    
+    // Save new credentials block into database array
+    users.push({
+        username: username,
+        password: password
+    });
+
+    // Commit updated records array back to LocalStorage
+    localStorage.setItem("users", JSON.stringify(users));
+    
+    alert("Account Created successfully!");
+    
+    // Send user smoothly over to the login portal
+    window.location.href = "./login.html"; 
+}
+
+// --- INITIALIZE FORM ATTRIBUTES ON LOAD ---
+document.addEventListener("DOMContentLoaded", function() {
+    const signupForm = document.getElementById("signupForm");
+    
+    if (signupForm) {
+        signupForm.addEventListener("submit", register);
+    } else {
+        console.warn("Warning: Could not find an element with id='signupForm' on this page.");
+    }
+});
+
+// ============================================================================
+// ---  LOG-IN PAGE (Azhar Manie) ---
+// ============================================================================
+function login(e) {
+    if (e) e.preventDefault(); // Prevents page reload on form submit
+
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const user = users.find( user => user.username === username && user.password === password);
+    const user = users.find(user => user.username === username && user.password === password);
     if (user) {
         alert("Login Successful");
-        localStorage.setItem("currentUser",username);
-    } 
-    else {
+        localStorage.setItem("currentUser", username);
+        window.location.href = "./index.html"; // Redirects straight to index dashboard
+    } else {
         alert("Invalid Username or Password");
     }
 }
 
-function openBookings() {
+// --- EVENT BINDING & GUARD CHECKS ---
+// This guarantees smooth operation across pages even if buttons are missing
+document.addEventListener("DOMContentLoaded", function() {
     
-}
+    // Bind Login Form
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", login);
+    }
 
+    // Bind Signup Form (Assuming your signup form element uses id="signupForm")
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+        signupForm.addEventListener("submit", register);
+    }
+
+    // Fixed darkmode button listener initialization (Removed the accidental execution parenthesis)
+    const darkModeBtn = document.getElementById("darkModeBtn");
+    if (darkModeBtn) {
+        darkModeBtn.addEventListener("click", function() {
+            // Optional: Toggle your CSS master class cleanly here instead
+            document.body.classList.toggle("dark-theme");
+        });
+    }
+});
 //============================================================SERVICES PAGE========================================================================
 
 
