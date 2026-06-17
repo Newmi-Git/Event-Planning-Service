@@ -14,14 +14,16 @@
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body { font-family: 'Segoe UI', sans-serif; padding-top: 60px; height:100vh;}
+        body { font-family: 'Segoe UI', sans-serif; padding-top: 60px; height:100vh; background-color: #FF6347;}
 
         /* HERO */
         .hero-section {
-            background-color: #909090;
+            background-color: #FF6347;
             padding: 60px 80px;
-            padding-top:100px;
+            padding-top:120px;
+            margin-top: 0;
         }
+
         .hero-section p {
             font-size: 3rem;
             font-weight: 700;
@@ -37,7 +39,7 @@
         }
 
         /* CARDS SECTION */
-        .cards-section { background-color: #909090; padding: 0 80px 60px; }
+        .cards-section { background-color: #FF6347; padding: 0 80px 60px; }
 
         /* CAROUSEL */
         .carousel-inner { padding: 10px 0 40px; }
@@ -53,9 +55,9 @@
             flex-direction: column;
             gap: 10px;
             transition: all 0.4s ease-in-out;
+            background-color: #ffffff;
+            border: 2px solid black;
         }
-
-        .review-card.featured { border: 3px solid #111; }
 
         .stars i { color: #f7ff0b; font-size: 1.7rem; }
 
@@ -104,7 +106,7 @@
             border-radius: 50%;
             border: none;
         }
-        .navbar-container {
+        .navbar-container-event {
             position: fixed;
             top: 0;
             left: 0;
@@ -113,7 +115,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.92); 
+            background-color: transparent;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -121,28 +123,28 @@
             z-index: 1000;
             }
 
-            .navbar ul {
+            .navbar-event ul {
             gap:100px;
             }
 
-            .navbar ul {
+            .navbar-event ul {
             list-style: none;
             display: flex;
             align-items: center; 
             padding: 0;
             }
 
-            .navbar li {
+            .navbar-event li {
             padding: 0.5rem 1rem;
             }
 
-            .navbar ul li a img {
+            .navbar-event ul li a img {
             height: 60px;
             width: auto;
             display: block;
             }
 
-            .navbar-container a {
+            .navbar-container-event a {
             text-decoration: none;
             color: #333; 
             font-weight: 500;
@@ -150,7 +152,7 @@
             display: inline-block;
             }
 
-            .navbar-container .navbar ul li a:hover {
+            .navbar-container-event .navbar ul li a:hover {
             color: #ff6347; /* Accent color on hover */
             text-decoration:none;
             transform: translateY(-2px);
@@ -164,8 +166,8 @@
 <body>
 
     <header>
-      <div class="navbar-container">
-        <nav class="navbar">
+      <div class="navbar-container-event">
+        <nav class="navbar-event">
           <ul>
             <li><a href="./gallery.html">Gallery</a></li>
             <li><a href="./services.html">Events</a></li>
@@ -189,7 +191,7 @@
     </section>
 
     <section class="cards-section">
-        <div id="reviewCarousel" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="4000">
+        <div id="reviewCarousel" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="2000">
 
             <div class="carousel-inner">
 
