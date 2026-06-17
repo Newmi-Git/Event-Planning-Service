@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      <div class="navbar-container">
+        <nav class="navbar">
+          <ul>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./services.html">Events</a></li>
+            <li><a href="calculator.html">Budget Tracker</a></li>
+            <li>
+              <a href="./index.html">
+                <img src="images/AffaireDeCoeur_transparent.png" alt="Logo" />
+              </a>
+            </li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="container">
+        <div id="calculator">
+            <input id="display" placeholder="0" readonly>
+            <div id="btns">
+                <button class="special" onclick="appendtodisplay('+')">+</button>
+                <button onclick="appendtodisplay('7')">7</button>
+                <button onclick="appendtodisplay('8')">8</button>
+                <button onclick="appendtodisplay('9')">9</button>
+                <button class="special" onclick="appendtodisplay('-')">-</button>
+                <button onclick="appendtodisplay('4')">4</button>
+                <button onclick="appendtodisplay('5')">5</button>
+                <button onclick="appendtodisplay('6')">6</button>
+                <button class="special" onclick="appendtodisplay('*')">×</button>
+                <button onclick="appendtodisplay('1')">1</button>
+                <button onclick="appendtodisplay('2')">2</button>
+                <button onclick="appendtodisplay('3')">3</button>
+                <button class="special" onclick="appendtodisplay('/')">÷</button>
+                <button class="special" onclick="Cleardisplay('AC')">AC</button>
+                <button class="special" onclick="Calculate('=')">=</button>
+                <button onclick="appendtodisplay('0')">0</button>
+            </div>
+
+
+            <input type="number" id="budgetinput" placeholder="Enter budget"><br><br>
+            <div id="budget">
+                <button class="budgetbutton" onclick="setbudget()">Set Budget</button>
+                <button class="subtractbutton" onclick="subtractprices()">Subtract all prices from budget</button>
+            </div>
+        </div><br>
+
+        <div class="add-events">
+            <a href="services.html">
+                <button class="addevent">Add more Events</button>
+            </a>
+        </div>
+    </div>
+
+    <div id="cardsContainer"></div>
+
+    <h3>Total: <span id="totalprice">R0</span></h3>
+
+    <p id="budgetstatus"></p>
+
+
+
+
+
+    <script src="calculator.js"></script>
+</body>
+</html>
