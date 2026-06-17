@@ -1,19 +1,25 @@
+
+
+
 #container{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
     align-items: start;
+    justify-content: center;
 }
 
-
-/* Calculator */
+/* ============================= */
+        /* Calculator */
+/* ============================= */
 
 #calculator{
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 15px;
     background-color: hsl(0, 1%, 23%);
     width: 500px;
+    margin-top: 150px;
 }
 
 
@@ -35,8 +41,16 @@
     padding: 25px;
 }
 
+.special{
+    background-color: #FF6347;
+}
+
+.special:hover{
+    background-color: hsl(9, 69%, 48%);
+}
 
 button{
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
     width: 100px;
     height: 100px;
     border-radius: 5px;
@@ -45,11 +59,14 @@ button{
     font-size: 2rem;
     background-color: hsl(0, 1%, 54%);
     color: white;
+    transition: transform 0.2s ease;
 }
 
 
 button:hover{
     background-color: hsl(0, 0%, 46%);
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+    transform: scale(1.05); 
 }
 
 
@@ -95,28 +112,6 @@ button:hover{
    
 }
 
-
-.event-1{
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 200px;
-}
-
-
-.event-2{
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 200px;
-}
-
-
-.event-3{
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 200px;
-}
-
-
 img {
     width: 200px;
     height: 100px;
@@ -134,6 +129,7 @@ img {
 
 .addevent{
     width: 500px;
+    margin-top: 150px;
 }
 
 
@@ -151,4 +147,96 @@ img {
     #container {
         grid-template-columns: 1fr;
     }
+}
+
+/*================================ */
+            /* Navbar */
+/*================================ */
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.92); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.navbar ul {
+  gap:100px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center; 
+  padding: 0;
+}
+
+.navbar li {
+  padding: 0.5rem 1rem;
+}
+
+.navbar ul li a img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.navbar-container a {
+  text-decoration: none;
+  color: #333; 
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.navbar-container .navbar ul li a:hover {
+  color: #ff6347; /* Accent color on hover */
+  text-decoration:none;
+  transform: translateY(-2px);
+}
+
+
+
+
+/*================================ */
+        /* Event Page */
+/*================================ */
+
+.achievements-services-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievements, .services-index {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievements:hover, .services-index:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.services-index ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
 }

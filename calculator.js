@@ -55,20 +55,47 @@ function Calculate() {
 // -----------------------------------------------------
 
 
-// Subtract prices from budget function
+// Events that are added are stored in this array
+let events = [];  
 
-function subtractprices() {
-    const diff = budget - total
-    if (diff > 0) {
-        alert("You under budget by" + diff)
-    } 
+document.querySelectorAll(".products").forEach(product => {
+    product.addEventListener("click", () => {
+        const eventName = product.dataset.name;
+        const eventPrice = product.dataset.price;
 
-    else if (diff < 0){
-        alert("You are over budget by" + diff)
-    } else{
-        alert("You are exactly on budget")
-    }
+        events.push({
+            Name: eventName,
+            Price: eventPrice
+        })
+
+        displayEvents()
+    })
+})
+
+function displayEvents() {
+    const cards = document.getElementById("cardsContainer");
+    CSSContainerRule.innerHTML = "";
+
+    let total = 0;
+    events.forEach(event => {
+        total += event.price;
+
+        cards.innerHTML += `<div class= "b1">
+                                <h3>${event.name}<h3>
+                                <p>Price: R${event.price}<p>
+                            </div>`;
+    })
 }
 
 
 
+document.getElementById("totalPrice").textContent = `R${total}`;
+
+const status = document.getElementById("budgetstatus");
+if (total > budget) {
+    status.textContent = `Over budget by R${total-budget}`;
+    status.style.color = "red";
+} else {
+    status.textContent = `Under budget by R${total-budget}`;
+    status.style.color = "green";
+}
