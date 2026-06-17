@@ -9,103 +9,188 @@
 </head>
 
 <body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Budget Tracker</a></li>
+                <li><a href="index.html"><img src="Images/AffaireDeCoeur_transparent.png" alt="Logo"></a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <body>
-        <div class="navbar-container">
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Budget Tracker</a></li>
-                    <li><a href="#"><img src="Images/AffaireDeCoeur_transparent.png" alt="Logo"></a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+    <aside class="filter-sidebar">
+        <div class="filter-header">
+            <h3>Filter Gallery</h3>
+            <button type="button" class="clear-all-btn" id="clear-filters">Clear All</button>
         </div>
 
-        <div class="feature-image-container">
-
-
-            <img src="https://i.ibb.co/tyFNYNz/happy-black-parents-with-kids-making-video-call-smart-phone-home.jpg"
-                alt="Feature Family Photo" class="feature-image">
-
-
-            <div class="overlay-text">
-                <h2>Family Moments</h2>
-                <p>Where Moments becomes Milestones</p>
+        <form class="filter-form" id="filter-form" onsubmit="event.preventDefault();">
+            <div class="filter-group">
+                <label for="search-filter" class="filter-label">Search</label>
+                <input type="search" id="search-filter" placeholder="Search by name or type..." />
             </div>
 
+            <hr class="filter-divider" />
 
+            <div class="filter-group">
+                <span class="filter-label">Categories</span>
+                <fieldset class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="weddings" /> Weddings
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="swimming" /> Swimming
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="carnivals" /> Carnivals
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="dining" /> Dining
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="celebrations" /> Celebrations
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="picnic" /> Picnic
+                    </label>
+                </fieldset>
+            </div>
+        </form>
+    </aside>
+
+    <div class="feature-image-container">
+        <img src="https://i.ibb.co/tyFNYNz/happy-black-parents-with-kids-making-video-call-smart-phone-home.jpg"
+            alt="Feature Family Photo" class="feature-image">
+        <div class="overlay-text">
+            <h2>Family Moments</h2>
+            <p>Where Moments becomes Milestones</p>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="quote-box">
+            <p>
+                “It is not how much we have,<br>
+                but how much we enjoy,<br>
+                that makes happiness.”
+            </p>
         </div>
 
-
-        <!-- Gallery Grid -->
-        <div class="content-grid">
-
-
-            <!-- Quote -->
-            <div class="quote-box">
-                <p>
-                    “It is not how much we have,<br>
-                    but how much we enjoy,<br>
-                    that makes happiness.”
-                </p>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="https://i.ibb.co/vxJP5zpw/full-shot-happy-family-nature.jpg"
+                        alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/gZsSPZYG/1.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/DgSPkfwk/3.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/8g8XTwdQ/4.webp" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/NdC3z9xj/5.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/sdk5SxRq/fam3.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/KxbzNKCd/6.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/QvJtnwpL/7.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/vxJP5zpw/full-shot-happy-family-nature.jpg"
+                        alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/gZsSPZYG/1.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo"></div>
             </div>
-
-            <div class="carousel-container">
-                <div class="carousel-track">
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/vxJP5zpw/full-shot-happy-family-nature.jpg" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/gZsSPZYG/1.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/DgSPkfwk/3.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/8g8XTwdQ/4.webp" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/NdC3z9xj/5.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/sdk5SxRq/fam3.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/KxbzNKCd/6.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide">
-                        <img src="https://i.ibb.co/QvJtnwpL/7.avif" alt="Family Photo">
-                    </div>
-
-                    <div class="carousel-slide"><img src="https://i.ibb.co/vxJP5zpw/full-shot-happy-family-nature.jpg"
-                            alt="Family Photo"></div>
-                    <div class="carousel-slide"><img src="https://i.ibb.co/gZsSPZYG/1.avif" alt="Family Photo"></div>
-                    <div class="carousel-slide"><img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo"></div>
-
-                </div>
-            </div>
-
-
         </div>
-        </section>
+        
+<div class="gallery-container">
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/hRZhhpRQ/fam6.webp" alt="Family picnic">
+        </div>
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/GvFtcPPk/fam7.jpg" alt="Celebrations">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/s9TKqrtY/fam8.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/vxCH8BVP/fam9.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/h5TStrQ/fam10.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/6RmPq9J7/fam13.jpg" alt="Picnic">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/SX4NsV5t/swimming.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/jCvq2Kn/swimming1.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/JRgQk1Ht/carnivals.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/WpfrTb18/carnivals1.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/WvWkzQjf/varnivals2.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/4RLytB4M/dining.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/LDbt3W6d/dining1.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/1fcZLCyJ/dinning3.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/HprwjhPj/dinning4.jpg" alt="Dining">
+        </div>
+    </div> 
 
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('search-filter');
+        const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        
+        function updateGalleryVisibility() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const activeCategories = Array.from(categoryCheckboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
 
-    </body>
+            galleryItems.forEach(item => {
+                const altText = item.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+                const itemClasses = item.className.toLowerCase();
+                
+                // Matches search if search is empty or term is found in alt text or classes
+                const matchesSearch = !searchTerm || altText.includes(searchTerm) || itemClasses.includes(searchTerm);
 
-</html>
+                // Matches category if no categories selected or item has one of selected categories
+                const matchesCategory = activeCategories.length === 0 || 
+                    activeCategories.some(cat => item.classList.contains(cat));
+
+                if (matchesSearch && matchesCategory) {
+                    item.style.display = 'block';
+                    item.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', updateGalleryVisibility);
+        
+        categoryCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateGalleryVisibility);
+        });
+
+        clearFiltersBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            categoryCheckboxes.forEach(cb => cb.checked = false);
+            updateGalleryVisibility();
+        });
+    });
+</script>
