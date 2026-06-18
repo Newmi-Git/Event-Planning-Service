@@ -1,13 +1,13 @@
 const display = document.getElementById("display");
 let budgetset = false;
 let budget = 0;
-let total = 0
+let total = 0;
 
 
 // Set budget functions
 
 function setbudget() {
-    const budget = parseFloat(document.getElementById("budgetinput").value);
+    const budget = parseFloat(document.getElementById("budgetinput").value); 
     function showBudget() {
         display.value = budget;
     }
@@ -99,3 +99,5 @@ if (total > budget) {
     status.textContent = `Under budget by R${total-budget}`;
     status.style.color = "green";
 }
+
+
