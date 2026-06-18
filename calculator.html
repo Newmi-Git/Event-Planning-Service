@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link rel="stylesheet" href="style.css">
+    <head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
 </head>
 <body>
     <header>
@@ -58,17 +64,39 @@
         </div><br>
 
         <div class="add-events">
+              <div id="cardsContainer">
+
+              </div>
+
+              <h3>Total: <span id="totalprice">R0</span></h3>
+
+              <p id="budgetstatus"></p>
             <a href="services.html">
                 <button class="addevent">Add more Events</button>
             </a>
         </div>
+
+        <div id="model-container">
+          <dialog id="showalert" class="show-alert">
+            <div id="customalert-content">
+                <h2>Alert</h2>
+                <p>Please enter a valid budget amount</p>
+                <button id="confirm">OK</button>
+            </div>
+          </dialog>
+        </div>
+        <div id="model-container">
+          <dialog id="showalert2" class="show-alert">
+            <div id="customalert-content">
+                <h2>Alert</h2>
+                <p>No events in your plan.</p>
+                <button id="confirm2">OK</button>
+            </div>
+          </dialog>
+        </div>
     </div>
 
-    <div id="cardsContainer"></div>
 
-    <h3>Total: <span id="totalprice">R0</span></h3>
-
-    <p id="budgetstatus"></p>
 
 
 
