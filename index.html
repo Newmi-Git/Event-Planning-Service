@@ -12,13 +12,9 @@
       <div class="navbar-container">
         <nav class="navbar">
           <ul>
-            <!-- 1. Invisible spacer to keep logo perfectly centered -->
-            <li class="nav-spacer" aria-hidden="true"></li>
-
-            <!-- 2. Core Navigation Links -->
-            <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="./services.html">Events</a></li>
-            <li><a href="#">Budget Tracker</a></li>
+            <li class="nav-left"><a href="./gallery.html">Gallery</a></li>
+            <li class="nav-left"><a href="./services.html">Events</a></li>
+            <li class="nav-left"><a href="#">Budget Tracker</a></li>
             
             <li class="logo-item">
               <a href="./index.html">
@@ -26,11 +22,11 @@
               </a>
             </li>
             
-            <li><a href="#">Reviews</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li class="nav-right"><a href="#">Reviews</a></li>
+            <li class="nav-right"><a href="./about.html">About Us</a></li>
+            <li class="nav-right"><a href="./contact.html">Contact</a></li>
           
-            <li class="dropdown-item">
+            <li class="dropdown-item nav-right">
               <button class="account-btn" aria-haspopup="true" aria-expanded="false">
                 Account <span class="arrow">▼</span>
               </button>
@@ -74,8 +70,41 @@
       </button>
     </main>
 
-    <div class="footer">
-      <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
-    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links-box">
+                <p>Follow us on</p>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                </div>
+            </div>
+
+            <div class="about-us">
+                <p>About</p>
+                <a href="./services.html">Our Service</a>
+                <a href="./gallery.html">Our Gallery</a>
+                <a href="./about.html">Our Team</a>
+            </div>
+
+            <div class="Mail">
+                <p>Email</p>
+                <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
+            </div>
+
+            <div class="Location">
+                <p>Head Office Location</p>
+                <p>📍Cape Town, South Africa</p>
+            </div>
+
+            <div class="main-footer">
+                <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    
   </body>
 </html>

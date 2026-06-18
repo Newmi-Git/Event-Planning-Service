@@ -1,3 +1,7 @@
+/*=====================================
+  GLOBAL LIFE-CYCLE & ACCENTS
+=====================================*/
+
 html {
   scroll-behavior: smooth;
 }
@@ -10,6 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: #222222;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Keeps the footer at the very bottom */
@@ -29,43 +35,118 @@ main {
 }
 
 .darkmode-btn img {
-  width: 30px; /* Adjust size as needed */
+  width: 30px;
   height: auto;
 }
 
-/* Dark Theme Variables & Adjustments */
+/* --- Core Dark Theme Variables & Selectors --- */
 body.dark-theme {
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #121212 !important;
+  color: #f5f5f5 !important;
 }
 
+/* Invert Navbar Tones */
 body.dark-theme .navbar-container {
-  background-color: rgba(30, 30, 30, 0.92);
+  background-color: rgba(30, 30, 30, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-body.dark-theme .navbar-container a {
-  color: #fff;
+body.dark-theme .navbar-container a,
+body.dark-theme .account-btn {
+  color: #ffffff;
 }
 
-body.dark-theme .achievements, 
-body.dark-theme .services-index {
+body.dark-theme .account-btn {
+  border-color: #444444;
+}
+
+/* Dropdown Container Fixes */
+body.dark-theme .dropdown-menu {
   background-color: #1e1e1e;
-  color: #fff;
+  border-color: #333333;
 }
 
-body.dark-theme .contact_container {
-  background: #1e1e1e;
+body.dark-theme .dropdown-link {
+  color: #dddddd !important;
+}
+
+body.dark-theme .dropdown-link:hover {
+  background-color: #2a2a2a;
+}
+
+/* Cards & Sections Custom Rules */
+body.dark-theme .achievements, 
+body.dark-theme .services-index,
+body.dark-theme .contact_container,
+body.dark-theme .filter-section,
+body.dark-theme .gallery-container,
+body.dark-theme .quote-box {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Typography Overrides for Dark Mode */
+body.dark-theme .contact_subtitle,
 body.dark-theme .contact_intro h1,
+body.dark-theme .contact_info h3,
+body.dark-theme .info_item h4,
+body.dark-theme .services,
+body.dark-theme .services .service-header h1,
+body.dark-theme .services .filter-group label,
+body.dark-theme .services .filter-group ul,
+body.dark-theme .services .products p,
+body.dark-theme .quote-box p,
+body.dark-theme .info_item p {
+  color: #ffffff !important;
+}
+
+body.dark-theme .contact_intro p,
+body.dark-theme .contact_info > p,
+body.dark-theme .info_item a {
+  color: #cccccc !important;
+}
+
+/* Forms & UI Inputs Fixes */
 body.dark-theme .form_group label {
-  color: #fff;
+  color: #ffffff;
+}
+
+body.dark-theme .form_group input,
+body.dark-theme .form_group textarea,
+body.dark-theme .services-page .search-bar {
+  background-color: #252525 !important;
+  border-color: #444444 !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .services .search-bar input {
+  color: #ffffff !important;
+}
+
+body.dark-theme .services .sorting-options button {
+  background-color: #252525;
+  color: #ffffff;
+  border-color: #444444;
+}
+
+body.dark-theme .services .sorting-options button.active {
+  background-color: #ff6347;
+  border-color: #ff6347;
+  color: #ffffff;
+}
+
+body.dark-theme .services .products {
+  border-color: #333333;
+  background-color: #1a1a1a;
+}
+
+body.dark-theme .carousel-container {
+  background-color: #151515;
 }
 
 /*=====================================
-  NAVBAR 
+  NAVBAR (Optimized Logo Centering)
 =====================================*/ 
 
 .navbar-container {
@@ -91,68 +172,32 @@ body.dark-theme .form_group label {
   display: flex;
   align-items: center; 
   padding: 0;
-  margin: 0 auto;        /* Center the entire link track container */
+  margin: 0 auto;        
   width: 100%;
-  max-width: 1100px;     /* Pulls all items in closer together towards the center */
-  gap: clamp(10px, 2vw, 30px); /* Slightly tighter spacing for a unified center cluster */
-}
-
-.navbar .nav-spacer {
-  width: 40px;           /* Reduced from 110px so the layout doesn't overcompensate */
-  flex-shrink: 0;
-}
-
-.navbar ul li.start-auth {
-  margin-left: auto;
-}
-
-.navbar .auth-li {
-  flex-shrink: 0;
-}
-
-.navbar ul li .btn-login:hover,
-.navbar ul li .btn-signup:hover {
-  transform: translateY(-1px);
-}
-
-.navbar .btn-login {
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  background-color: transparent;
-  color: #333;
-}
-
-.navbar .btn-login:hover {
-  color: #ff6347 !important;
-  border-color: #ff6347;
-}
-
-.navbar .btn-signup {
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 20px;
-  background-color: #ff6347;
-  color: white !important; /* Forces text color white over global links */
-  box-shadow: 0 4px 10px rgba(255, 99, 71, 0.15);
-}
-
-.navbar .btn-signup:hover {
-  background-color: #ff4500;
-  box-shadow: 0 6px 14px rgba(255, 99, 71, 0.25);
-}
-
-/* Dark theme logic override */
-body.dark-theme .navbar .btn-login {
-  color: #fff;
-  border-color: #444;
+  max-width: 1100px;     
 }
 
 .navbar li {
   padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+/* Balanced wings alignment logic */
+.navbar li.nav-left {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar li.logo-item {
+  flex: 0 0 auto;
+  margin: 0 20px;
+}
+
+.navbar li.nav-right {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar ul li a img {
@@ -170,7 +215,7 @@ body.dark-theme .navbar .btn-login {
 }
 
 .navbar-container .navbar ul li a:hover {
-  color: #ff6347; /* Accent color on hover */
+  color: #ff6347; 
   text-decoration: none;
   transform: translateY(-2px);
 }
@@ -180,7 +225,6 @@ body.dark-theme .navbar .btn-login {
 =====================================*/ 
 
 .navbar ul li.dropdown-item {
-  margin-left: initial;  
   position: relative; 
   padding: 15px 0;   
 }
@@ -209,7 +253,7 @@ body.dark-theme .navbar .btn-login {
 /* Dropdown Container Panel */
 .dropdown-menu {
   position: absolute;
-  top: 100%; /* Sits cleanly flush underneath the header block */
+  top: 100%; 
   right: 0;
   background-color: #ffffff;
   min-width: 160px;
@@ -236,7 +280,7 @@ body.dark-theme .navbar .btn-login {
   text-decoration: none;
   display: block;
   text-align: left;
-  transform: none !important; /* Disables standard navbar link bobbing */
+  transform: none !important; 
 }
 
 .dropdown-link:hover {
@@ -264,22 +308,6 @@ body.dark-theme .navbar .btn-login {
 
 .dropdown-item:hover .account-btn .arrow {
   transform: rotate(180deg);
-}
-
-/* --- Dark Theme Support --- */
-body.dark-theme .account-btn {
-  color: #fff;
-  border-color: #444;
-}
-body.dark-theme .dropdown-menu {
-  background-color: #1e1e1e;
-  border-color: #333;
-}
-body.dark-theme .dropdown-link {
-  color: #ddd !important;
-}
-body.dark-theme .dropdown-link:hover {
-  background-color: #2a2a2a;
 }
 
 /*=====================================
@@ -367,26 +395,27 @@ body.dark-theme .dropdown-link:hover {
   padding: 0;
   line-height: 1.8;
 }
+
 /* =====================================
    RESPONSIVE DESIGN
 ===================================== */
 
 /* Tablets */
 @media (max-width: 900px) {
-
-  /* Navbar */
   .navbar-container {
     position: relative;
     padding: 10px 0;
   }
 
   .navbar ul {
-    gap: 25px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .navbar li {
+  .navbar li, .navbar li.nav-left, .navbar li.nav-right {
+    flex: initial;
+    justify-content: center;
     padding: 0.3rem 0.5rem;
   }
 
@@ -415,16 +444,13 @@ body.dark-theme .dropdown-link:hover {
     padding: 30px 20px;
   }
 
-  .achievements,
-  .services-index {
+  .achievements, .services-index {
     padding: 25px;
   }
 }
 
 /* Mobile phones */
 @media (max-width: 600px) {
-
-  /* Navbar becomes stacked */
   .navbar-container {
     position: relative;
   }
@@ -471,13 +497,11 @@ body.dark-theme .dropdown-link:hover {
     padding: 20px 15px;
   }
 
-  .achievements h2,
-  .services-index h2 {
+  .achievements h2, .services-index h2 {
     font-size: 1.3rem;
   }
 
-  .achievements p,
-  .services-index li {
+  .achievements p, .services-index li {
     font-size: 0.95rem;
   }
 
@@ -487,13 +511,11 @@ body.dark-theme .dropdown-link:hover {
     bottom: 20px;
     right: 20px;
   }
-
-
 }
 
 /* ==========================================
    CONTACT PAGE
-   ========================================== */
+========================================== */
 
 .contact-page-wrapper {
   padding-top: 140px; 
@@ -584,8 +606,7 @@ body.dark-theme .dropdown-link:hover {
   color: #1a1a1a;
 }
 
-.info_item p, 
-.info_item a {
+.info_item p, .info_item a {
   margin: 0;
   color: #555;
   text-decoration: none;
@@ -617,8 +638,7 @@ body.dark-theme .dropdown-link:hover {
   letter-spacing: 0.5px;
 }
 
-.form_group input,
-.form_group textarea {
+.form_group input, .form_group textarea {
   padding: 14px 18px;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
@@ -629,8 +649,7 @@ body.dark-theme .dropdown-link:hover {
   transition: all 0.2s ease;
 }
 
-.form_group input:focus,
-.form_group textarea:focus {
+.form_group input:focus, .form_group textarea:focus {
   outline: none;
   border-color: #ff2a54;
   background-color: #fff;
@@ -666,10 +685,88 @@ body.dark-theme .dropdown-link:hover {
 
 .footer {
   text-align: center;
-  padding: 20px;
-  background-color: #333;
-  color: white;
+  padding: 40px 20px 20px 20px; 
+  background-color: #1a1a1a; 
+  color: #ffffff;
   margin-top: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 30px; 
+  font-family: sans-serif; 
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.social-links-box, .about-us, .Mail, .Location {
+  flex: 1;
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-container p:first-child {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #b3b3b3; 
+  margin-bottom: 5px;
+}
+
+.footer-container a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+  color: #d4af37; 
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.3rem;
+  margin-top: 5px;
+}
+
+.icons i {
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icons i:hover {
+  transform: translateY(-3px);
+  color: #d4af37; 
+}
+
+.Location p:last-child {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.main-footer {
+  border-top: 1px solid #333; 
+  padding-top: 20px;
+  width: 100%;
+}
+
+.main-footer p {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
 }
 
 /*=====================================
@@ -681,13 +778,11 @@ body.dark-theme .dropdown-link:hover {
   color: #222;
 }
 
-/* PAGE LAYOUT */
 .services-page .services-wrapper {
   display: flex;
   margin-top: 80px;
 }
 
-/* SIDEBAR */
 .services-page .filter-section {
   width: 180px;
   flex-shrink: 0;
@@ -748,21 +843,19 @@ body.dark-theme .dropdown-link:hover {
   margin-top: 6px;
 }
 
-/* MAIN SECTION */
-.services-page .services-section {
+.services-section {
   flex: 1;
   padding: 20px 24px;
 }
 
-/* SEARCH + SORT BAR */
-.services-page .services-search-bar {
+.services-search-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.services-page .search-bar {
+.search-bar {
   display: flex;
   align-items: center;
   background: #f5f5f5;
@@ -771,7 +864,7 @@ body.dark-theme .dropdown-link:hover {
   gap: 8px;
 }
 
-.services-page .search-bar input {
+.search-bar input {
   border: none;
   background: none;
   outline: none;
@@ -779,19 +872,19 @@ body.dark-theme .dropdown-link:hover {
   width: 220px;
 }
 
-.services-page .search-bar button {
+.search-bar button {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 14px;
 }
 
-.services-page .sorting-options {
+.sorting-options {
   display: flex;
   gap: 6px;
 }
 
-.services-page .sorting-options button {
+.sorting-options button {
   padding: 5px 12px;
   border-radius: 16px;
   border: 1px solid #ccc;
@@ -801,27 +894,25 @@ body.dark-theme .dropdown-link:hover {
   color: #444;
 }
 
-.services-page .sorting-options button.active {
+.sorting-options button.active {
   background: #222;
   color: #fff;
   border-color: #222;
 }
 
-/* HEADING */
-.services-page .service-header h1 {
+.service-header h1 {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* CARD GRID */
-.services-page .service-items {
+.service-items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
-.services-page .products {
+.products {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -829,11 +920,11 @@ body.dark-theme .dropdown-link:hover {
   transition: all 0.5s ease-in-out;
 }
 
-.services-page .products.wide {
+.products.wide {
   grid-column: span 2;
 }
 
-.services-page .products img {
+.products img {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
@@ -841,17 +932,17 @@ body.dark-theme .dropdown-link:hover {
   background: #e5e5e5;
 }
 
-.services-page .products.wide img {
+.products.wide img {
   aspect-ratio: 16/7;
 }
 
-.services-page .products p {
+.products p {
   padding: 8px 10px;
   font-size: 70%;
   color: #555;
 }
 
-.services-page .products:hover {
+.products:hover {
   transform: scale(1.01);
   box-shadow: 0 10px 30px rgba(244, 162, 29, 0.677);
   cursor: pointer;
@@ -861,7 +952,6 @@ body.dark-theme .dropdown-link:hover {
   GALLERY
 =====================================*/
 
-/* CONTAINER */
 .gallery-container {
   max-width: 1100px;
   margin: auto;
@@ -871,7 +961,6 @@ body.dark-theme .dropdown-link:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* HERO IMAGE CONTAINER */
 .feature-image-container {
   margin-top: 100px;
   position: relative;
@@ -881,7 +970,6 @@ body.dark-theme .dropdown-link:hover {
   overflow: hidden;
 }
 
-/* HERO IMAGE */
 .feature-image {
   width: 100%;
   height: 100%;
@@ -889,7 +977,6 @@ body.dark-theme .dropdown-link:hover {
   display: block;
 }
 
-/* Optional dark overlay */
 .feature-image-container::before {
   content: "";
   position: absolute;
@@ -898,7 +985,6 @@ body.dark-theme .dropdown-link:hover {
   z-index: 1;
 }
 
-/* CENTERED TEXT */
 .overlay-text {
   position: absolute;
   top: 50%;
@@ -925,14 +1011,12 @@ body.dark-theme .dropdown-link:hover {
   margin: 0 auto;
 }
 
-/* GALLERY GRID */
 .content-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
 
-/* QUOTE BOX */
 .quote-box {
   background-color: #fafafa;
   border: 1px solid #eeeeee;
@@ -950,7 +1034,6 @@ body.dark-theme .dropdown-link:hover {
   color: #555;
 }
 
-/* IMAGE CARDS */
 .secondary-image {
   overflow: hidden;
   border: 1px solid #eeeeee;
@@ -1020,7 +1103,7 @@ body.dark-theme .dropdown-link:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 140px 20px 60px 20px; /* Aligns with contact page spacing under fixed navbar */
+  padding: 140px 20px 60px 20px; 
   min-height: calc(100vh - 200px);
 }
 
@@ -1059,7 +1142,6 @@ body.dark-theme .dropdown-link:hover {
   gap: 20px;
 }
 
-/* Row wrapper for aligning password labels alongside option buttons */
 .auth-form .label-row {
   display: flex;
   justify-content: space-between;
@@ -1143,42 +1225,21 @@ body.dark-theme .form-checkbox a {
 }
 
 /*=====================================
-  MEDIA QUERIES
+  MEDIA QUERIES (EXTENSIONS)
 =====================================*/
 
-/* TABLET */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    text-align: center;
-  }
   .content-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .feature-image {
     height: 350px;
   }
-  .navbar .nav-spacer {
-    display: none;
-  }
-  .navbar ul li.dropdown-item {
-    margin-left: 0;
-  }
-  .navbar ul {
-    justify-content: center;
-  }
 }
 
-/* MOBILE */
 @media (max-width: 500px) {
   .content-grid {
     grid-template-columns: 1fr;
-  }
-  .navbar ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px 0;
   }
   .navbar h1 {
     font-size: 24px;
@@ -1186,7 +1247,6 @@ body.dark-theme .form-checkbox a {
   .feature-image {
     height: 250px;
   }
-  /* Left-align dropdown adjustments for centered stacked layouts */
   .dropdown-menu {
     right: 50%;
     transform: translateX(50%) translateY(10px);
