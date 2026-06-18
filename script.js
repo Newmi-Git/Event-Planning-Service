@@ -11,24 +11,6 @@ function darkMode() {
     textcolour.style.backgroundColor = "White";
 };
 
-function register() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    if (users.find(user => user.username === username)) {
-        alert("Username Already Exists!");
-        return;
-    }
-    users.push({
-        username: username,
-        password: password
-    });
-
-    localStorage.setItem("users", JSON.stringify(users));
-    alert("Account Created!");
-}
 
 // ============================================================================
 // ---  SIGN-UP PAGE (Azhar Manie) ---
@@ -133,7 +115,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-//============================================================SERVICES PAGE========================================================================
+
+//============================================================
+// SERVICES PAGE
+// ===========================================================
 
 
 const searchInput   = document.getElementById('search-input');
