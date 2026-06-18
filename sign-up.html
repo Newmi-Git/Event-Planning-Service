@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Sign Up</title>
+</head>
+<body>
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Get Started</h2>
+        <p>Create an account to get started with us.</p>
+      </div>
+      
+      <form class="auth-form" id="signupForm">
+        <div class="form_group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Jane Doe" required>
+        </div>
+
+        <div class="form_group">
+          <label for="username">Email Address</label>
+          <input type="email" id="username" placeholder="name@example.com" required>
+        </div>
+        
+        <div class="form_group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Minimum 8 characters" required>
+        </div>
+        
+        <div class="form-checkbox">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">I agree to the <a href="#" class="auth-alt-link">Terms & Conditions</a></label>
+        </div>
+        
+        <button type="submit" class="contact_submit_btn auth-btn-full">Create Account</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>Already have an account? <a href="./login.html" class="auth-alt-link">Log in</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

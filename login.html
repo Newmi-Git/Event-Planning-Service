@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+</head>
+<body>
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h2>Welcome Back</h2>
+        <p>Log into your account to manage your event packages</p>
+      </div>
+      
+      <form class="auth-form" id="loginForm">
+        <div class="form_group">
+          <label for="username">Email or Username</label>
+          <input type="text" id="username" placeholder="name@example.com" required>
+        </div>
+        
+        <div class="form_group">
+          <div class="label-row">
+            <label for="password">Password</label>
+            <a href="#" class="auth-alt-link text-small">Forgot?</a>
+          </div>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+        
+        <button type="submit" class="contact_submit_btn auth-btn-full">Sign In</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>Don't have an account? <a href="./sign-up.html" class="auth-alt-link">Create one</a></p>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
