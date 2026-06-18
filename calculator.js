@@ -26,6 +26,7 @@ function Calculate() {
         showalert.style.display = "block";
         return;
     }
+
     try {
         const result = eval(display.value);
         display.value = result;
