@@ -746,6 +746,139 @@ body.dark-theme .remove-note-btn:hover {
   background-color: #ff4500;
 }
 
+/*================================
+  RESPONSIVE DESIGN
+================================*/
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+
+  .contact-page-wrapper {
+    width: 95%;
+    padding-top: 120px;
+  }
+
+  .contact_container {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .contact_intro h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+
+  .contact-page-wrapper {
+    width: 95%;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .contact_container {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    gap: 30px;
+  }
+
+  .contact_info {
+    padding-right: 0;
+  }
+
+  .contact_intro {
+    margin-bottom: 30px;
+  }
+
+  .contact_intro h1 {
+    font-size: 2rem;
+  }
+
+  .contact_intro p {
+    font-size: 1rem;
+  }
+
+  .contact_submit_btn {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .info_item {
+    gap: 12px;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+
+
+/* Small Phones */
+@media screen and (max-width: 480px) {
+
+  .contact-page-wrapper {
+    padding-top: 90px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .contact_container {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .contact_intro h1 {
+    font-size: 1.7rem;
+  }
+
+  .contact_intro p {
+    font-size: 0.9rem;
+  }
+
+  .contact_info h3 {
+    font-size: 1.3rem;
+  }
+
+  .info_icon {
+    font-size: 1.1rem;
+    padding: 8px;
+  }
+
+  .info_item h4 {
+    font-size: 0.9rem;
+  }
+
+  .info_item p,
+  .info_item a {
+    font-size: 0.85rem;
+  }
+
+  .form_group label {
+    font-size: 0.75rem;
+  }
+
+  .form_group input,
+  .form_group textarea {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .contact_submit_btn {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
 /*=====================================
   FOOTER
 =====================================*/
