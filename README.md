@@ -1,5 +1,5 @@
 
-# **Event Planning Service - Affair De Coeur**
+# ** Event Planning Service - Affair De Coeur **
 
 ## Startup Description
 
