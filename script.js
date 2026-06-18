@@ -170,47 +170,47 @@ function renderCart() {
         cartItemsList.innerHTML = '<p class="cart-empty-msg">No events added yet.</p>';
     } else {
         cartItemsList.innerHTML = '';
+
         planIds.forEach(item => {
-            const card = document.querySelector(`.products[data-id="${id}"]`);
+            const card = document.querySelector(`.products[data-id="${item.id}"]`);
             if (!card) return;
 
-            const name  = card.dataset.name;
-            const price = parseInt(card.dataset.price);
-            const priceText = price === 0 ? 'Free' : `R${price}`;
+            const name       = card.dataset.name;
+            const price      = parseInt(card.dataset.price);
+            const quantity   = item.quantity;
+            const totalPrice = price * quantity;
 
+            // ✅ FIX 1: declare row HERE inside the loop
             const row = document.createElement('div');
             row.className = 'cart-item-row';
+
             row.innerHTML = `
                 <span class="cart-item-name">${name}</span>
-
-                <button class="minus-btn" data-id="${id}">-</button>
-
-                <span class="quantity">1</span>
-
-                <button class="plus-btn" data-id="${id}">+</button>
-
-                <span class="cart-item-price">R${price}</span>
-
-                <button class="cart-item-delete" data-id="${id}">
+                <button class="minus-btn" data-id="${item.id}">−</button>
+                <span class="qty">${quantity}</span>
+                <button class="plus-btn" data-id="${item.id}">+</button>
+                <span class="cart-item-price">R${totalPrice}</span>
+                <button class="cart-item-delete" data-id="${item.id}">
                     <i class="bi bi-trash3"></i>
                 </button>
             `;
-            cartItemsList.appendChild(row);
-        });
 
-        cartItemsList.querySelectorAll('.cart-item-delete').forEach(btn => {
-            btn.addEventListener('click', function () {
-                removeFromPlan(this.dataset.id);
-            });
+            cartItemsList.appendChild(row);
+
+            // ✅ FIX 2: event listeners AFTER appendChild, still inside the loop
+            row.querySelector('.plus-btn').addEventListener('click', () => increaseQuantity(item.id));
+            row.querySelector('.minus-btn').addEventListener('click', () => decreaseQuantity(item.id));
+            row.querySelector('.cart-item-delete').addEventListener('click', () => removeFromPlan(item.id));
         });
     }
 
     renderNotes();
 
-
+    // ✅ FIX 3: planIds is now [{id, quantity}] not [id], so use .find() not .includes()
     document.querySelectorAll('.add-to-plan-btn').forEach(btn => {
         const id = btn.dataset.id;
-        if (planIds.includes(id)) {
+        const inPlan = planIds.find(item => item.id === id);
+        if (inPlan) {
             btn.textContent = '✓ Added';
             btn.classList.add('added');
         } else {
@@ -220,71 +220,63 @@ function renderCart() {
     });
 }
 
-row.querySelector(".plus-btn").addEventListener("click", () => {
-    increaseQuantity(id);
-});
-
-row.querySelector(".minus-btn").addEventListener("click", () => {
-    decreaseQuantity(id);
-});
 
 
 //=====================================================CART — ADD==================================================================
 
 function addToPlan(id, btnEl) {
+    const card = document.querySelector(`.products[data-id="${id}"]`);
     const existingItem = planIds.find(item => item.id === id);
 
     if (existingItem) {
         existingItem.quantity++;
     } else {
-    planIds.push({
-        id: id,
-        quantity: 1
-    });
-}
+        planIds.push({
+            id:       id,
+            quantity: 1,
+            name:     card.dataset.name,
+            price:    parseInt(card.dataset.price),
+            image:    card.querySelector('img')?.src || ''   // ← add this
+        });
+    }
     savePlan();
-
     flyToCart(btnEl);
-
     cartBtn.classList.remove('bump');
-    void cartBtn.offsetWidth; // reflow
+    void cartBtn.offsetWidth;
     cartBtn.classList.add('bump');
-    
     cartCount.classList.remove('pop');
     void cartCount.offsetWidth;
     cartCount.classList.add('pop');
+    renderCart();
+}
 
+//============================================================CART — REMOVE=============================================================
+function removeFromPlan(id) {
+    planIds = planIds.filter(item => item.id !== id);
+    savePlan();
     renderCart();
 }
 
 function increaseQuantity(id) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const item = cart.find(item => item.id === id);
+    const item = planIds.find(item => item.id === id);
 
     if(item){
         item.quantity++;
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    savePlan();
     renderCart();
 }
 
 function decreaseQuantity(id) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const item = cart.find(item => item.id === id);
+    const item = planIds.find(item => item.id === id);
 
     if(item && item.quantity > 1){
         item.quantity--;
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
-}
-//============================================================CART — REMOVE=============================================================
-function removeFromPlan(id) {
-    planIds = planIds.filter(i => i !== id);
     savePlan();
     renderCart();
 }

@@ -1,107 +1,153 @@
 const display = document.getElementById("display");
 let budgetset = false;
 let budget = 0;
-let total = 0;
 
 
-// Set budget functions
-
-function setbudget() {
-    const budget = parseFloat(document.getElementById("budgetinput").value); 
-    function showBudget() {
-        display.value = budget;
-    }
-
-    display.addEventListener("keydown", function (e) {
-        e.preventDefault();
-    })
-
-    if (isNaN(budget) || budget <= 0 ) {
-        alert("Please enter a valid budget amount");
-        return;
-    }
-
-    budgetset = true
-    alert("Budget set to R" + budget + ".You can now use the calculator.")
-
-    showBudget()
-}
-
-
-// The calculator functions
 
 function appendtodisplay(user_input) {
     if (!budgetset) {
-        alert("Please set your budget first")
-        return
+        alert("Please set your budget first");
+        return;
     }
     display.value += user_input;
 }
 
-
 function Cleardisplay() {
     display.value = "";
+    document.getElementById('budgetstatus').textContent = '';
 }
-
 
 function Calculate() {
     if (!budgetset) {
-        alert("Please set your budget first")
-        return
+        alert("Please set your budget first");
+        return;
     }
-    display.value = eval(display.value);
+    try {
+        const result = eval(display.value);
+        display.value = result;
+        updateBudgetStatus(result);
+    } catch {
+        display.value = "Error";
+    }
 }
 
-// -----------------------------------------------------
+function setbudget() {
+    const input = parseFloat(document.getElementById("budgetinput").value);
+    if (isNaN(input) || input <= 0) {
+        alert("Please enter a valid budget amount");
+        return;
+    }
+    budget = input;
+    budgetset = true;
+    display.value = budget;
+    document.getElementById('budgetstatus').textContent = '';
+    alert("Budget set to R" + budget + ". Click events or use the calculator to subtract.");
+}
 
 
-// Events that are added are stored in this array
+function updateBudgetStatus(result) {
+    const status = document.getElementById('budgetstatus');
+    const diff = result;  // result IS the remaining amount (budget - costs)
+    if (diff < 0) {
+        status.textContent = `⚠ Over budget by R${Math.abs(diff).toFixed(2)}`;
+        status.style.color = '#e74c3c';
+    } else {
+        status.textContent = `✓ R${diff.toFixed(2)} remaining`;
+        status.style.color = '#2ecc71';
+    }
+}
 
-//Add events from LocalStorage to events array
-//
+
+function subtractprices() {
+    if (!budgetset) {
+        alert("Please set your budget first");
+        return;
+    }
+
+    const planIds = JSON.parse(localStorage.getItem('adc_plan_ids') || '[]');
+    if (planIds.length === 0) {
+        alert("No events in your plan.");
+        return;
+    }
+
+
+    let expression = budget.toString();
+    planIds.forEach(item => {
+        const lineTotal = item.price * item.quantity;
+        expression += `-${lineTotal}`;
+    });
+
+    display.value = expression;
+
+}
 
 
 
-let events = [];  
+function appendEventToDisplay(price, quantity) {
+    if (!budgetset) {
+        alert("Please set your budget first");
+        return;
+    }
+    const lineTotal = price * quantity;
+    display.value += `-${lineTotal}`;
+}
 
-document.querySelectorAll(".products").forEach(product => {
-    product.addEventListener("click", () => {
-        const eventName = product.dataset.name;
-        const eventPrice = product.dataset.price;
 
-        events.push({
-            Name: eventName,
-            Price: eventPrice
-        })
-        displayEvents()
-    })
-})
 
-function displayEvents() {
-    const cards = document.getElementById("cardsContainer");
-    CSSContainerRule.innerHTML = "";
+function deleteFromPlan(id) {
+    let planIds = JSON.parse(localStorage.getItem('adc_plan_ids') || '[]');
+    planIds = planIds.filter(item => item.id !== id);
+    localStorage.setItem('adc_plan_ids', JSON.stringify(planIds));
+    loadFromPlan();
+}
+
+function loadFromPlan() {
+    const planIds = JSON.parse(localStorage.getItem('adc_plan_ids') || '[]');
+    const cards   = document.getElementById('cardsContainer');
+
+    cards.innerHTML = '';
+
+    if (planIds.length === 0) {
+        cards.innerHTML = `
+            <div class="plan-empty">
+                <p>No events in your plan yet.</p>
+                <a href="services.html">Browse events →</a>
+            </div>`;
+        document.getElementById('totalprice').textContent = 'R0';
+        return;
+    }
 
     let total = 0;
-    events.forEach(event => {
-        total += event.price;
-        cards.innerHTML += `<div class= "b1">
-                                <h3>${event.name}<h3>
-                                <p>Price: R${event.price}<p>
-                            </div>`;
-    })
+    planIds.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const card = document.createElement('div');
+        card.className = 'event-card';
+        card.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="event-card-img">
+            <div class="event-card-info">
+                <h4 class="event-card-name">${item.name}</h4>
+                <p class="event-card-qty">Qty: ${item.quantity}</p>
+                <p class="event-card-price">R${item.price} each</p>
+                <p class="event-card-total">= R${itemTotal}</p>
+            </div>
+            <button class="event-card-delete" title="Remove from plan" onclick="deleteFromPlan('${item.id}')">
+                <i class="bi bi-trash3"></i>
+            </button>
+        `;
+
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.event-card-delete')) return;
+            appendEventToDisplay(item.price, item.quantity);
+            card.classList.add('card-tapped');
+            setTimeout(() => card.classList.remove('card-tapped'), 300);
+        });
+
+        cards.appendChild(card);
+    });
+
+    document.getElementById('totalprice').textContent = `R${total}`;
 }
 
-
-
-document.getElementById("totalPrice").textContent = `R${total}`;
-
-const status = document.getElementById("budgetstatus");
-if (total > budget) {
-    status.textContent = `Over budget by R${total-budget}`;
-    status.style.color = "red";
-} else {
-    status.textContent = `Under budget by R${total-budget}`;
-    status.style.color = "green";
-}
-
-
+loadFromPlan();
