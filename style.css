@@ -463,8 +463,8 @@ body {
 .gallery-container {
   max-width: 1200px;
   width: 95%;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .filter-header {
