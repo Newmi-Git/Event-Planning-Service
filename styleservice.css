@@ -895,7 +895,7 @@ body {
 
     /* Layout: tighten sidebar */
     .services-page .services-wrapper {
-        margin-top: 70px;
+        margin-top: 200px;
     }
 
     .services-page .filter-section {
@@ -952,7 +952,7 @@ body {
     /* ── LAYOUT ── */
     .services-page .services-wrapper {
         flex-direction: column;
-        margin-top: 60px;
+        margin-top: 200px;
     }
 
     /* ── FILTER SIDEBAR → COLLAPSIBLE DRAWER ── */
@@ -1082,7 +1082,7 @@ body {
         bottom: 0;
         right: 0;
         left: 0;
-        width: 100%;
+        width: 200%;
         max-height: 75vh;
         border-radius: 16px 16px 0 0;
         box-shadow: 0 -4px 30px rgba(0,0,0,0.18);
@@ -1148,7 +1148,7 @@ body {
 
     /* ── LAYOUT ── */
     .services-page .services-wrapper {
-        margin-top: 56px;
+        margin-top: 200px;
     }
 
     .services-page .services-section {

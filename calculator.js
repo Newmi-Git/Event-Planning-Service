@@ -56,6 +56,12 @@ function Calculate() {
 
 
 // Events that are added are stored in this array
+
+//Add events from LocalStorage to events array
+//
+
+
+
 let events = [];  
 
 document.querySelectorAll(".products").forEach(product => {
@@ -67,7 +73,6 @@ document.querySelectorAll(".products").forEach(product => {
             Name: eventName,
             Price: eventPrice
         })
-
         displayEvents()
     })
 })
@@ -79,7 +84,6 @@ function displayEvents() {
     let total = 0;
     events.forEach(event => {
         total += event.price;
-
         cards.innerHTML += `<div class= "b1">
                                 <h3>${event.name}<h3>
                                 <p>Price: R${event.price}<p>

@@ -170,7 +170,7 @@ function renderCart() {
         cartItemsList.innerHTML = '<p class="cart-empty-msg">No events added yet.</p>';
     } else {
         cartItemsList.innerHTML = '';
-        planIds.forEach(id => {
+        planIds.forEach(item => {
             const card = document.querySelector(`.products[data-id="${id}"]`);
             if (!card) return;
 
@@ -181,9 +181,17 @@ function renderCart() {
             const row = document.createElement('div');
             row.className = 'cart-item-row';
             row.innerHTML = `
-                <span class="cart-item-name" title="${name}">${name}</span>
-                <span class="cart-item-price">${priceText}</span>
-                <button class="cart-item-delete" data-id="${id}" title="Remove">
+                <span class="cart-item-name">${name}</span>
+
+                <button class="minus-btn" data-id="${id}">-</button>
+
+                <span class="quantity">1</span>
+
+                <button class="plus-btn" data-id="${id}">+</button>
+
+                <span class="cart-item-price">R${price}</span>
+
+                <button class="cart-item-delete" data-id="${id}">
                     <i class="bi bi-trash3"></i>
                 </button>
             `;
@@ -212,11 +220,28 @@ function renderCart() {
     });
 }
 
-//=====================================================CART — ADD==================================================================
-function addToPlan(id, btnEl) {
-    if (planIds.includes(id)) return; // already in plan
+row.querySelector(".plus-btn").addEventListener("click", () => {
+    increaseQuantity(id);
+});
 
-    planIds.push(id);
+row.querySelector(".minus-btn").addEventListener("click", () => {
+    decreaseQuantity(id);
+});
+
+
+//=====================================================CART — ADD==================================================================
+
+function addToPlan(id, btnEl) {
+    const existingItem = planIds.find(item => item.id === id);
+
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+    planIds.push({
+        id: id,
+        quantity: 1
+    });
+}
     savePlan();
 
     flyToCart(btnEl);
@@ -232,6 +257,31 @@ function addToPlan(id, btnEl) {
     renderCart();
 }
 
+function increaseQuantity(id) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const item = cart.find(item => item.id === id);
+
+    if(item){
+        item.quantity++;
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+}
+
+function decreaseQuantity(id) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const item = cart.find(item => item.id === id);
+
+    if(item && item.quantity > 1){
+        item.quantity--;
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+}
 //============================================================CART — REMOVE=============================================================
 function removeFromPlan(id) {
     planIds = planIds.filter(i => i !== id);
