@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="./gallery-style.css">
+    <script src="https://kit.fontawesome.com/6247c2759e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Budget Tracker</a></li>
+                <li><a href="index.html"><img src="Images/AffaireDeCoeur_transparent.png" alt="Logo"></a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <aside class="filter-sidebar">
+        <div class="filter-header">
+            <h3>Filter Gallery</h3>
+            <button type="button" class="clear-all-btn" id="clear-filters">Clear All</button>
+        </div>
+
+        <form class="filter-form" id="filter-form" onsubmit="event.preventDefault();">
+            <div class="filter-group">
+                <label for="search-filter" class="filter-label">Search</label>
+                <input type="search" id="search-filter" placeholder="Search by name or type..." />
+            </div>
+
+            <hr class="filter-divider" />
+
+            <div class="filter-group">
+                <span class="filter-label">Categories</span>
+                <fieldset class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="weddings" /> Weddings
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="swimming" /> Swimming
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="carnivals" /> Carnivals
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="dining" /> Dining
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="celebrations" /> Celebrations
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="category" value="picnic" /> Picnic
+                    </label>
+                </fieldset>
+            </div>
+        </form>
+    </aside>
+
+    <div class="feature-image-container">
+        <img src="https://i.ibb.co/tyFNYNz/happy-black-parents-with-kids-making-video-call-smart-phone-home.jpg"
+            alt="Feature Family Photo" class="feature-image">
+        <div class="overlay-text">
+            <h2>Family Moments</h2>
+            <p>Where Moments becomes Milestones</p>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="quote-box">
+            <p>
+                “It is not how much we have,<br>
+                but how much we enjoy,<br>
+                that makes happiness.”
+            </p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="https://i.ibb.co/vxJP5zpw/full-shot-happy-family-nature.jpg"
+                        alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/gZsSPZYG/1.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/DgSPkfwk/3.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/8g8XTwdQ/4.webp" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/NdC3z9xj/5.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/sdk5SxRq/fam3.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/KxbzNKCd/6.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/QvJtnwpL/7.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/vxJP5zpw/full-shot-happy-family-nature.jpg"
+                        alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/gZsSPZYG/1.avif" alt="Family Photo"></div>
+                <div class="carousel-slide"><img src="https://i.ibb.co/7x2SdBCP/2.avif" alt="Family Photo"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/hRZhhpRQ/fam6.webp" alt="Picnic">
+        </div>
+
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/GvFtcPPk/fam7.jpg" alt="Celebrations">
+        </div>
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/S4GJBXV2/celebartions.jpg" alt="Celebrations">
+        </div>
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/nHY1K7D/celebartions1.jpg" alt="Celebrations">
+        </div>
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/LzTTpngt/celebartions2.jpg" alt="Celebrations">
+        </div>
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/QvT9mq61/celebrations3.jpg" alt="Celebrations">
+        </div>
+        <div class="gallery-item celebrations">
+            <img src="https://i.ibb.co/ZRGr30Fk/celebrations4.jpg" alt="Celebrations">
+        </div>
+
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/s9TKqrtY/fam8.jpg" alt="Carnivals">
+        </div>
+
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/vxCH8BVP/fam9.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/RfmLhjd/wedding.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/mCscw78n/weddind.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/Xcq4gQM/wedding1.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/yndgysQq/wedding2.jpg" alt="Wedding">
+        </div>
+        <div class="gallery-item weddings">
+            <img src="https://i.ibb.co/nM2P3jSh/wedding3.jpg" alt="Wedding">
+        </div>
+
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/6RmPq9J7/fam13.jpg" alt="Picnic">
+        </div>
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/2YKM7Y83/picnic1.avif" alt="Picnic">
+        </div>
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/7TJ1qzY/pexels-kampus-8914053.jpg" alt="Picnic">
+        </div>
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/Xfpsk3bs/picnic2.avif" alt="Picnic">
+        </div>
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/2T4DtLz/picnic3.jpg" alt="Picnic">
+        </div>
+        <div class="gallery-item picnic">
+            <img src="https://i.ibb.co/JjWDCwV2/picnic4.jpg" alt="Picnic">
+        </div>
+
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/SX4NsV5t/swimming.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/jCvq2Kn/swimming1.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/qFPYRtmH/swimming2.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/M5yDkKJX/swimming3.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/yFyB77Xh/swimming4.webp" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/qYnD0zPF/swimming5.jpg" alt="Swimming">
+        </div>
+        <div class="gallery-item swimming">
+            <img src="https://i.ibb.co/fzcMY6Jf/swimming6.jpg" alt="Swimming">
+        </div>
+
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/JRgQk1Ht/carnivals.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/WpfrTb18/carnivals1.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/WvWkzQjf/varnivals2.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/xKT6CWt3/carnivals2.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/wZd0k70W/carnivals3.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/Qvr8q1KY/carnival4.jpg" alt="Carnivals">
+        </div>
+        <div class="gallery-item carnivals">
+            <img src="https://i.ibb.co/PvwSkjT8/carnivals5.jpg" alt="Carnivals">
+        </div>
+
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/4RLytB4M/dining.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/LDbt3W6d/dining1.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/1fcZLCyJ/dinning3.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/HprwjhPj/dinning4.jpg" alt="Dining">
+        </div>
+        <div class="gallery-item dining">
+            <img src="https://i.ibb.co/XxbB7rvK/dinning.jpg" alt="Dining">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links-box">
+                <p>Follow us on</p>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                </div>
+            </div>
+
+            <div class="about-us">
+                <p>About</p>
+                <a href="#">Our Service</a>
+                <a href="#">Our Process</a>
+                <a href="#">Our Team</a>
+            </div>
+
+            <div class="Mail">
+                <p>Email</p>
+                <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
+            </div>
+
+            <div class="Location">
+                <p>Head Office Location</p>
+                <p>📍Cape Town, South Africa</p>
+            </div>
+
+            <div class="main-footer">
+                <p>&copy; 2026 Affair de Coeur. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-filter');
+            const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const clearFiltersBtn = document.getElementById('clear-filters');
+
+            function updateGalleryVisibility() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                const activeCategories = Array.from(categoryCheckboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+
+                galleryItems.forEach(item => {
+                    const altText = item.querySelector('img')?.getAttribute('alt')?.toLowerCase() || '';
+                    const itemClasses = item.className.toLowerCase();
+
+                    const matchesSearch = !searchTerm || altText.includes(searchTerm) || itemClasses.includes(searchTerm);
+                    const matchesCategory = activeCategories.length === 0 ||
+                        activeCategories.some(cat => item.classList.contains(cat));
+
+                    if (matchesSearch && matchesCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', updateGalleryVisibility);
+            categoryCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateGalleryVisibility);
+            });
+
+            clearFiltersBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                categoryCheckboxes.forEach(cb => cb.checked = false);
+                updateGalleryVisibility();
+            });
+        });
+    </script>
+</body>
+
+</html>
