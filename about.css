@@ -1,41 +1,9 @@
-/* Reset */
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+
 
 .about-body{
     font-family: Arial, sans-serif;
     color:black;
 }
-
-/* Navigation */
-.navbar {
-     background-color: rgb(181, 176, 176); 
-    padding: 15px;
-    margin: 5px;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
-
-/* Main Content */
-main {
-    width: 90%;
-    margin: 30px auto;
-}
-
 
 
 /* Hero Section */
@@ -226,17 +194,6 @@ main {
     font-size: 20px;
     margin: 60px auto;
     max-width: 800px;
-}
-
-/* Footer */
-.footer {
-    background-color: rgb(202, 69, 20);
-    color: black;
-    text-align: center;
-    padding: 20px;
-    margin:0;
-    margin-top: 30px;
-    overflow: hidden;
 }
 
 /*  LAPTOP / DESKTOP */

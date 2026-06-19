@@ -4,8 +4,6 @@ const textcolour = document.getElementById("text");
 const navBar = document.getElementById("navbar");
 const bookButton = document.getElementById("bookButton");
 
-
-
 function darkMode() {
     indexBackground.style.backgroundColor = 'rgb(37, 36, 36)';
     textcolour.style.backgroundColor = "White";
