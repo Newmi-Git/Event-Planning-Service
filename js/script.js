@@ -1,24 +1,85 @@
-const darkModeBtn = document.getElementById("darkModeBtn");
-const indexBackground = document.getElementById("indexBackground");
-const textcolour = document.getElementById("text");
-const navBar = document.getElementById("navbar");
-const bookButton = document.getElementById("bookButton");
-
-function darkMode() {
-    indexBackground.style.backgroundColor = 'rgb(37, 36, 36)';
-    textcolour.style.backgroundColor = "White";
-};
-
-
 // ============================================================================
-// ---  SIGN-UP PAGE (Azhar Manie) ---
+// --- GLOBAL LIFE-CYCLE & INITIALIZATION ---
 // ============================================================================
-
-function register(e) {
-    // Prevents the browser from reloading the page natively on form submission
-    if (e) e.preventDefault(); 
+document.addEventListener("DOMContentLoaded", function() {
     
-    // Grabs input values matching the IDs inside signup.html
+    // 1. Apply Persistent Dark Theme Immediately on Page Load
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-theme");
+        const iconImg = document.querySelector("#darkModeBtn img");
+        if (iconImg) iconImg.style.filter = "invert(1)";
+    }
+
+    // 2. Sync Authenticated User State in Navbar
+    renderAuthNavbar();
+
+    // 3. Bind Dark Mode Toggle Button Click Event Safely
+    const darkModeBtn = document.getElementById("darkModeBtn");
+    if (darkModeBtn) {
+
+        darkModeBtn.addEventListener("click", function() {
+            document.body.classList.toggle("dark-theme");
+            const iconImg = darkModeBtn.querySelector("img");
+            
+            if (document.body.classList.contains("dark-theme")) {
+                localStorage.setItem("theme", "dark");
+                if (iconImg) iconImg.style.filter = "invert(1)";
+            } else {
+                localStorage.setItem("theme", "light");
+                if (iconImg) iconImg.style.filter = "none";
+            }
+        });
+    }
+
+    // 4. Bind Authentication Forms Safely
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", login);
+    }
+
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+        signupForm.addEventListener("submit", register);
+    }
+});
+
+
+// ============================================================================
+// --- AUTH UI STATE CONTROLLER ---
+// ============================================================================
+function renderAuthNavbar() {
+    const currentUser = localStorage.getItem("currentUser");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+    const accountBtn = document.querySelector(".account-btn");
+
+    if (!dropdownMenu || !accountBtn) return; // Guard clause if header changes
+
+    if (currentUser) {
+        // Update main button text to reflect the logged-in user
+        accountBtn.innerHTML = `Hi, ${currentUser} <span class="arrow">▼</span>`;
+
+        // Update dropdown choices to show useful post-auth utilities
+        dropdownMenu.innerHTML = `
+            <a href="#" id="logoutBtn" class="dropdown-link signup-highlight">Log Out</a>
+        `;
+
+        // Wire up the logout script
+        document.getElementById("logoutBtn").addEventListener("click", function(e) {
+            e.preventDefault();
+            localStorage.removeItem("currentUser");
+            alert("Logged out successfully.");
+            window.location.reload();
+        });
+    }
+}
+
+
+// ============================================================================
+// --- SIGN-UP PAGE ENGINE ---
+// ============================================================================
+function register(e) {
+    if (e) e.preventDefault(); 
+
     const usernameField = document.getElementById("username");
     const passwordField = document.getElementById("password");
 
@@ -30,89 +91,55 @@ function register(e) {
     const username = usernameField.value.trim();
     const password = passwordField.value;
 
-    // Retrieve database array from LocalStorage, or initialize an empty array
+    if (username === "" || password === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Check if the email/username is already registered
+    // Check case-insensitive duplication
     const userExists = users.some(user => user.username.toLowerCase() === username.toLowerCase());
-    
     if (userExists) {
-        alert("Username or Email Already Exists!");
+        alert("Username or Email already exists!");
         return;
     }
     
-    // Save new credentials block into database array
-    users.push({
-        username: username,
-        password: password
-    });
-
-    // Commit updated records array back to LocalStorage
+    users.push({ username, password });
     localStorage.setItem("users", JSON.stringify(users));
     
-    alert("Account Created successfully!");
-    
-    // Send user smoothly over to the login portal
+    alert("Account created successfully!");
     window.location.href = "./login.html"; 
 }
 
-// --- INITIALIZE FORM ATTRIBUTES ON LOAD ---
-document.addEventListener("DOMContentLoaded", function() {
-    const signupForm = document.getElementById("signupForm");
-    
-    if (signupForm) {
-        signupForm.addEventListener("submit", register);
-    } else {
-        console.warn("Warning: Could not find an element with id='signupForm' on this page.");
-    }
-});
 
 // ============================================================================
-// ---  LOG-IN PAGE (Azhar Manie) ---
+// --- LOG-IN PAGE ENGINE ---
 // ============================================================================
 function login(e) {
-    if (e) e.preventDefault(); // Prevents page reload on form submit
+    if (e) e.preventDefault(); 
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    const usernameField = document.getElementById("username");
+    const passwordField = document.getElementById("password");
+
+    if (!usernameField || !passwordField) return;
+
+    const username = usernameField.value.trim();
+    const password = passwordField.value;
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const user = users.find(user => user.username === username && user.password === password);
+    // Validate case-insensitive profile name matching along with password
+    const user = users.find(user => user.username.toLowerCase() === username.toLowerCase() && user.password === password);
+    
     if (user) {
-        alert("Login Successful");
-        localStorage.setItem("currentUser", username);
-        window.location.href = "./index.html"; // Redirects straight to index dashboard
+        alert("Login successful!");
+        localStorage.setItem("currentUser", user.username); // Keep exact case for display
+        window.location.href = "./index.html"; 
     } else {
         alert("Invalid Username or Password");
     }
 }
-
-// --- EVENT BINDING & GUARD CHECKS ---
-// This guarantees smooth operation across pages even if buttons are missing
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // Bind Login Form
-    const loginForm = document.getElementById("loginForm");
-    if (loginForm) {
-        loginForm.addEventListener("submit", login);
-    }
-
-    // Bind Signup Form (Assuming your signup form element uses id="signupForm")
-    const signupForm = document.getElementById("signupForm");
-    if (signupForm) {
-        signupForm.addEventListener("submit", register);
-    }
-
-    // Fixed darkmode button listener initialization (Removed the accidental execution parenthesis)
-    const darkModeBtn = document.getElementById("darkModeBtn");
-    if (darkModeBtn) {
-        darkModeBtn.addEventListener("click", function() {
-            // Optional: Toggle your CSS master class cleanly here instead
-            document.body.classList.toggle("dark-theme");
-        });
-    }
-});
 
 //============================================================
 // SERVICES PAGE
@@ -225,46 +252,29 @@ sortBtns.forEach(btn => {
     });
 });
 
-function renderCart() {
-    cartCount.textContent = planIds.length;
+renderCart();
 
-    if (planIds.length === 0) {
-        cartItemsList.innerHTML = '<p class="cart-empty-msg">No events added yet.</p>';
-    } else {
-        cartItemsList.innerHTML = '';
+// Setup the responsive mobile filter drawer
+(function setupFilterDrawer() {
+    const filterSection = document.querySelector('.services-page .filter-section');
+    if (!filterSection) return;
 
-        planIds.forEach(item => {
-            const card = document.querySelector(`.products[data-id="${item.id}"]`);
-            if (!card) return;
+    // Create the toggle button
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'filter-toggle-btn';
+    toggleBtn.innerHTML = `
+        <span>🎯 Filter &amp; Search</span>
+        <span class="filter-toggle-icon">&#8964;</span>
+    `;
 
-            const name       = card.dataset.name;
-            const price      = parseInt(card.dataset.price);
-            const quantity   = item.quantity;
-            const totalPrice = price * quantity;
+    // Insert it as the first child of the filter section
+    filterSection.insertBefore(toggleBtn, filterSection.firstChild);
 
-            // ✅ FIX 1: declare row HERE inside the loop
-            const row = document.createElement('div');
-            row.className = 'cart-item-row';
-
-            row.innerHTML = `
-                <span class="cart-item-name">${name}</span>
-                <button class="minus-btn" data-id="${item.id}">−</button>
-                <span class="qty">${quantity}</span>
-                <button class="plus-btn" data-id="${item.id}">+</button>
-                <span class="cart-item-price">R${totalPrice}</span>
-                <button class="cart-item-delete" data-id="${item.id}">
-                    <i class="bi bi-trash3"></i>
-                </button>
-            `;
-
-            cartItemsList.appendChild(row);
-
-            // ✅ FIX 2: event listeners AFTER appendChild, still inside the loop
-            row.querySelector('.plus-btn').addEventListener('click', () => increaseQuantity(item.id));
-            row.querySelector('.minus-btn').addEventListener('click', () => decreaseQuantity(item.id));
-            row.querySelector('.cart-item-delete').addEventListener('click', () => removeFromPlan(item.id));
-        });
-    }
+    // Toggle drawer open/closed
+    toggleBtn.addEventListener('click', () => {
+        filterSection.classList.toggle('drawer-open');
+    });
+})();
 
     renderNotes();
 
@@ -280,7 +290,7 @@ function renderCart() {
             btn.classList.remove('added');
         }
     });
-}
+
 
 
 
