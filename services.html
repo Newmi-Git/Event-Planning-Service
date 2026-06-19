@@ -10,23 +10,42 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </head>
     <body>
         <div class="services-page"> 
             <!-- Navigation Bar -->
-            <div class="navbar-container">
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="/calculator.html">Budget Tracker</a></li>
-                        <li><a href="#"><img src="Images/AffaireDeCoeur_transparent.png" alt="Logo"></a></li>
-                        <li><a href="review.html">Reviews</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <header>
+                <div class="navbar-container">
+                    <nav class="navbar">
+                        <ul>
+                            <li class="nav-left"><a href="./gallery.html">Gallery</a></li>
+                            <li class="nav-left"><a href="./services.html">Events</a></li>
+                            <li class="nav-left"><a href="./calculator.html">Budget Tracker</a></li>
+                            
+                            <li class="logo-item">
+                            <a href="./index.html">
+                                <img src="images/AffaireDeCoeur_transparent.png" alt="Logo" />
+                            </a>
+                            </li>
+                            
+                            <li class="nav-right"><a href="./review.html">Reviews</a></li>
+                            <li class="nav-right"><a href="./about.html">About Us</a></li>
+                            <li class="nav-right"><a href="./contact.html">Contact</a></li>
+                        
+                            <li class="dropdown-item nav-right">
+                            <button class="account-btn" aria-haspopup="true" aria-expanded="false">
+                                Account <span class="arrow">▼</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="./login.html" class="dropdown-link">Login</a>
+                                <a href="./sign-up.html" class="dropdown-link signup-highlight">Sign Up</a>
+                            </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
 
             <div class="services-wrapper">
 
@@ -572,9 +591,57 @@
                 </div>
 
             </div>
+            <button id="darkModeBtn" class="darkmode-btn" aria-label="Toggle Dark Mode"
+                style="
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    z-index: 9999;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    border:2px solid black;
+                ">
+                <img src="images/icons8-dark-mode-50.png" alt="Dark mode icon" />
+            </button>
         </div>
 
         <script src="script.js" defer></script>
         <script src="scriptservice.js" defer></script>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="social-links-box">
+                    <p>Follow us on</p>
+                    <div class="icons">
+                        <i class="fa fa-brands fa-instagram"></i>
+                        <i class="fa fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-facebook">‌</i>
+                    </div>
+                </div>
+
+                <div class="about-us">
+                    <p>About</p>
+                    <a href="./services.html">Our Service</a>
+                    <a href="./gallery.html">Our Gallery</a>
+                    <a href="./about.html">Our Team</a>
+                </div>
+
+                <div class="Mail">
+                    <p>Email</p>
+                    <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
+                </div>
+
+                <div class="Location">
+                    <p>Head Office Location</p>
+                    <p>📍Cape Town, South Africa</p>
+                </div>
+
+                <div class="main-footer">
+                    <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
