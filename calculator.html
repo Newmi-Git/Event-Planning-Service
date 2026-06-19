@@ -85,7 +85,7 @@
           placeholder="Enter budget"
         /><br /><br />
         <div id="budget">
-          <button class="budgetbutton"  onclick="setbudget()">Set Budget</button>
+          <button class="budgetbutton" onclick="setbudget()">Set Budget</button>
           <button class="subtractbutton" onclick="subtractprices()">
             Subtract all prices from budget
           </button>
@@ -123,6 +123,25 @@
         </dialog>
       </div>
     </div>
+
+    <button
+      id="darkModeBtn"
+      class="darkmode-btn"
+      aria-label="Toggle Dark Mode"
+      style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        padding: 10px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid black;
+      "
+    >
+      <img src="images/icons8-dark-mode-50.png" alt="Dark mode icon" />
+    </button>
 
     <script src="calculator.js"></script>
   </body>

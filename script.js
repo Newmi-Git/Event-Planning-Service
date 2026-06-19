@@ -1,24 +1,48 @@
-const darkModeBtn = document.getElementById("darkModeBtn");
-const indexBackground = document.getElementById("indexBackground");
-const textcolour = document.getElementById("text");
-const navBar = document.getElementById("navbar");
-const bookButton = document.getElementById("bookButton");
-
-function darkMode() {
-    indexBackground.style.backgroundColor = 'rgb(37, 36, 36)';
-    textcolour.style.backgroundColor = "White";
-};
-
-
 // ============================================================================
-// ---  SIGN-UP PAGE (Azhar Manie) ---
+// --- GLOBAL INITIALIZATION & DARK THEME (WITH PERSISTENCE) ---
 // ============================================================================
-
-function register(e) {
-    // Prevents the browser from reloading the page natively on form submission
-    if (e) e.preventDefault(); 
+document.addEventListener("DOMContentLoaded", function() {
     
-    // Grabs input values matching the IDs inside signup.html
+    // Check local storage on page load to apply saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-theme");
+    }
+
+    // Bind Dark Mode Button Toggle Action
+    const darkModeBtn = document.getElementById("darkModeBtn");
+    if (darkModeBtn) {
+        darkModeBtn.addEventListener("click", function() {
+            document.body.classList.toggle("dark-theme");
+            
+            // Save selection to storage
+            if (document.body.classList.contains("dark-theme")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
+
+    // ============================================================================
+    // --- AUTHENTICATION FORMS BINDING ---
+    // ============================================================================
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", login);
+    }
+
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+        signupForm.addEventListener("submit", register);
+    }
+});
+
+// ============================================================================
+// --- SIGN-UP LOGIC ---
+// ============================================================================
+function register(e) {
+    if (e) e.preventDefault(); // Prevents native form page reload
+    
     const usernameField = document.getElementById("username");
     const passwordField = document.getElementById("password");
 
@@ -30,180 +54,129 @@ function register(e) {
     const username = usernameField.value.trim();
     const password = passwordField.value;
 
-    // Retrieve database array from LocalStorage, or initialize an empty array
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // Check if the email/username is already registered
+    // Check if user exists
     const userExists = users.some(user => user.username.toLowerCase() === username.toLowerCase());
-    
     if (userExists) {
         alert("Username or Email Already Exists!");
         return;
     }
     
-    // Save new credentials block into database array
-    users.push({
-        username: username,
-        password: password
-    });
-
-    // Commit updated records array back to LocalStorage
+    // Save new user block
+    users.push({ username: username, password: password });
     localStorage.setItem("users", JSON.stringify(users));
     
     alert("Account Created successfully!");
-    
-    // Send user smoothly over to the login portal
     window.location.href = "./login.html"; 
 }
 
-// --- INITIALIZE FORM ATTRIBUTES ON LOAD ---
-document.addEventListener("DOMContentLoaded", function() {
-    const signupForm = document.getElementById("signupForm");
-    
-    if (signupForm) {
-        signupForm.addEventListener("submit", register);
-    } else {
-        console.warn("Warning: Could not find an element with id='signupForm' on this page.");
-    }
-});
-
 // ============================================================================
-// ---  LOG-IN PAGE (Azhar Manie) ---
+// --- LOG-IN LOGIC ---
 // ============================================================================
 function login(e) {
-    if (e) e.preventDefault(); // Prevents page reload on form submit
+    if (e) e.preventDefault(); 
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    const usernameField = document.getElementById("username");
+    const passwordField = document.getElementById("password");
+
+    if (!usernameField || !passwordField) return;
+
+    const username = usernameField.value;
+    const password = passwordField.value;
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
-
     const user = users.find(user => user.username === username && user.password === password);
+
     if (user) {
         alert("Login Successful");
         localStorage.setItem("currentUser", username);
-        window.location.href = "./index.html"; // Redirects straight to index dashboard
+        window.location.href = "./index.html"; 
     } else {
         alert("Invalid Username or Password");
     }
 }
 
-// --- EVENT BINDING & GUARD CHECKS ---
-// This guarantees smooth operation across pages even if buttons are missing
+// ============================================================================
+// --- SERVICES PAGE: FILTERING & SORTING LOGIC ---
+// ============================================================================
 document.addEventListener("DOMContentLoaded", function() {
-    
-    // Bind Login Form
-    const loginForm = document.getElementById("loginForm");
-    if (loginForm) {
-        loginForm.addEventListener("submit", login);
-    }
+    const searchInput   = document.getElementById('search-input');
+    const budgetSlider  = document.getElementById('budget-slider');
+    const budgetLabel   = document.getElementById('budget-label');
+    const grid          = document.getElementById('product-grid');
+    const sortBtns      = document.querySelectorAll('.sorting-options button');
+    const checkboxes    = document.querySelectorAll('.filter-group input[type="checkbox"]');
+    const tagBtns       = document.querySelectorAll('.tag button');
 
-    // Bind Signup Form (Assuming your signup form element uses id="signupForm")
-    const signupForm = document.getElementById("signupForm");
-    if (signupForm) {
-        signupForm.addEventListener("submit", register);
-    }
+    // SAFE GUARD: Only run this whole filtration logic if we are actually on the services page
+    if (!grid) return; 
 
-    // Fixed darkmode button listener initialization (Removed the accidental execution parenthesis)
-    const darkModeBtn = document.getElementById("darkModeBtn");
-    if (darkModeBtn) {
-        darkModeBtn.addEventListener("click", function() {
-            // Optional: Toggle your CSS master class cleanly here instead
-            document.body.classList.toggle("dark-theme");
+    // --- FILTER ALL ---
+    function filterAll() {
+        const query    = searchInput ? searchInput.value.toLowerCase() : "";
+        const budget   = budgetSlider ? parseInt(budgetSlider.value) : Infinity;
+        const checked  = [...checkboxes].filter(cb => cb.checked).map(cb => cb.value);
+
+        document.querySelectorAll('.products').forEach(card => {
+            const nameMatch     = card.dataset.name ? card.dataset.name.toLowerCase().includes(query) : true;
+            const cardCategories = card.dataset.category ? card.dataset.category.split(' ') : [];
+            const categoryMatch  = checked.every(cat => cardCategories.includes(cat));
+            const priceMatch     = card.dataset.price ? parseInt(card.dataset.price) <= budget : true;
+
+            card.style.display = (nameMatch && categoryMatch && priceMatch) ? '' : 'none';
         });
     }
-});
 
-//============================================================
-// SERVICES PAGE
-// ===========================================================
+    // --- SEARCH FIELD ---
+    if (searchInput) {
+        searchInput.addEventListener('input', filterAll);
+    }
 
-
-const searchInput   = document.getElementById('search-input');
-const budgetSlider  = document.getElementById('budget-slider');
-const budgetLabel   = document.getElementById('budget-label');
-const grid          = document.getElementById('product-grid');
-const sortBtns      = document.querySelectorAll('.sorting-options button');
-const checkboxes    = document.querySelectorAll('.filter-group input[type="checkbox"]');
-const tagBtns       = document.querySelectorAll('.tag button');
-
-// --- FILTER ALL ---
-function filterAll() {
-    const query    = searchInput.value.toLowerCase();
-    const budget   = parseInt(budgetSlider.value);
-    const checked  = [...checkboxes].filter(cb => cb.checked).map(cb => cb.value);
-
-    document.querySelectorAll('.products').forEach(card => {
-        const nameMatch     = card.dataset.name.toLowerCase().includes(query);
-        const cardCategories = card.dataset.category.split(' ');
-        const categoryMatch  = checked.every(cat => cardCategories.includes(cat));
-        const priceMatch    = parseInt(card.dataset.price) <= budget;
-
-        card.style.display = (nameMatch && categoryMatch && priceMatch) ? '' : 'none';
-    });
-}
-
-// --- SEARCH ---
-searchInput.addEventListener('input', filterAll);
-
-// --- BUDGET SLIDER ---
-budgetSlider.addEventListener('input', function () {
-    budgetLabel.textContent = 'R0–' + this.value;
-    filterAll();
-});
-
-// --- CHECKBOXES ---
-checkboxes.forEach(cb => cb.addEventListener('change', filterAll));
-
-// --- ACTIVE FILTER TAGS (×) ---
-tagBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-        const tag         = this.parentElement;
-        const filterValue = tag.dataset.filter;
-
-        const cb = document.querySelector(`.filter-group input[value="${filterValue}"]`);
-        if (cb) {
-            cb.checked = false;
-        }
-
-        tag.remove();
-        filterAll();
-    });
-});
-
-// --- SORT ---
-sortBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-        sortBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
-        const type  = this.dataset.sort;
-        const cards = [...document.querySelectorAll('.products')];
-
-        cards.sort((a, b) => {
-            if (type === 'price-asc')  return parseInt(a.dataset.price) - parseInt(b.dataset.price);
-            if (type === 'price-desc') return parseInt(b.dataset.price) - parseInt(a.dataset.price);
-            if (type === 'rating')     return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
-            return 0;
+    // --- BUDGET SLIDER ---
+    if (budgetSlider && budgetLabel) {
+        budgetSlider.addEventListener('input', function () {
+            budgetLabel.textContent = 'R0–' + this.value;
+            filterAll();
         });
+    }
 
-        cards.forEach(card => grid.appendChild(card));
+    // --- CATEGORY CHECKBOXES ---
+    checkboxes.forEach(cb => cb.addEventListener('change', filterAll));
+
+    // --- ACTIVE FILTER TAGS (×) ---
+    tagBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const tag         = this.parentElement;
+            const filterValue = tag.dataset.filter;
+
+            const cb = document.querySelector(`.filter-group input[value="${filterValue}"]`);
+            if (cb) {
+                cb.checked = false;
+            }
+
+            tag.remove();
+            filterAll();
+        });
+    });
+
+    // --- SORT ENGINE ---
+    sortBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            sortBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const type  = this.dataset.sort;
+            const cards = [...document.querySelectorAll('.products')];
+
+            cards.sort((a, b) => {
+                if (type === 'price-asc')  return parseInt(a.dataset.price || 0) - parseInt(b.dataset.price || 0);
+                if (type === 'price-desc') return parseInt(b.dataset.price || 0) - parseInt(a.dataset.price || 0);
+                if (type === 'rating')     return parseFloat(b.dataset.rating || 0) - parseFloat(a.dataset.rating || 0);
+                return 0;
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-darkMode.addEventListener("click", darkMode())
