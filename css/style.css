@@ -27,27 +27,19 @@ main {
 
 }
 
+
 /* ==========================================================================
-   DARK THEME TOGGLE BUTTON STYLING
+   CORE LIGHT THEME DEFAULTS / BASELINE STYLES
    ========================================================================== */
-.darkmode-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease;
+:root {
+  --primary-accent: #ff6347;
+  --primary-accent-hover: #ff7f66;
 }
 
-.darkmode-btn:hover {
-  transform: scale(1.05);
-}
-
-.darkmode-btn img {
-  width: 30px;
-  height: auto;
+body {
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ==========================================================================
@@ -78,11 +70,11 @@ body.dark-theme .cart-empty-msg {
 
 /* Fix for standard anchor links across generic layout elements */
 body.dark-theme a:not(.dropdown-link):not(.navbar-container a) {
-  color: #ff6347;
+  color: var(--primary-accent);
   transition: color 0.2s ease;
 }
 body.dark-theme a:not(.dropdown-link):not(.navbar-container a):hover {
-  color: #ff7f66;
+  color: var(--primary-accent-hover);
 }
 
 /* ==========================================================================
@@ -132,8 +124,7 @@ body.dark-theme .contact_container,
 body.dark-theme .filter-sidebar,
 body.dark-theme .gallery-container,
 body.dark-theme .quote-box,
-body.dark-theme .carousel-container,
-body.dark-theme .filter-sidebar {
+body.dark-theme .carousel-container {
   background-color: #1e1e1e !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -182,8 +173,8 @@ body.dark-theme .filter-sidebar .checkbox-group input[type="checkbox"] {
 
 /* Force Checkbox Checked Solid Fill State */
 body.dark-theme .filter-sidebar .checkbox-group input[type="checkbox"]:checked {
-  background-color: #ff6347 !important; /* Premium Accent Color */
-  border-color: #ff6347 !important;
+  background-color: var(--primary-accent) !important; /* Premium Accent Color */
+  border-color: var(--primary-accent) !important;
 }
 
 /* Force White Checkmark Icon Injection Layer */
@@ -198,8 +189,8 @@ body.dark-theme .filter-sidebar .checkbox-group input[type="checkbox"]:checked::
 /* Force Clear All Filter Action Button Styles */
 body.dark-theme .filter-sidebar .filter-header .clear-all-btn {
   background-color: transparent !important;
-  color: #ff6347 !important;
-  border: 1px solid #ff6347 !important;
+  color: var(--primary-accent) !important;
+  border: 1px solid var(--primary-accent) !important;
   padding: 4px 10px !important;
   border-radius: 4px !important;
   cursor: pointer !important;
@@ -208,12 +199,12 @@ body.dark-theme .filter-sidebar .filter-header .clear-all-btn {
 }
 
 body.dark-theme .filter-sidebar .filter-header .clear-all-btn:hover {
-  background-color: #ff6347 !important;
+  background-color: var(--primary-accent) !important;
   color: #ffffff !important;
-  border-color: #ff6347 !important;
+  border-color: var(--primary-accent) !important;
 }
 
-/* FIXED: Explicit Filter/Sorting Option Button Inactive States */
+/* Explicit Filter/Sorting Option Button Inactive States */
 body.dark-theme .sorting-options button,
 body.dark-theme .filter-sidebar button:not(.clear-all-btn):not(.active) {
   background-color: #252525 !important;
@@ -233,8 +224,8 @@ body.dark-theme .filter-sidebar button:not(.clear-all-btn):not(.active):hover {
 /* Active Highlight Button State */
 body.dark-theme .sorting-options button.active,
 body.dark-theme .filter-sidebar button.active {
-  background-color: #ff6347 !important;
-  border-color: #ff6347 !important;
+  background-color: var(--primary-accent) !important;
+  border-color: var(--primary-accent) !important;
   color: #ffffff !important;
 }
 
@@ -277,8 +268,14 @@ body.dark-theme .form_group textarea::placeholder {
   color: #888888 !important;
 }
 
-body.dark-theme #search-filter:focus {
-  border-color: #ff6347 !important;
+/* Global Focus Handling for Inputs */
+body.dark-theme #search-filter:focus,
+body.dark-theme .form_group input:focus,
+body.dark-theme .form_group textarea:focus,
+body.dark-theme #search-input:focus,
+body.dark-theme #cart-note-input:focus,
+body.dark-theme .services select:focus {
+  border-color: var(--primary-accent) !important;
   outline: none;
 }
 
@@ -312,6 +309,51 @@ body.dark-theme .remove-note-btn {
 
 body.dark-theme #cart-close-btn:hover,
 body.dark-theme .remove-note-btn:hover {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   ADVANCED DARK THEME FONT COLOR FIXES
+   ========================================================================== */
+
+/* Force all text variants, paragraph structures, labels, and spans */
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme label,
+body.dark-theme li,
+body.dark-theme strong,
+body.dark-theme b,
+body.dark-theme i {
+  color: #e0e0e0 !important; /* Soft off-white to prevent glare */
+}
+
+/* Force dark theme visibility inside form control elements, buttons, and fields */
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select,
+body.dark-theme button {
+  color: #ffffff !important;
+}
+
+/* Table Text Correction (For Cart Data or Invoice Summary Views) */
+body.dark-theme table,
+body.dark-theme th,
+body.dark-theme td {
+  color: #ffffff !important;
+}
+
+/* Explicit class-based overrides for Bootstrap compatibility */
+body.dark-theme .text-dark,
+body.dark-theme .text-body,
+body.dark-theme .text-black {
+  color: #ffffff !important;
+}
+
+/* Cart Item Name Specific Highlight Fix */
+body.dark-theme .cart-item-row,
+body.dark-theme .cart-item-name,
+body.dark-theme .qty,
+body.dark-theme .cart-item-price {
   color: #ffffff !important;
 }
 

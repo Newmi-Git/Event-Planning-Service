@@ -1,647 +1,1608 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Affair De Coeur</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    </head>
-    <body>
-        <div class="services-page"> 
-            <!-- Navigation Bar -->
-            <header>
-                <div class="navbar-container">
-                    <nav class="navbar">
-                        <ul>
-                            <li class="nav-left"><a href="./gallery.html">Gallery</a></li>
-                            <li class="nav-left"><a href="./services.html">Events</a></li>
-                            <li class="nav-left"><a href="./calculator.html">Budget Tracker</a></li>
-                            
-                            <li class="logo-item">
-                            <a href="./index.html">
-                                <img src="images/AffaireDeCoeur_transparent.png" alt="Logo" />
-                            </a>
-                            </li>
-                            
-                            <li class="nav-right"><a href="./review.html">Reviews</a></li>
-                            <li class="nav-right"><a href="./about.html">About Us</a></li>
-                            <li class="nav-right"><a href="./contact.html">Contact</a></li>
-                        
-                            <li class="dropdown-item nav-right">
-                            <button class="account-btn" aria-haspopup="true" aria-expanded="false">
-                                Account <span class="arrow">▼</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a href="./login.html" class="dropdown-link">Login</a>
-                                <a href="./sign-up.html" class="dropdown-link signup-highlight">Sign Up</a>
-                            </div>
-                            </li>
-                        </ul>
-                    </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Affair De Coeur</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="services-page">
+      <!-- Navigation Bar -->
+      <header>
+        <div class="navbar-container">
+          <nav class="navbar">
+            <ul>
+              <li class="nav-left"><a href="./gallery.html">Gallery</a></li>
+              <li class="nav-left"><a href="./services.html">Events</a></li>
+              <li class="nav-left">
+                <a href="./calculator.html">Budget Tracker</a>
+              </li>
+
+              <li class="logo-item">
+                <a href="./index.html">
+                  <img src="images/AffaireDeCoeur_transparent.png" alt="Logo" />
+                </a>
+              </li>
+
+              <li class="nav-right"><a href="./review.html">Reviews</a></li>
+              <li class="nav-right"><a href="./about.html">About Us</a></li>
+              <li class="nav-right"><a href="./contact.html">Contact</a></li>
+
+              <li class="dropdown-item nav-right">
+                <button
+                  class="account-btn"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Account <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="./login.html" class="dropdown-link">Login</a>
+                  <a
+                    href="./sign-up.html"
+                    class="dropdown-link signup-highlight"
+                    >Sign Up</a
+                  >
                 </div>
-            </header>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-            <div class="services-wrapper">
+      <div class="services-wrapper">
+        <div class="filter-section">
+          <h3>Events</h3>
 
-                <div class="filter-section">
-                    <h3>Events</h3>
+          <div class="filter-group">
+            <label><input type="checkbox" value="we-host" /> We Host</label>
+            <label
+              ><input type="checkbox" value="go-karting" /> Go Karting</label
+            >
+            <label><input type="checkbox" value="swimming" /> Swimming</label>
+            <label><input type="checkbox" value="swimming" /> Indoor</label>
+            <label><input type="checkbox" value="swimming" /> Outdoor</label>
+            <label
+              ><input type="checkbox" value="restaurants" /> Restaurants</label
+            >
+            <label
+              ><input type="checkbox" value="fine-dining" /> Fine Dining</label
+            >
+            <label><input type="checkbox" value="fast-food" /> Fast Food</label>
+            <label><input type="checkbox" value="buffet" /> Buffet</label>
+            <label
+              ><input type="checkbox" value="casual-dining" /> Casual
+              Dining</label
+            >
+            <label
+              ><input type="checkbox" value="winelands" /> Winelands
+              Tours</label
+            >
+            <label
+              ><input type="checkbox" value="nature" /> Nature & Outdoors</label
+            >
+            <label><input type="checkbox" value="adventure" /> Adventure</label>
+            <label
+              ><input type="checkbox" value="culture" /> Culture &
+              Museums</label
+            >
+            <label><input type="checkbox" value="skating" /> Skating</label>
+            <label><input type="checkbox" value="aquarium" /> Aquarium</label>
+            <label><input type="checkbox" value="beaches" /> Beaches</label>
+            <label><input type="checkbox" value="scenic" /> Scenic</label>
+            <label><input type="checkbox" value="cafes" /> Cafes</label>
+          </div>
 
-                    <div class="filter-group">
-                        <label><input type="checkbox" value="we-host"> We Host</label>
-                        <label><input type="checkbox" value="go-karting"> Go Karting</label>
-                        <label><input type="checkbox" value="swimming"> Swimming</label>
-                        <label><input type="checkbox" value="swimming"> Indoor</label>
-                        <label><input type="checkbox" value="swimming"> Outdoor</label>
-                        <label><input type="checkbox" value="restaurants"> Restaurants</label>
-                        <label><input type="checkbox" value="fine-dining"> Fine Dining</label>
-                        <label><input type="checkbox" value="fast-food"> Fast Food</label>
-                        <label><input type="checkbox" value="buffet"> Buffet</label>
-                        <label><input type="checkbox" value="casual-dining"> Casual Dining</label>
-                        <label><input type="checkbox" value="winelands"> Winelands Tours</label>
-                        <label><input type="checkbox" value="nature"> Nature & Outdoors</label>
-                        <label><input type="checkbox" value="adventure"> Adventure</label>
-                        <label><input type="checkbox" value="culture"> Culture & Museums</label>
-                        <label><input type="checkbox" value="skating"> Skating</label>
-                        <label><input type="checkbox" value="aquarium"> Aquarium</label>
-                        <label><input type="checkbox" value="beaches"> Beaches</label>
-                        <label><input type="checkbox" value="scenic"> Scenic</label>
-                        <label><input type="checkbox" value="cafes"> Cafes</label>
-                    </div>
-
-                    <div class="filter-group">
-                        <label>Budget <span id="budget-label">R0–2000</span></label>
-                        <input type="range" id="budget-slider" min="0" max="2000" value="2000">
-                    </div>
-                </div>
-
-                <div class="services-section">
-
-                    <div class="services-search-bar">
-                        <div class="search-bar">
-                            <input type="text" id="search-input" placeholder="Search text">
-                            <button><i class="bi bi-search"></i></button>
-                        </div>
-                        <div class="sorting-options">
-                            <button data-sort="featured">Featured</button>
-                            <button data-sort="price-asc">Price ascending</button>
-                            <button data-sort="price-desc">Price descending</button>
-                            <button data-sort="rating">Rating</button>
-                        </div>
-                    </div>
-
-                    <div class="service-header">
-                        <h1 style="font-size: 300%;">What We Offer</h1>
-                        <div class="cart-wrapper">
-                            <button class="btn btn-primary cart-btn" id="cart-btn">
-                                <i class="bi bi-cart-fill"></i>
-                                <span class="cart-count" id="cart-count">0</span>
-                            </button>
-                            <div class="cart-dropdown" id="cart-dropdown">
-                                <div class="cart-dropdown-header">
-                                    <span>Your Plan</span>
-                                    <button class="cart-close-btn" id="cart-close-btn"><i class="bi bi-x-lg"></i></button>
-                                </div>
-                                <div class="cart-items-list" id="cart-items-list">
-                                    <p class="cart-empty-msg">No events added yet.</p>
-                                </div>
-                                <div class="cart-dropdown-footer">
-                                    <div class="cart-note-row">
-                                        <input type="text" id="cart-note-input" placeholder="Add a note to your plan...">
-                                        <button id="cart-note-add-btn"><i class="bi bi-plus-lg"></i></button>
-                                    </div>
-                                    <div id="cart-notes-list"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="service-items" id="product-grid">
-
-                        <div class="products" data-id="1" data-name="Weddings" data-host="we-host" data-category="we-host go-karting adventure" data-price="2000" data-rating="5.0">
-                            <span class="host-tag we-host-tag">We Host</span>
-                            <img src="images\adc_certified_art.png" alt="Weddings">
-                            <p style="font-size: 80%; color: #FF6347"><b>Weddings</b></p>
-                            <p>From <b><i>R2000</i></b> per Event</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="1">Add to Plan</button>
-                                <button class="btn-combo">See More</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="2" data-name="Social Gatherings" data-host="we-host" data-category="we-host go-karting adventure" data-price="300" data-rating="4.8">
-                            <span class="host-tag we-host-tag">We Host</span>
-                            <img src="images\adc_certified_art.png" alt="Social Gatherings">
-                            <p style="font-size: 80%; color: #FF6347"><b>Social Gatherings</b></p>
-                            <p>From <b><i>R300</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="2">Add to Plan</button>
-                                <button class="btn-combo">See More</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="3" data-name="Food Truck" data-host="we-host" data-category="we-host go-karting adventure" data-price="300" data-rating="4.7">
-                            <span class="host-tag we-host-tag">We Host</span>
-                            <img src="images\adc_certified_art.png" alt="Food Truck">
-                            <p style="font-size: 80%; color: #FF6347"><b>Food Truck</b></p>
-                            <p>From <b><i>R300</i></b></p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="3">Add to Plan</button>
-                                <button class="btn-combo">See More</button>
-                            </div>
-                        </div>
-
-                        <!-- EXTERNAL HOST -->
-
-                        <div class="products" data-id="4" data-name="Century Karting" data-host="external" data-category="go-karting adventure" data-price="300" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/go-karting-in-Cape-Town.webp" alt="Go Karting">
-                            <p style="font-size: 80%; color: #FF6347"><b>Century Karting</b></p>
-                            <p>From <b><i>R300</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="4">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.centurykarting.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="5" data-name="Sea Point Pools" data-host="external" data-category="swimming outdoor nature" data-price="30" data-rating="4.2">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/diving-pool-at-front.jpg" alt="Swimming">
-                            <p style="font-size: 80%; color: #FF6347"><b>Sea Point Pools</b></p>
-                            <p>From <b><i>R30</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="5">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/place/Sea+Point+Swimming+Pool,+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="6" data-name="Pigalle Restaurant" data-host="external" data-category="restaurants fine-dining" data-price="800" data-rating="4.8">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/pigalle.webp" alt="Fine Dining">
-                            <p style="font-size: 80%; color: #FF6347"><b>Pigalle Restaurant</b></p>
-                            <p>From <b><i>R800</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="6">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.pigalle.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="7" data-name="Stellenbosch Winelands Tour" data-host="external" data-category="winelands outdoor scenic" data-price="1650" data-rating="4.7">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/winelandstour.jpg" alt="Winelands Tours">
-                            <p style="font-size: 80%; color: #FF6347"><b>Stellenbosch Winelands Tour</b></p>
-                            <p>From <b><i>R1650</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="7">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.wineroute.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="8" data-name="The Village Buffet" data-host="external" data-category="restaurants buffet" data-price="180" data-rating="4.0">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/TheVillageBuffet.webp" alt="Buffet">
-                            <p style="font-size: 80%; color: #FF6347"><b>The Village Buffet</b></p>
-                            <p>From <b><i>R180</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="8">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.thevillagebuffet.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="9" data-name="Long Street Baths" data-host="external" data-category="swimming indoor" data-price="30" data-rating="4.3">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/longstreetbaths.jpg" alt="Outdoor Swimming">
-                            <p style="font-size: 80%; color: #FF6347"><b>Long Street Baths</b></p>
-                            <p>From <b><i>R30</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="9">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.capetown.gov.za/Family%20and%20home/parks-and-recreation/swimming-pools/long-street-baths','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="10" data-name="Honest Chocolate Cafe" data-host="external" data-category="restaurants cafes casual-dining" data-price="120" data-rating="4.1">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/honestchocolatecafe.webp" alt="Cafes">
-                            <p style="font-size: 80%; color: #FF6347"><b>Honest Chocolate Cafe</b></p>
-                            <p>From <b><i>R120</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="10">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.honestchocolate.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="11" data-name="Golden Dish" data-host="external" data-category="restaurants fast-food" data-price="80" data-rating="3.8">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/goldendish.jpg" alt="Fast Food">
-                            <p style="font-size: 80%; color: #FF6347"><b>Golden Dish</b></p>
-                            <p>From <b><i>R80</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="11">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/search/Golden+Dish+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="12" data-name="Ricks Cafe Americain" data-host="external" data-category="restaurants casual-dining" data-price="200" data-rating="4.0">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/ricks-cafe-americain.webp" alt="Casual Dining">
-                            <p style="font-size: 80%; color: #FF6347"><b>Ricks Cafe Americain</b></p>
-                            <p>From <b><i>R200</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="12">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.rickscafe.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="13" data-name="Table Mountain Aerial Cableway" data-host="external" data-category="nature outdoor scenic adventure" data-price="450" data-rating="4.9">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/tablemountaincableway.webp" alt="Table Mountain">
-                            <p style="font-size: 80%; color: #FF6347"><b>Table Mountain Aerial Cableway</b></p>
-                            <p>From <b><i>R450</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="13">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.tablemountain.net','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="14" data-name="Kirstenbosch National Botanical Garden" data-host="external" data-category="nature outdoor scenic" data-price="220" data-rating="4.8">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Kirstenbosch National Botanical Garden.webp" alt="Kirstenbosch">
-                            <p style="font-size: 80%; color: #FF6347"><b>Kirstenbosch National Botanical Garden</b></p>
-                            <p>From <b><i>R220</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="14">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.sanbi.org/gardens/kirstenbosch','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="15" data-name="Cape Point Nature Reserve" data-host="external" data-category="nature outdoor scenic adventure" data-price="353" data-rating="4.8">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Cape Point Nature Reserve.webp" alt="Cape Point">
-                            <p style="font-size: 80%; color: #FF6347"><b>Cape Point Nature Reserve</b></p>
-                            <p>From <b><i>R353</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="15">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.capepoint.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="16" data-name="Boulders Beach Penguin Colony" data-host="external" data-category="nature outdoor beaches scenic" data-price="220" data-rating="4.7">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Boulders Beach Penguin Colony.webp" alt="Boulders Beach Penguins">
-                            <p style="font-size: 80%; color: #FF6347"><b>Boulders Beach Penguin Colony</b></p>
-                            <p>From <b><i>R220</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="16">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.sanparks.org/parks/table_mountain/tourism/attractions.php#boulders','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="17" data-name="Lions Head Hike" data-host="external" data-category="nature outdoor adventure scenic" data-price="0" data-rating="4.8">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Lion's Head Hike.webp" alt="Lions Head Hike">
-                            <p style="font-size: 80%; color: #FF6347"><b>Lion's Head Hike</b></p>
-                            <p><b><i>Free</i></b> entry</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="17">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/place/Lion%27s+Head,+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="18" data-name="Chapman's Peak Drive" data-host="external" data-category="nature outdoor scenic" data-price="55" data-rating="4.7">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/chapmans-peak-drive.webp" alt="Chapmans Peak">
-                            <p style="font-size: 80%; color: #FF6347"><b>Chapman's Peak Drive</b></p>
-                            <p>From <b><i>R55</i></b> per vehicle</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="18">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.chapmanspeakdrive.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="19" data-name="Camps Bay Beach" data-host="external" data-category="beaches outdoor scenic" data-price="0" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Camps Bay Beach.webp" alt="Camps Bay Beach">
-                            <p style="font-size: 80%; color: #FF6347"><b>Camps Bay Beach</b></p>
-                            <p><b><i>Free</i></b> entry</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="19">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/place/Camps+Bay+Beach,+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="20" data-name="Clifton Beaches" data-host="external" data-category="beaches outdoor scenic" data-price="0" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Clifton Beaches.webp" alt="Clifton Beaches">
-                            <p style="font-size: 80%; color: #FF6347"><b>Clifton Beaches</b></p>
-                            <p><b><i>Free</i></b> entry</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="20">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/place/Clifton+Beach,+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="21" data-name="Robben Island Museum" data-host="external" data-category="culture outdoor scenic" data-price="750" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Robben Island Museum.webp" alt="Robben Island">
-                            <p style="font-size: 80%; color: #FF6347"><b>Robben Island Museum</b></p>
-                            <p>From <b><i>R750</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="21">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.robben-island.org.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="22" data-name="Two Oceans Aquarium" data-host="external" data-category="aquarium indoor culture" data-price="260" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Two Oceans Aquarium.webp" alt="Two Oceans Aquarium">
-                            <p style="font-size: 80%; color: #FF6347"><b>Two Oceans Aquarium</b></p>
-                            <p>From <b><i>R260</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="22">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.aquarium.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="23" data-name="Zeitz Museum of Contemporary Art Africa" data-host="external" data-category="culture indoor" data-price="200" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Zeitz Museum of Contemporary Art Africa.webp" alt="Zeitz MOCAA">
-                            <p style="font-size: 80%; color: #FF6347"><b>Zeitz Museum of Contemporary Art Africa</b></p>
-                            <p>From <b><i>R200</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="23">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.zeitzmocaa.museum','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="24" data-name="Bo-Kaap Neighbourhood Walk" data-host="external" data-category="culture outdoor scenic" data-price="0" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Bo-Kaap Neighbourhood Walk.webp" alt="Bo-Kaap">
-                            <p style="font-size: 80%; color: #FF6347"><b>Bo-Kaap Neighbourhood Walk</b></p>
-                            <p><b><i>Free</i></b> to explore</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="24">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/place/Bo-Kaap,+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="25" data-name="Groot Constantia Wine Estate" data-host="external" data-category="winelands culture scenic" data-price="150" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Groot Constantia Wine Estate.webp" alt="Groot Constantia">
-                            <p style="font-size: 80%; color: #FF6347"><b>Groot Constantia Wine Estate</b></p>
-                            <p>From <b><i>R150</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="25">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.grootconstantia.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="26" data-name="World of Birds Wildlife Sanctuary" data-host="external" data-category="nature indoor outdoor culture" data-price="195" data-rating="4.3">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/World of Birds Wildlife Sanctuary.webp" alt="World of Birds">
-                            <p style="font-size: 80%; color: #FF6347"><b>World of Birds Wildlife Sanctuary</b></p>
-                            <p>From <b><i>R195</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="26">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.worldofbirds.org.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="27" data-name="The Ice Station GrandWest" data-host="external" data-category="skating indoor adventure" data-price="75" data-rating="4.4">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/The-Ice-Station-GrandWest-1024x768.webp" alt="Ice Skating GrandWest">
-                            <p style="font-size: 80%; color: #FF6347"><b>The Ice Station GrandWest</b></p>
-                            <p>From <b><i>R75</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="27">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.suninternational.com/grandwest/entertainment/ice-station','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="28" data-name="Rollercade Table Bay Mall" data-host="external" data-category="skating indoor adventure" data-price="180" data-rating="4.3">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Rollercade Table Bay Mall.webp" alt="Rollercade Roller Skating">
-                            <p style="font-size: 80%; color: #FF6347"><b>Rollercade Table Bay Mall</b></p>
-                            <p>From <b><i>R180</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="28">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/place/Rollercade+Table+Bay+Mall','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="29" data-name="Abseil Africa Table Mountain" data-host="external" data-category="adventure outdoor scenic" data-price="1095" data-rating="4.9">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Abseil Africa – Table Mountain.webp" alt="Abseil Africa">
-                            <p style="font-size: 80%; color: #FF6347"><b>Abseil Africa – Table Mountain</b></p>
-                            <p>From <b><i>R1095</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="29">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.abseilafrica.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="30" data-name="Cape Town City Sightseeing Bus" data-host="external" data-category="scenic culture outdoor" data-price="260" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Cape Town City Sightseeing Bus.webp" alt="City Sightseeing Bus">
-                            <p style="font-size: 80%; color: #FF6347"><b>Cape Town City Sightseeing Bus</b></p>
-                            <p>From <b><i>R260</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="30">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.citysightseeing.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="31" data-name="Hout Bay Harbour Boat Cruise" data-host="external" data-category="scenic outdoor adventure" data-price="150" data-rating="4.4">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Hout Bay Harbour Boat Cruise.webp" alt="Hout Bay Boat Cruise">
-                            <p style="font-size: 80%; color: #FF6347"><b>Hout Bay Harbour Boat Cruise</b></p>
-                            <p>From <b><i>R150</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="31">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.nauticaharbourtours.com','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="32" data-name="Shark Cage Diving Gansbaai" data-host="external" data-category="adventure outdoor" data-price="1800" data-rating="4.7">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Copper-Shark-Diving-Gansbaai.webp" alt="Shark Cage Diving">
-                            <p style="font-size: 80%; color: #FF6347"><b>Shark Cage Diving – Gansbaai</b></p>
-                            <p>From <b><i>R1800</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="32">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.sharkbookings.com','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="33" data-name="La Colombe Restaurant" data-host="external" data-category="restaurants fine-dining" data-price="1250" data-rating="4.9">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/La Colombe Restaurant.webp" alt="La Colombe">
-                            <p style="font-size: 80%; color: #FF6347"><b>La Colombe Restaurant</b></p>
-                            <p>From <b><i>R1250</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="33">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.lacolombe.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="34" data-name="The Test Kitchen" data-host="external" data-category="restaurants fine-dining" data-price="1500" data-rating="4.9">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/The Test Kitchen.webp" alt="The Test Kitchen">
-                            <p style="font-size: 80%; color: #FF6347"><b>The Test Kitchen</b></p>
-                            <p>From <b><i>R1500</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="34">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.thetestkitchen.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="35" data-name="Karibu Restaurant" data-host="external" data-category="restaurants casual-dining" data-price="250" data-rating="4.4">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Karibu Restaurant.webp" alt="Karibu Restaurant">
-                            <p style="font-size: 80%; color: #FF6347"><b>Karibu Restaurant</b></p>
-                            <p>From <b><i>R250</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="35">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.google.com/maps/search/Karibu+Restaurant+Cape+Town','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="36" data-name="Kloof Street House" data-host="external" data-category="restaurants casual-dining" data-price="350" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/La Colombe Restaurant.webp" alt="Kloof Street House">
-                            <p style="font-size: 80%; color: #FF6347"><b>Kloof Street House</b></p>
-                            <p>From <b><i>R350</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="36">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.kloofstreethouse.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="37" data-name="The Harbour House Kalk Bay" data-host="external" data-category="restaurants fine-dining scenic" data-price="450" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/The Harbour House – Kalk Bay.webp" alt="Harbour House">
-                            <p style="font-size: 80%; color: #FF6347"><b>The Harbour House – Kalk Bay</b></p>
-                            <p>From <b><i>R450</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="37">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.harbourhouse.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="38" data-name="Societi Bistro" data-host="external" data-category="restaurants casual-dining" data-price="200" data-rating="4.4">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Societi Bistro.webp" alt="Societi Bistro">
-                            <p style="font-size: 80%; color: #FF6347"><b>Societi Bistro</b></p>
-                            <p>From <b><i>R200</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="38">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.societibistro.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="39" data-name="Bootlegger Coffee Company" data-host="external" data-category="cafes restaurants" data-price="80" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Bootlegger Coffee Company.webp" alt="Bootlegger Coffee">
-                            <p style="font-size: 80%; color: #FF6347"><b>Bootlegger Coffee Company</b></p>
-                            <p>From <b><i>R80</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="39">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.bootlegger.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="40" data-name="Truth Coffee Cape Town" data-host="external" data-category="cafes restaurants" data-price="90" data-rating="4.6">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Truth Coffee Cape Town.webp" alt="Truth Coffee">
-                            <p style="font-size: 80%; color: #FF6347"><b>Truth Coffee Cape Town</b></p>
-                            <p>From <b><i>R90</i></b> per person</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="40">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.truthcoffee.com','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="41" data-name="Oranjezicht City Farm Market" data-host="external" data-category="outdoor culture casual-dining" data-price="0" data-rating="4.7">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Oranjezicht City Farm Market.webp" alt="Oranjezicht City Farm Market">
-                            <p style="font-size: 80%; color: #FF6347"><b>Oranjezicht City Farm Market</b></p>
-                            <p><b><i>Free</i></b> entry</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="41">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.ozcf.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                        <div class="products" data-id="42" data-name="Neighbourgoods Market" data-host="external" data-category="outdoor culture casual-dining" data-price="0" data-rating="4.5">
-                            <span class="host-tag external-tag">External Host</span>
-                            <img src="images/Neighbourgoods Market.webp" alt="Neighbourgoods Market">
-                            <p style="font-size: 80%; color: #FF6347"><b>Neighbourgoods Market</b></p>
-                            <p><b><i>Free</i></b> entry</p>
-                            <div class="card-actions">
-                                <button class="add-to-plan-btn" data-id="42">Add to Plan</button>
-                                <button class="go-to-site-btn" onclick="window.open('https://www.neighbourgoodsmarket.co.za','_blank')">Go to Site</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <button id="darkModeBtn" class="darkmode-btn" aria-label="Toggle Dark Mode"
-                style="
-                    position: fixed;
-                    bottom: 20px;
-                    left: 20px;
-                    z-index: 9999;
-                    padding: 10px;
-                    border: none;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    border:2px solid black;
-                ">
-                <img src="images/icons8-dark-mode-50.png" alt="Dark mode icon" />
-            </button>
+          <div class="filter-group">
+            <label>Budget <span id="budget-label">R0–2000</span></label>
+            <input
+              type="range"
+              id="budget-slider"
+              min="0"
+              max="2000"
+              value="2000"
+            />
+          </div>
         </div>
 
-
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="social-links-box">
-                    <p>Follow us on</p>
-                    <div class="icons">
-                        <i class="fa fa-brands fa-instagram"></i>
-                        <i class="fa fa-brands fa-x-twitter"></i>
-                        <i class="fa-brands fa-facebook">‌</i>
-                    </div>
-                </div>
-
-                <div class="about-us">
-                    <p>About</p>
-                    <a href="./services.html">Our Service</a>
-                    <a href="./gallery.html">Our Gallery</a>
-                    <a href="./about.html">Our Team</a>
-                </div>
-
-                <div class="Mail">
-                    <p>Email</p>
-                    <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
-                </div>
-
-                <div class="Location">
-                    <p>Head Office Location</p>
-                    <p>📍Cape Town, South Africa</p>
-                </div>
-
-                <div class="main-footer">
-                    <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
-                </div>
+        <div class="services-section">
+          <div class="services-search-bar">
+            <div class="search-bar">
+              <input type="text" id="search-input" placeholder="Search text" />
+              <button><i class="bi bi-search"></i></button>
             </div>
-        </footer>
-        <script src="/script.js" defer></script>
+            <div class="sorting-options">
+              <button data-sort="featured">Featured</button>
+              <button data-sort="price-asc">Price ascending</button>
+              <button data-sort="price-desc">Price descending</button>
+              <button data-sort="rating">Rating</button>
+            </div>
+          </div>
 
-        <script src="/scriptservice.js" defer></script>
-    </body>
+          <div class="service-header">
+            <h1 style="font-size: 300%">What We Offer</h1>
+            <div class="cart-wrapper">
+              <button class="btn btn-primary cart-btn" id="cart-btn">
+                <i class="bi bi-cart-fill"></i>
+                <span class="cart-count" id="cart-count">0</span>
+              </button>
+              <div class="cart-dropdown" id="cart-dropdown">
+                <div class="cart-dropdown-header">
+                  <span>Your Plan</span>
+                  <button class="cart-close-btn" id="cart-close-btn">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div class="cart-items-list" id="cart-items-list">
+                  <p class="cart-empty-msg">No events added yet.</p>
+                </div>
+                <div class="cart-dropdown-footer">
+                  <div class="cart-note-row">
+                    <input
+                      type="text"
+                      id="cart-note-input"
+                      placeholder="Add a note to your plan..."
+                    />
+                    <button id="cart-note-add-btn">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+                  </div>
+                  <div id="cart-notes-list"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-items" id="product-grid">
+            <div
+              class="products"
+              data-id="1"
+              data-name="Weddings"
+              data-host="we-host"
+              data-category="we-host go-karting adventure"
+              data-price="2000"
+              data-rating="5.0"
+            >
+              <span class="host-tag we-host-tag">We Host</span>
+              <img src="images\adc_certified_art.png" alt="Weddings" />
+              <p style="font-size: 80%; color: #ff6347"><b>Weddings</b></p>
+              <p>
+                From <b><i>R2000</i></b> per Event
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="1">Add to Plan</button>
+                <button class="btn-combo">See More</button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="2"
+              data-name="Social Gatherings"
+              data-host="we-host"
+              data-category="we-host go-karting adventure"
+              data-price="300"
+              data-rating="4.8"
+            >
+              <span class="host-tag we-host-tag">We Host</span>
+              <img src="images\adc_certified_art.png" alt="Social Gatherings" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Social Gatherings</b>
+              </p>
+              <p>
+                From <b><i>R300</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="2">Add to Plan</button>
+                <button class="btn-combo">See More</button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="3"
+              data-name="Food Truck"
+              data-host="we-host"
+              data-category="we-host go-karting adventure"
+              data-price="300"
+              data-rating="4.7"
+            >
+              <span class="host-tag we-host-tag">We Host</span>
+              <img src="images\adc_certified_art.png" alt="Food Truck" />
+              <p style="font-size: 80%; color: #ff6347"><b>Food Truck</b></p>
+              <p>
+                From <b><i>R300</i></b>
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="3">Add to Plan</button>
+                <button class="btn-combo">See More</button>
+              </div>
+            </div>
+
+            <!-- EXTERNAL HOST -->
+
+            <div
+              class="products"
+              data-id="4"
+              data-name="Century Karting"
+              data-host="external"
+              data-category="go-karting adventure"
+              data-price="300"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/go-karting-in-Cape-Town.webp" alt="Go Karting" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Century Karting</b>
+              </p>
+              <p>
+                From <b><i>R300</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="4">Add to Plan</button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.centurykarting.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="5"
+              data-name="Sea Point Pools"
+              data-host="external"
+              data-category="swimming outdoor nature"
+              data-price="30"
+              data-rating="4.2"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/diving-pool-at-front.jpg" alt="Swimming" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Sea Point Pools</b>
+              </p>
+              <p>
+                From <b><i>R30</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="5">Add to Plan</button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/place/Sea+Point+Swimming+Pool,+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="6"
+              data-name="Pigalle Restaurant"
+              data-host="external"
+              data-category="restaurants fine-dining"
+              data-price="800"
+              data-rating="4.8"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/pigalle.webp" alt="Fine Dining" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Pigalle Restaurant</b>
+              </p>
+              <p>
+                From <b><i>R800</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="6">Add to Plan</button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.pigalle.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="7"
+              data-name="Stellenbosch Winelands Tour"
+              data-host="external"
+              data-category="winelands outdoor scenic"
+              data-price="1650"
+              data-rating="4.7"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/winelandstour.jpg" alt="Winelands Tours" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Stellenbosch Winelands Tour</b>
+              </p>
+              <p>
+                From <b><i>R1650</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="7">Add to Plan</button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.wineroute.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="8"
+              data-name="The Village Buffet"
+              data-host="external"
+              data-category="restaurants buffet"
+              data-price="180"
+              data-rating="4.0"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/TheVillageBuffet.webp" alt="Buffet" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>The Village Buffet</b>
+              </p>
+              <p>
+                From <b><i>R180</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="8">Add to Plan</button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.thevillagebuffet.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="9"
+              data-name="Long Street Baths"
+              data-host="external"
+              data-category="swimming indoor"
+              data-price="30"
+              data-rating="4.3"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/longstreetbaths.jpg" alt="Outdoor Swimming" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Long Street Baths</b>
+              </p>
+              <p>
+                From <b><i>R30</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="9">Add to Plan</button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.capetown.gov.za/Family%20and%20home/parks-and-recreation/swimming-pools/long-street-baths',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="10"
+              data-name="Honest Chocolate Cafe"
+              data-host="external"
+              data-category="restaurants cafes casual-dining"
+              data-price="120"
+              data-rating="4.1"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/honestchocolatecafe.webp" alt="Cafes" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Honest Chocolate Cafe</b>
+              </p>
+              <p>
+                From <b><i>R120</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="10">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.honestchocolate.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="11"
+              data-name="Golden Dish"
+              data-host="external"
+              data-category="restaurants fast-food"
+              data-price="80"
+              data-rating="3.8"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/goldendish.jpg" alt="Fast Food" />
+              <p style="font-size: 80%; color: #ff6347"><b>Golden Dish</b></p>
+              <p>
+                From <b><i>R80</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="11">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/search/Golden+Dish+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="12"
+              data-name="Ricks Cafe Americain"
+              data-host="external"
+              data-category="restaurants casual-dining"
+              data-price="200"
+              data-rating="4.0"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/ricks-cafe-americain.webp" alt="Casual Dining" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Ricks Cafe Americain</b>
+              </p>
+              <p>
+                From <b><i>R200</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="12">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.rickscafe.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="13"
+              data-name="Table Mountain Aerial Cableway"
+              data-host="external"
+              data-category="nature outdoor scenic adventure"
+              data-price="450"
+              data-rating="4.9"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/tablemountaincableway.webp"
+                alt="Table Mountain"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Table Mountain Aerial Cableway</b>
+              </p>
+              <p>
+                From <b><i>R450</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="13">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.tablemountain.net', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="14"
+              data-name="Kirstenbosch National Botanical Garden"
+              data-host="external"
+              data-category="nature outdoor scenic"
+              data-price="220"
+              data-rating="4.8"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Kirstenbosch National Botanical Garden.webp"
+                alt="Kirstenbosch"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Kirstenbosch National Botanical Garden</b>
+              </p>
+              <p>
+                From <b><i>R220</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="14">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.sanbi.org/gardens/kirstenbosch',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="15"
+              data-name="Cape Point Nature Reserve"
+              data-host="external"
+              data-category="nature outdoor scenic adventure"
+              data-price="353"
+              data-rating="4.8"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Cape Point Nature Reserve.webp"
+                alt="Cape Point"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Cape Point Nature Reserve</b>
+              </p>
+              <p>
+                From <b><i>R353</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="15">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.capepoint.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="16"
+              data-name="Boulders Beach Penguin Colony"
+              data-host="external"
+              data-category="nature outdoor beaches scenic"
+              data-price="220"
+              data-rating="4.7"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Boulders Beach Penguin Colony.webp"
+                alt="Boulders Beach Penguins"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Boulders Beach Penguin Colony</b>
+              </p>
+              <p>
+                From <b><i>R220</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="16">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.sanparks.org/parks/table_mountain/tourism/attractions.php#boulders',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="17"
+              data-name="Lions Head Hike"
+              data-host="external"
+              data-category="nature outdoor adventure scenic"
+              data-price="0"
+              data-rating="4.8"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/Lion's Head Hike.webp" alt="Lions Head Hike" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Lion's Head Hike</b>
+              </p>
+              <p>
+                <b><i>Free</i></b> entry
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="17">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/place/Lion%27s+Head,+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="18"
+              data-name="Chapman's Peak Drive"
+              data-host="external"
+              data-category="nature outdoor scenic"
+              data-price="55"
+              data-rating="4.7"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/chapmans-peak-drive.webp" alt="Chapmans Peak" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Chapman's Peak Drive</b>
+              </p>
+              <p>
+                From <b><i>R55</i></b> per vehicle
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="18">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.chapmanspeakdrive.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="19"
+              data-name="Camps Bay Beach"
+              data-host="external"
+              data-category="beaches outdoor scenic"
+              data-price="0"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/Camps Bay Beach.webp" alt="Camps Bay Beach" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Camps Bay Beach</b>
+              </p>
+              <p>
+                <b><i>Free</i></b> entry
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="19">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/place/Camps+Bay+Beach,+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="20"
+              data-name="Clifton Beaches"
+              data-host="external"
+              data-category="beaches outdoor scenic"
+              data-price="0"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/Clifton Beaches.webp" alt="Clifton Beaches" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Clifton Beaches</b>
+              </p>
+              <p>
+                <b><i>Free</i></b> entry
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="20">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/place/Clifton+Beach,+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="21"
+              data-name="Robben Island Museum"
+              data-host="external"
+              data-category="culture outdoor scenic"
+              data-price="750"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/Robben Island Museum.webp" alt="Robben Island" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Robben Island Museum</b>
+              </p>
+              <p>
+                From <b><i>R750</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="21">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.robben-island.org.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="22"
+              data-name="Two Oceans Aquarium"
+              data-host="external"
+              data-category="aquarium indoor culture"
+              data-price="260"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Two Oceans Aquarium.webp"
+                alt="Two Oceans Aquarium"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Two Oceans Aquarium</b>
+              </p>
+              <p>
+                From <b><i>R260</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="22">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.aquarium.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="23"
+              data-name="Zeitz Museum of Contemporary Art Africa"
+              data-host="external"
+              data-category="culture indoor"
+              data-price="200"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Zeitz Museum of Contemporary Art Africa.webp"
+                alt="Zeitz MOCAA"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Zeitz Museum of Contemporary Art Africa</b>
+              </p>
+              <p>
+                From <b><i>R200</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="23">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.zeitzmocaa.museum', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="24"
+              data-name="Bo-Kaap Neighbourhood Walk"
+              data-host="external"
+              data-category="culture outdoor scenic"
+              data-price="0"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/Bo-Kaap Neighbourhood Walk.webp" alt="Bo-Kaap" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Bo-Kaap Neighbourhood Walk</b>
+              </p>
+              <p>
+                <b><i>Free</i></b> to explore
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="24">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/place/Bo-Kaap,+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="25"
+              data-name="Groot Constantia Wine Estate"
+              data-host="external"
+              data-category="winelands culture scenic"
+              data-price="150"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Groot Constantia Wine Estate.webp"
+                alt="Groot Constantia"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Groot Constantia Wine Estate</b>
+              </p>
+              <p>
+                From <b><i>R150</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="25">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.grootconstantia.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="26"
+              data-name="World of Birds Wildlife Sanctuary"
+              data-host="external"
+              data-category="nature indoor outdoor culture"
+              data-price="195"
+              data-rating="4.3"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/World of Birds Wildlife Sanctuary.webp"
+                alt="World of Birds"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>World of Birds Wildlife Sanctuary</b>
+              </p>
+              <p>
+                From <b><i>R195</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="26">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.worldofbirds.org.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="27"
+              data-name="The Ice Station GrandWest"
+              data-host="external"
+              data-category="skating indoor adventure"
+              data-price="75"
+              data-rating="4.4"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/The-Ice-Station-GrandWest-1024x768.webp"
+                alt="Ice Skating GrandWest"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>The Ice Station GrandWest</b>
+              </p>
+              <p>
+                From <b><i>R75</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="27">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.suninternational.com/grandwest/entertainment/ice-station',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="28"
+              data-name="Rollercade Table Bay Mall"
+              data-host="external"
+              data-category="skating indoor adventure"
+              data-price="180"
+              data-rating="4.3"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Rollercade Table Bay Mall.webp"
+                alt="Rollercade Roller Skating"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Rollercade Table Bay Mall</b>
+              </p>
+              <p>
+                From <b><i>R180</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="28">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/place/Rollercade+Table+Bay+Mall',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="29"
+              data-name="Abseil Africa Table Mountain"
+              data-host="external"
+              data-category="adventure outdoor scenic"
+              data-price="1095"
+              data-rating="4.9"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Abseil Africa – Table Mountain.webp"
+                alt="Abseil Africa"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Abseil Africa – Table Mountain</b>
+              </p>
+              <p>
+                From <b><i>R1095</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="29">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.abseilafrica.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="30"
+              data-name="Cape Town City Sightseeing Bus"
+              data-host="external"
+              data-category="scenic culture outdoor"
+              data-price="260"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Cape Town City Sightseeing Bus.webp"
+                alt="City Sightseeing Bus"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Cape Town City Sightseeing Bus</b>
+              </p>
+              <p>
+                From <b><i>R260</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="30">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.citysightseeing.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="31"
+              data-name="Hout Bay Harbour Boat Cruise"
+              data-host="external"
+              data-category="scenic outdoor adventure"
+              data-price="150"
+              data-rating="4.4"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Hout Bay Harbour Boat Cruise.webp"
+                alt="Hout Bay Boat Cruise"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Hout Bay Harbour Boat Cruise</b>
+              </p>
+              <p>
+                From <b><i>R150</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="31">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.nauticaharbourtours.com', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="32"
+              data-name="Shark Cage Diving Gansbaai"
+              data-host="external"
+              data-category="adventure outdoor"
+              data-price="1800"
+              data-rating="4.7"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Copper-Shark-Diving-Gansbaai.webp"
+                alt="Shark Cage Diving"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Shark Cage Diving – Gansbaai</b>
+              </p>
+              <p>
+                From <b><i>R1800</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="32">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.sharkbookings.com', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="33"
+              data-name="La Colombe Restaurant"
+              data-host="external"
+              data-category="restaurants fine-dining"
+              data-price="1250"
+              data-rating="4.9"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/La Colombe Restaurant.webp" alt="La Colombe" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>La Colombe Restaurant</b>
+              </p>
+              <p>
+                From <b><i>R1250</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="33">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.lacolombe.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="34"
+              data-name="The Test Kitchen"
+              data-host="external"
+              data-category="restaurants fine-dining"
+              data-price="1500"
+              data-rating="4.9"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/The Test Kitchen.webp" alt="The Test Kitchen" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>The Test Kitchen</b>
+              </p>
+              <p>
+                From <b><i>R1500</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="34">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.thetestkitchen.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="35"
+              data-name="Karibu Restaurant"
+              data-host="external"
+              data-category="restaurants casual-dining"
+              data-price="250"
+              data-rating="4.4"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Karibu Restaurant.webp"
+                alt="Karibu Restaurant"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Karibu Restaurant</b>
+              </p>
+              <p>
+                From <b><i>R250</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="35">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.google.com/maps/search/Karibu+Restaurant+Cape+Town',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="36"
+              data-name="Kloof Street House"
+              data-host="external"
+              data-category="restaurants casual-dining"
+              data-price="350"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/La Colombe Restaurant.webp"
+                alt="Kloof Street House"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Kloof Street House</b>
+              </p>
+              <p>
+                From <b><i>R350</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="36">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.kloofstreethouse.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="37"
+              data-name="The Harbour House Kalk Bay"
+              data-host="external"
+              data-category="restaurants fine-dining scenic"
+              data-price="450"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/The Harbour House – Kalk Bay.webp"
+                alt="Harbour House"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>The Harbour House – Kalk Bay</b>
+              </p>
+              <p>
+                From <b><i>R450</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="37">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.harbourhouse.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="38"
+              data-name="Societi Bistro"
+              data-host="external"
+              data-category="restaurants casual-dining"
+              data-price="200"
+              data-rating="4.4"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img src="images/Societi Bistro.webp" alt="Societi Bistro" />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Societi Bistro</b>
+              </p>
+              <p>
+                From <b><i>R200</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="38">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.societibistro.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="39"
+              data-name="Bootlegger Coffee Company"
+              data-host="external"
+              data-category="cafes restaurants"
+              data-price="80"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Bootlegger Coffee Company.webp"
+                alt="Bootlegger Coffee"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Bootlegger Coffee Company</b>
+              </p>
+              <p>
+                From <b><i>R80</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="39">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open('https://www.bootlegger.co.za', '_blank')
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="40"
+              data-name="Truth Coffee Cape Town"
+              data-host="external"
+              data-category="cafes restaurants"
+              data-price="90"
+              data-rating="4.6"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Truth Coffee Cape Town.webp"
+                alt="Truth Coffee"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Truth Coffee Cape Town</b>
+              </p>
+              <p>
+                From <b><i>R90</i></b> per person
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="40">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.truthcoffee.com', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="41"
+              data-name="Oranjezicht City Farm Market"
+              data-host="external"
+              data-category="outdoor culture casual-dining"
+              data-price="0"
+              data-rating="4.7"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Oranjezicht City Farm Market.webp"
+                alt="Oranjezicht City Farm Market"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Oranjezicht City Farm Market</b>
+              </p>
+              <p>
+                <b><i>Free</i></b> entry
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="41">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="window.open('https://www.ozcf.co.za', '_blank')"
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="products"
+              data-id="42"
+              data-name="Neighbourgoods Market"
+              data-host="external"
+              data-category="outdoor culture casual-dining"
+              data-price="0"
+              data-rating="4.5"
+            >
+              <span class="host-tag external-tag">External Host</span>
+              <img
+                src="images/Neighbourgoods Market.webp"
+                alt="Neighbourgoods Market"
+              />
+              <p style="font-size: 80%; color: #ff6347">
+                <b>Neighbourgoods Market</b>
+              </p>
+              <p>
+                <b><i>Free</i></b> entry
+              </p>
+              <div class="card-actions">
+                <button class="add-to-plan-btn" data-id="42">
+                  Add to Plan
+                </button>
+                <button
+                  class="go-to-site-btn"
+                  onclick="
+                    window.open(
+                      'https://www.neighbourgoodsmarket.co.za',
+                      '_blank',
+                    )
+                  "
+                >
+                  Go to Site
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        id="darkModeBtn"
+        class="darkmode-btn"
+        aria-label="Toggle Dark Mode"
+        style="
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
+          z-index: 9999;
+          padding: 10px;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 2px solid black;
+        "
+      >
+        <img src="images/icons8-dark-mode-50.png" alt="Dark mode icon" />
+      </button>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="social-links-box">
+          <p>Follow us on</p>
+          <div class="icons">
+            <i class="fa fa-brands fa-instagram"></i>
+            <i class="fa fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-facebook">‌</i>
+          </div>
+        </div>
+
+        <div class="about-us">
+          <p>About</p>
+          <a href="./services.html">Our Service</a>
+          <a href="./gallery.html">Our Gallery</a>
+          <a href="./about.html">Our Team</a>
+        </div>
+
+        <div class="Mail">
+          <p>Email</p>
+          <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
+        </div>
+
+        <div class="Location">
+          <p>Head Office Location</p>
+          <p>📍Cape Town, South Africa</p>
+        </div>
+
+        <div class="main-footer">
+          <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/script.js" defer></script>
+  </body>
 </html>
