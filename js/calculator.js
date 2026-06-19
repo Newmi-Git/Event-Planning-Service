@@ -28,8 +28,10 @@ function Calculate() {
     }
 
     try {
-        const result = eval(display.value);
-        display.value = result;
+        // const result = eval(display.value);
+        let result = eval(display.value);
+        display.value = isFinite(result) ? result : "Error";
+        // display.value = result;
         updateBudgetStatus(result);
     } catch {
         display.value = "Error";
