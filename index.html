@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   </head>
 
   <body>
@@ -12,13 +14,9 @@
       <div class="navbar-container">
         <nav class="navbar">
           <ul>
-            <!-- 1. Invisible spacer to keep logo perfectly centered -->
-            <li class="nav-spacer" aria-hidden="true"></li>
-
-            <!-- 2. Core Navigation Links -->
-            <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="./services.html">Events</a></li>
-            <li><a href="#">Budget Tracker</a></li>
+            <li class="nav-left"><a href="./gallery.html">Gallery</a></li>
+            <li class="nav-left"><a href="./services.html">Events</a></li>
+            <li class="nav-left"><a href="./calculator.html">Budget Tracker</a></li>
             
             <li class="logo-item">
               <a href="./index.html">
@@ -26,11 +24,11 @@
               </a>
             </li>
             
-            <li><a href="#">Reviews</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li class="nav-right"><a href="./review.html">Reviews</a></li>
+            <li class="nav-right"><a href="./about.html">About Us</a></li>
+            <li class="nav-right"><a href="./contact.html">Contact</a></li>
           
-            <li class="dropdown-item">
+            <li class="dropdown-item nav-right">
               <button class="account-btn" aria-haspopup="true" aria-expanded="false">
                 Account <span class="arrow">▼</span>
               </button>
@@ -48,7 +46,7 @@
       <div class="herosection">
         <h1>AFFAIRE DE COEUR</h1>
         <p>Making Event Planning Organised, Simple and Unforgettable.</p>
-        <button class="index-button" id="indexButton">View Experiences</button>
+        <button class="index-button" id="indexButton" onclick="window.location.href='./services.html'">View Experiences</button>
       </div>
 
       <div class="achievements-services-index">
@@ -74,8 +72,41 @@
       </button>
     </main>
 
-    <div class="footer">
-      <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
-    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links-box">
+                <p>Follow us on</p>
+                <div class="icons">
+                    <i class="fa fa-brands fa-instagram"></i>
+                    <i class="fa fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-facebook">‌</i>
+                </div>
+            </div>
+
+            <div class="about-us">
+                <p>About</p>
+                <a href="./services.html">Our Service</a>
+                <a href="./gallery.html">Our Gallery</a>
+                <a href="./about.html">Our Team</a>
+            </div>
+
+            <div class="Mail">
+                <p>Email</p>
+                <a href="mailto:hello@affairdecoeur.com">hello@affairdecoeur.com</a>
+            </div>
+
+            <div class="Location">
+                <p>Head Office Location</p>
+                <p>📍Cape Town, South Africa</p>
+            </div>
+
+            <div class="main-footer">
+                <p>&copy; 2026 Affaire de Coeur. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    
   </body>
 </html>
