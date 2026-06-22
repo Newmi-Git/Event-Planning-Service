@@ -31,11 +31,11 @@ Affaire De Coeur centralizes the entire process — from discovery to booking �
 
 | Name | GitHub |
 |---|---|
-| Owam Gobs | — |
-| Azhar Manie | — |
+| Owam Gobs | [@OwamGobs](https://github.com/OwamGobs) |
+| Azhar Manie | [@chefmanie27-pixel](https://github.com/chefmanie27-pixel) |
 | Yaghya Abdul | [@Newmi-Git](https://github.com/Newmi-Git) |
-| Krishendree Kirstensamy | — |
-| Elijah Lategan | — |
+| Krishendree Kirstensamy | [@KrishendreeX](https://github.com/KrishendreeX) |
+| Elijah Lategan | [@Elijah736](https://github.com/Elijah736) |
 
 ---
 
