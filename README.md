@@ -1,116 +1,104 @@
+# Affaire De Coeur — Event Planning Service
 
-# **Event Planning Service - Affair De Coeur**
+> A centralized platform for discovering venues, events, and experiences in Cape Town — and hiring professionals to bring them to life.
 
-## Startup Description
+🌐 **[Live Site](https://newmi-git.github.io/Event-Planning-Service/)** &nbsp;|&nbsp; 🎨 **[Figma Design](https://www.figma.com/design/U2BVGob1CDa3zGXmy2jyNS/Untitled?node-id=1-2&t=RO7sFATyIYEPpHvr-1)** &nbsp;|&nbsp; 💻 **[GitHub Repo](https://github.com/Newmi-Git/Event-Planning-Service)**
 
-We've created a site that allows users to easily navigate between different venues, social events, locations, and activities, while also providing the option to hire us to host and manage special occasions. Our platform is designed to simplify event discovery and planning by offering information about available events, venues, and experiences in one convenient location. Users can browse upcoming events, explore different activity options, compare venues, and find experiences that match their interests. Whether you're looking for entertainment, planning a celebration, or organizing a corporate function, our website serves as a central hub to help you discover, plan, and enjoy memorable experiences with ease.
+---
 
+## Overview
 
-## Problem Statement
+Affaire De Coeur is a full-stack event planning web application that simplifies how users discover and organize memorable experiences. The platform serves as a central hub where users can:
 
-Many people struggle to find suitable venues, events, and activities for social gatherings, celebrations, and special occasions. Information is often scattered across multiple platforms, making it time-consuming and difficult to compare options, discover new experiences, and organize events efficiently. Additionally, individuals and organizations looking for professional event planning services may face challenges in finding reliable event hosts and coordinators. This creates a need for a centralized platform that enables users to easily browse venues, discover events and activities, and connect with event planning services to simplify the process of organizing memorable experiences.
+- Browse a curated catalogue of venues, social events, and activities
+- Filter and search experiences by interest or occasion
+- Compare options and plan events in one place
+- Hire professional hosts and coordinators for special occasions
 
-## __Team Members__
-Owam Gobs
-Azhar Manie
-Yaghya Abdul
-Krishendree Kirstensamy
-Elijah Lategan
+Whether it's a private celebration, a corporate function, or a casual outing — Affaire De Coeur brings everything together.
+
+---
+
+## The Problem We're Solving
+
+Finding the right venue or event experience is frustrating. Information is scattered across multiple platforms, comparisons are difficult, and connecting with a reliable event coordinator adds another layer of complexity.
+
+Affaire De Coeur centralizes the entire process — from discovery to booking — so users spend less time searching and more time enjoying.
+
+---
+
+## Team
+
+| Name | GitHub |
+|---|---|
+| Owam Gobs | — |
+| Azhar Manie | — |
+| Yaghya Abdul | [@Newmi-Git](https://github.com/Newmi-Git) |
+| Krishendree Kirstensamy | — |
+| Elijah Lategan | — |
+
+---
 
 ## Features
 
-- Dark Mode
-- Account Systen
-- Search System
-- Filter System
-- Event Catalogue
-- Custom Logo
+| Feature | Description |
+|---|---|
+| Dark Mode | Toggle between light and dark themes |
+| Account System | User registration and login |
+| Search System | Real-time search across events and venues |
+| Filter System | Filter events by type, location, or category |
+| Event Catalogue | Full browsable listing of events and activities |
+| Custom Logo | Original branding for the platform |
 
+---
 
-## HTML Concepts Used
+## Tech Stack
 
-HTML document structure
-DOCTYPE
-html, head and body
-Meta tags
-Headings
-Paragraphs
-Links
-Images
-Lists
-Forms
-Labels and Inputs
-Buttons
-Semantic Elements
-Comments
-Correct indentation
-Readable code
+### HTML
+- Semantic document structure (`DOCTYPE`, `html`, `head`, `body`)
+- Meta tags, headings, paragraphs, links, images
+- Forms, labels, inputs, buttons, lists
+- Consistent indentation and readable code
 
-## CSS Concepts Used
+### CSS
+- External stylesheets
+- Flexbox and CSS Grid layouts
+- Responsive design with media queries
+- Hover effects and transitions
+- Consistent spacing using the box model
 
-External Stylesheets
-Selectors
-Classes
-IDs
-Colours
-Typography
-Margins
-Padding
-Borders
-Box Model
-Flexbox
-CSS Grid
-Responsive Design
-Media Queries
-Hover Effects
-Transitions
-Consistent Spacing
+### JavaScript
+- DOM manipulation and event handling
+- Form validation with user feedback
+- Dark mode toggle
+- Search and filtering functionality
+- Pricing calculator
+- Image slider and testimonial carousel
+- Dynamic content rendering
+- Interactive navigation menu
 
-## JavaScript Concepts Used
-
-Form Validation
-Event Handling
-DOM Manipulation
-Variables and Data Types
-Functions
-Conditional Statements
-Arrays
-Objects
-User Feedback Messages
-Dark Mode Toggle
-Search Functionality
-Pricing Calculator
-Image Slider
-Testimonial Carousel
-Dynamic Content Rendering
-Filtering Functionality
-Interactive Navigation Menu
-
-### Figma:
-
-https://www.figma.com/design/U2BVGob1CDa3zGXmy2jyNS/Untitled?node-id=1-2&t=RO7sFATyIYEPpHvr-1
-
-### Github:
-
-https://github.com/Newmi-Git/Event-Planning-Service
-
-### Website Link:
-
-https://newmi-git.github.io/Event-Planning-Service/
+---
 
 ## Challenges
 
-- Working with branches
+- **Branch management** — coordinating feature branches across a team of five required stricter Git discipline than expected.
+- **Merge conflicts** — resolving conflicts taught the team how to communicate changes clearly before committing.
 
-## Lessons Learned:
+---
 
-- We need to be more strict with time
-- Learnt how to deal with merge conflicts
-- Communication amongst members
+## Lessons Learned
+
+- Time management needs structure — loose deadlines don't work in a team environment.
+- Merge conflicts are manageable when communication happens *before* code is pushed.
+- Clear roles and responsibilities would have reduced overlap and confusion.
+
+---
 
 ## Future Improvements
 
-- Creating a fully encrypted Login Database
-- Implementing more animations
-- Creating a more dynamic User Interface
+- Encrypted login with a proper authentication database
+- More polished animations and micro-interactions
+- A more dynamic, data-driven UI
+- Improved mobile responsiveness across all pages
 
+---
