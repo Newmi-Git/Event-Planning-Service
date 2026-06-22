@@ -141,10 +141,12 @@ function login(e) {
     }
 }
 
-//============================================================
-// SERVICES PAGE
-// ===========================================================
+//============================================================SERVICES PAGE========================================================================
 
+/* ══════════════════════════════════════════════════════
+   Affair De Coeur — Services Page Script
+   Features: filter, sort, search, cart, localStorage
+   ══════════════════════════════════════════════════════ */
 
 const searchInput  = document.getElementById('search-input');
 const budgetSlider = document.getElementById('budget-slider');
@@ -252,29 +254,46 @@ sortBtns.forEach(btn => {
     });
 });
 
-renderCart();
+function renderCart() {
+    cartCount.textContent = planIds.length;
 
-// Setup the responsive mobile filter drawer
-(function setupFilterDrawer() {
-    const filterSection = document.querySelector('.services-page .filter-section');
-    if (!filterSection) return;
+    if (planIds.length === 0) {
+        cartItemsList.innerHTML = '<p class="cart-empty-msg">No events added yet.</p>';
+    } else {
+        cartItemsList.innerHTML = '';
 
-    // Create the toggle button
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'filter-toggle-btn';
-    toggleBtn.innerHTML = `
-        <span>🎯 Filter &amp; Search</span>
-        <span class="filter-toggle-icon">&#8964;</span>
-    `;
+        planIds.forEach(item => {
+            const card = document.querySelector(`.products[data-id="${item.id}"]`);
+            if (!card) return;
 
-    // Insert it as the first child of the filter section
-    filterSection.insertBefore(toggleBtn, filterSection.firstChild);
+            const name       = card.dataset.name;
+            const price      = parseInt(card.dataset.price);
+            const quantity   = item.quantity;
+            const totalPrice = price * quantity;
 
-    // Toggle drawer open/closed
-    toggleBtn.addEventListener('click', () => {
-        filterSection.classList.toggle('drawer-open');
-    });
-})();
+            // ✅ FIX 1: declare row HERE inside the loop
+            const row = document.createElement('div');
+            row.className = 'cart-item-row';
+
+            row.innerHTML = `
+                <span class="cart-item-name">${name}</span>
+                <button class="minus-btn" data-id="${item.id}">−</button>
+                <span class="qty">${quantity}</span>
+                <button class="plus-btn" data-id="${item.id}">+</button>
+                <span class="cart-item-price">R${totalPrice}</span>
+                <button class="cart-item-delete" data-id="${item.id}">
+                    <i class="bi bi-trash3"></i>
+                </button>
+            `;
+
+            cartItemsList.appendChild(row);
+
+            // ✅ FIX 2: event listeners AFTER appendChild, still inside the loop
+            row.querySelector('.plus-btn').addEventListener('click', () => increaseQuantity(item.id));
+            row.querySelector('.minus-btn').addEventListener('click', () => decreaseQuantity(item.id));
+            row.querySelector('.cart-item-delete').addEventListener('click', () => removeFromPlan(item.id));
+        });
+    }
 
     renderNotes();
 
@@ -290,7 +309,7 @@ renderCart();
             btn.classList.remove('added');
         }
     });
-
+}
 
 
 
